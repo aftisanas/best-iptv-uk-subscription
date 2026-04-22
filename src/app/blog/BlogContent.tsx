@@ -80,9 +80,9 @@ export default function BlogContent() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6"
           >
-            <span className="text-white">IPTV Providers UK —</span>
+            <span className="text-white">Best IPTV UK 2026 —</span>
             <br />
-            <span className="gradient-text-hero">Guides & Streaming Tips</span>
+            <span className="gradient-text-hero">Guides &amp; Streaming Tips</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -92,10 +92,10 @@ export default function BlogContent() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mx-auto max-w-2xl text-lg text-gray-300/90 leading-relaxed"
           >
-            Expert articles on setup, streaming optimisation, device support and the current state of British television — essential reading before choosing between{" "}
+            In-depth articles on setup, streaming optimisation, device coverage and the current state of British television — the research layer behind every{" "}
             <Link href="/#pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
-              IPTV providers
-            </Link>.
+              best IPTV UK subscription
+            </Link>{" "}decision.
           </motion.p>
         </div>
 

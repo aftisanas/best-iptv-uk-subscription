@@ -23,14 +23,14 @@ export default function ChannelsSection() {
             37,000 Live Channels
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            What Subscribers Get From The Top{" "}
-            <span className="gradient-text">IPTV Providers UK — 37,000 Channels</span>
+            Best IPTV UK Channel Line-Up{" "}
+            <span className="gradient-text">Ranked By Viewer Demand</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted">
-            The channel lineup separates serious IPTV providers from the rest. Every category below ships with every{" "}
+            The library covers every category UK viewers want. The six packs below are ranked by the channels subscribers watch most — and every one ships with every{" "}
             <SectionLink href="/#pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
-              IPTV subscription
-            </SectionLink>{" "}— no add-ons, no bolt-ons, no hidden fees.
+              best IPTV UK subscription
+            </SectionLink>, no add-ons or hidden fees.
           </p>
         </motion.div>
 

@@ -56,15 +56,15 @@ export default function CTASection() {
           </motion.div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Stop Comparing IPTV Providers &mdash;{" "}
-            <span className="gradient-text-hero">Start Streaming Tonight</span>
+            Join The Best IPTV UK Service Today &mdash;{" "}
+            <span className="gradient-text-hero">Rank #1 For A Reason</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-300/90 mb-10 leading-relaxed">
-            Over 50,000 UK homes already chose the provider that delivers on every promise. The 24-month{" "}
+            Over 50,000 UK households already switched to the top-rated best IPTV UK option of 2026. The 24-month{" "}
             <SectionLink href="/#pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
-              premium IPTV plan
+              best IPTV UK plan
             </SectionLink>{" "}
-            locks the lowest rate while covering the full 37,000-channel library, 198,000 films and a built-in VPN. The first channel plays minutes after payment — backed by a{" "}
+            locks the lowest price while covering the full 37,000-channel library, 198,000 films and a built-in VPN. The first channel plays in under two minutes after payment — backed by a{" "}
             <Link href="/refund" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
               30-day refund guarantee
             </Link>{" "}
@@ -80,7 +80,7 @@ export default function CTASection() {
               className="group relative flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98] w-full sm:w-auto justify-center"
             >
               <Play className="h-5 w-5 fill-current" />
-              Choose An IPTV Plan — From £4.99/mo
+              Start The Best IPTV UK Plan — From £4.99/mo
               <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
             </SectionLink>
             <SectionLink
@@ -88,12 +88,12 @@ export default function CTASection() {
               className="group flex items-center gap-2.5 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-purple-400/30 hover:bg-white/10 w-full sm:w-auto justify-center"
             >
               <MessageCircle className="h-5 w-5 text-cyan-400" />
-              Chat With The UK Team
+              Chat With UK Support
             </SectionLink>
           </div>
 
           <p className="mt-8 text-sm text-gray-400">
-            Questions? Email support@iptv-providers-uk.com — average reply under four minutes.
+            Questions before sign-up? Email support@best-iptv-uk-subscription.com — average reply under four minutes.
           </p>
         </motion.div>
       </div>

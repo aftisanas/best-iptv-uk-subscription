@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative h-[104vh] min-h-[640px] flex flex-col overflow-hidden"
+      className="relative min-h-[100dvh] md:h-[104vh] md:min-h-[840px] flex flex-col overflow-hidden"
     >
       {/* ── Deep premium gradient background ── */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a0118] via-[#1a0a3e] to-[#0c1445]" />
@@ -62,7 +62,7 @@ export default function HeroSection() {
       <ParticleBackground />
 
       {/* ── Content ── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-[7.5rem] lg:pt-32 pb-2 flex flex-col items-center text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-[7.5rem] lg:pt-32 pb-12 md:pb-6 lg:pb-2 flex flex-col items-center text-center">
         {/* Headline — 2 lines, matches reference sizing */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -70,10 +70,10 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-2"
         >
-          <span className="text-white">IPTV Providers UK 2026 — </span>
+          <span className="text-white">Best IPTV UK 2026 — </span>
           <br />
-          <span className="text-white">The Guide To The #1 Rated </span>
-          <span className="gradient-text-hero">IPTV Service</span>
+          <span className="text-white">#1 Rated IPTV Service For </span>
+          <span className="gradient-text-hero">British Viewers</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -83,7 +83,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.18 }}
           className="text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0"
         >
-          37,000 live channels, 198,000 films and 4K UHD streaming — the IPTV service 50,000 UK homes already trust. Rated 4.9/5 across independent IPTV reviews.
+          Crowned the best IPTV UK choice by 50,000 customers, with a 4.9-star average on independent review boards. Stream 37,000 channels in 4K with UK-based support on call around the clock.
         </motion.p>
 
         {/* Promo banner — replaces hero device image */}
@@ -101,14 +101,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35 }}
-          className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
+          className="mt-6 sm:mt-10 lg:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
         >
           <SectionLink
             href="/#pricing"
             className="group relative flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-lg shadow-purple-900/40 transition-all hover:shadow-2xl hover:shadow-purple-500/40 active:scale-[0.98] w-full sm:w-auto justify-center"
           >
             <Play className="h-5 w-5 fill-current" />
-            <span>Choose An IPTV Plan — From £4.99/mo</span>
+            <span>Start The Best IPTV UK Plan — From £4.99/mo</span>
             <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
           </SectionLink>

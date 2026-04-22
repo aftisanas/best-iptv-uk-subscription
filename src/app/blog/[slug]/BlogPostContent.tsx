@@ -138,16 +138,16 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
             className="mt-16 rounded-2xl border border-primary/15 bg-blue-50 p-8 text-center"
           >
             <h3 className="text-xl font-bold text-foreground mb-3">
-              Ready To Choose From The Top IPTV Providers UK?
+              Ready To Start The Best IPTV UK Plan?
             </h3>
             <p className="text-muted mb-6">
-              Start with the #1 rated UK IPTV provider. Plans from £4.99/month with a 30-day money-back guarantee.
+              The #1 rated best IPTV UK service for 2026. Plans from £4.99/month with a 30-day money-back guarantee.
             </p>
             <SectionLink
               href="/#pricing"
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-primary/20"
             >
-              View Subscription Plans
+              View Best IPTV UK Plans
             </SectionLink>
           </motion.div>
         </div>

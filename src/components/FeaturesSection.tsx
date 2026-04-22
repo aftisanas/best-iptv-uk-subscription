@@ -2,14 +2,17 @@
 
 import { motion } from "framer-motion";
 import {
-  Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield,
+  Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield, Star, Check, X,
 } from "lucide-react";
 import SectionLink from "./SectionLink";
-import { FEATURES } from "@/lib/constants";
+import { FEATURES, COMPARISON_ROWS } from "@/lib/constants";
 
 const iconMap = {
-  Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield,
+  Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield, Star,
 } as const;
+
+const isYes = (value: string) => /^yes/i.test(value);
+const isNo = (value: string) => /^no$/i.test(value.trim());
 
 export default function FeaturesSection() {
   return (
@@ -29,14 +32,14 @@ export default function FeaturesSection() {
             Eight Measured Pillars
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Eight Reasons UK Viewers Rate Us{" "}
-            <span className="gradient-text">The Top IPTV Provider</span>
+            Why We Rank As The Best IPTV UK{" "}
+            <span className="gradient-text">Service In 2026</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted">
-            Most IPTV providers list features without evidence. Every one of the eight pillars below is measured, published and guaranteed — and if any falls short, the 30-day refund on every{" "}
+            Eight pillars put this service at the top of the leaderboard. Every one is measured, published and backed by the 30-day refund on every{" "}
             <SectionLink href="/#pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
-              IPTV subscription
-            </SectionLink>{" "}covers the subscriber in full.
+              best IPTV UK subscription
+            </SectionLink>.
           </p>
         </motion.div>
 
@@ -71,6 +74,57 @@ export default function FeaturesSection() {
             );
           })}
         </div>
+
+        {/* Side-by-side comparison */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 lg:mt-20"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3">
+              Best IPTV UK 2026 —{" "}
+              <span className="gradient-text">Side-By-Side Comparison</span>
+            </h3>
+            <p className="mx-auto max-w-2xl text-base text-muted">
+              The numbers across the best IPTV UK options. How this service stacks up on the factors that matter to British viewers.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-violet-100/60 bg-white shadow-sm">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-violet-50/70 text-foreground">
+                <tr>
+                  <th scope="col" className="px-4 py-3 font-semibold">Feature</th>
+                  <th scope="col" className="px-4 py-3 font-semibold text-violet-700">Best IPTV UK (#1)</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">Typical UK IPTV Provider</th>
+                  <th scope="col" className="px-4 py-3 font-semibold">Free / Pirate Stream</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-violet-50">
+                {COMPARISON_ROWS.map((row) => (
+                  <tr key={row.feature} className="text-gray-600">
+                    <th scope="row" className="px-4 py-3 font-medium text-foreground">{row.feature}</th>
+                    <td className="px-4 py-3 font-semibold text-violet-700">
+                      <span className="inline-flex items-center gap-1.5">
+                        {isYes(row.ours) && <Check className="h-4 w-4 text-emerald-500" aria-hidden="true" />}
+                        {row.ours}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3">{row.typical}</td>
+                    <td className="px-4 py-3">
+                      <span className="inline-flex items-center gap-1.5">
+                        {isNo(row.pirate) && <X className="h-4 w-4 text-red-400" aria-hidden="true" />}
+                        {row.pirate}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

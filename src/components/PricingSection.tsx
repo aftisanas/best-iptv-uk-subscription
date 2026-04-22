@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Shield, CreditCard, Star, Crown, Gem, Award, Medal } from "lucide-react";
-import { PRICING_PLANS } from "@/lib/constants";
+import { PRICING_PLANS, HOW_IT_WORKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import OrderSummaryModal from "./OrderSummaryModal";
 
@@ -109,12 +109,40 @@ export default function PricingSection() {
             Transparent GBP Pricing
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-5">
-            IPTV Providers UK Pricing &mdash;{" "}
-            <span className="gradient-text">Transparent Plans, No Hidden Fees</span>
+            Best IPTV UK Pricing &mdash;{" "}
+            <span className="gradient-text">Ranked By Value</span>
           </h2>
           <p className="mx-auto max-w-2xl text-base text-muted leading-relaxed">
-            One service, four terms. Channels, 4K and VPN stay identical across every plan. The only variable is term length and savings — the fairest deal offered by UK IPTV providers.
+            Every plan unlocks the same top-ranked best IPTV UK service. The only variable is term length — longer plans give the best monthly price.
           </p>
+        </motion.div>
+
+        {/* How it works — 3 steps (collapsed from §7) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-14"
+        >
+          <h3 className="text-center text-xl sm:text-2xl font-bold text-foreground mb-6">
+            Join The Best IPTV UK Service In Three Steps
+          </h3>
+          <ol className="grid sm:grid-cols-3 gap-4">
+            {HOW_IT_WORKS.map((item, i) => (
+              <li
+                key={item.title}
+                className="relative rounded-xl border border-violet-100/60 bg-white p-5"
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 text-xs font-bold text-white">
+                    {i + 1}
+                  </span>
+                  <h4 className="text-sm font-semibold text-foreground">{item.title}</h4>
+                </div>
+                <p className="text-sm text-muted leading-relaxed">{item.description}</p>
+              </li>
+            ))}
+          </ol>
         </motion.div>
 
         {/* 4-plan grid */}
@@ -188,8 +216,8 @@ export default function PricingSection() {
 
                   {/* Tier name + duration */}
                   <div className="mb-5">
-                    <h3 className="text-xl font-bold text-foreground">{plan.tier}</h3>
-                    <p className="text-sm text-muted">{plan.name}</p>
+                    <h3 className="text-lg font-bold text-foreground leading-snug">{plan.tier}</h3>
+                    <p className="text-sm text-muted mt-1">{plan.name}</p>
                   </div>
 
                   {/* Price */}

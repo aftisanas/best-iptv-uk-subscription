@@ -23,29 +23,28 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "IPTV Providers UK 2026 | #1 Rated 4K IPTV Service £4.99",
-    template: "%s | IPTV Providers UK",
+    default: "Best IPTV UK 2026 | #1 Rated 4K Service From £4.99",
+    template: "%s | Best IPTV UK",
   },
   description:
-    "Trusted IPTV providers UK 2026. 37,000 channels, 4K UHD, built-in VPN, 24/7 support. Compare plans from the top UK IPTV provider. From £4.99/month. 30-day refund.",
+    "Best IPTV UK 2026 — rated 4.9/5 by 50,000 viewers. 37,000 channels, 4K UHD, built-in VPN, 24/7 UK support. Compare plans and start watching today. 30-day refund.",
   keywords: [
-    "iptv providers",
-    "iptv providers uk",
-    "best iptv providers",
-    "best iptv providers uk",
-    "uk iptv providers",
-    "iptv subscription",
-    "iptv uk",
     "best iptv uk",
-    "iptv service",
-    "iptv reviews",
-    "buy iptv",
+    "best iptv uk 2026",
+    "best uk iptv",
+    "best iptv provider uk",
+    "best iptv service uk",
+    "best iptv subscription uk",
+    "best iptv reseller uk",
+    "top iptv uk",
+    "best iptv for firestick uk",
+    "best iptv with vpn uk",
+    "iptv uk",
     "british iptv",
-    "premium iptv",
   ],
-  authors: [{ name: "IPTV Providers UK" }],
-  creator: "IPTV Providers UK",
-  applicationName: "IPTV Providers UK",
+  authors: [{ name: "Best IPTV UK" }],
+  creator: "Best IPTV UK",
+  applicationName: "Best IPTV UK",
   alternates: {
     canonical: "/",
     languages: {
@@ -69,17 +68,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    siteName: "IPTV Providers UK",
+    siteName: "Best IPTV UK",
     url: SITE_URL,
-    title: "IPTV Providers UK 2026 — The Complete Guide To The #1 Rated Service",
+    title: "Best IPTV UK 2026 — The #1 Rated IPTV Service For British Homes",
     description:
-      "Stop guessing which IPTV providers deliver. 37,000 channels, 198,000 films, fast activation, strong servers. See why 50,000 UK homes chose this provider.",
+      "Why this service ranks #1 for best IPTV UK in 2026: 37,000 channels, 4K UHD, built-in VPN, UK servers, 99.9% uptime and a 30-day money-back promise.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPTV Providers UK 2026 — The #1 Rated 4K IPTV Service",
+    title: "Best IPTV UK 2026 — The #1 Rated 4K IPTV Service",
     description:
-      "Trusted IPTV providers UK. 37,000 channels, 4K UHD, built-in VPN, five screens, 30-day guarantee. From £4.99/month.",
+      "Best IPTV UK 2026 — 37,000 channels, 4K UHD, built-in VPN, five screens, 30-day guarantee. Rated 4.9/5 by 50,000 UK subscribers.",
   },
   robots: {
     index: true,
