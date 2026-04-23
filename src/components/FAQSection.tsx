@@ -8,8 +8,11 @@ import SectionLink from "./SectionLink";
 import { FAQ_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
+const EXCLUDED_FAQ_QUESTION = "How many UK channels are included with the best IPTV UK service?";
+
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const faqItems = FAQ_ITEMS.filter((item) => item.question !== EXCLUDED_FAQ_QUESTION);
 
   return (
     <section id="faq" className="relative py-11 lg:py-16">
@@ -42,7 +45,7 @@ export default function FAQSection() {
         </motion.div>
 
         <div className="space-y-3">
-          {FAQ_ITEMS.map((item, i) => {
+          {faqItems.map((item, i) => {
             const isOpen = openIndex === i;
 
             return (

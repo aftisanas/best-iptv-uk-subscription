@@ -2,17 +2,14 @@
 
 import { motion } from "framer-motion";
 import {
-  Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield, Star, Check, X,
+  Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield, Star,
 } from "lucide-react";
 import SectionLink from "./SectionLink";
-import { FEATURES, COMPARISON_ROWS } from "@/lib/constants";
+import { FEATURES } from "@/lib/constants";
 
 const iconMap = {
   Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield, Star,
 } as const;
-
-const isYes = (value: string) => /^yes/i.test(value);
-const isNo = (value: string) => /^no$/i.test(value.trim());
 
 export default function FeaturesSection() {
   return (
@@ -74,57 +71,6 @@ export default function FeaturesSection() {
             );
           })}
         </div>
-
-        {/* Side-by-side comparison */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 lg:mt-20"
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3">
-              Best IPTV UK 2026 —{" "}
-              <span className="gradient-text">Side-By-Side Comparison</span>
-            </h3>
-            <p className="mx-auto max-w-2xl text-base text-muted">
-              The numbers across the best IPTV UK options. How this service stacks up on the factors that matter to British viewers.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto rounded-2xl border border-violet-100/60 bg-white shadow-sm">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-violet-50/70 text-foreground">
-                <tr>
-                  <th scope="col" className="px-4 py-3 font-semibold">Feature</th>
-                  <th scope="col" className="px-4 py-3 font-semibold text-violet-700">Best IPTV UK (#1)</th>
-                  <th scope="col" className="px-4 py-3 font-semibold">Typical UK IPTV Provider</th>
-                  <th scope="col" className="px-4 py-3 font-semibold">Free / Pirate Stream</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-violet-50">
-                {COMPARISON_ROWS.map((row) => (
-                  <tr key={row.feature} className="text-gray-600">
-                    <th scope="row" className="px-4 py-3 font-medium text-foreground">{row.feature}</th>
-                    <td className="px-4 py-3 font-semibold text-violet-700">
-                      <span className="inline-flex items-center gap-1.5">
-                        {isYes(row.ours) && <Check className="h-4 w-4 text-emerald-500" aria-hidden="true" />}
-                        {row.ours}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3">{row.typical}</td>
-                    <td className="px-4 py-3">
-                      <span className="inline-flex items-center gap-1.5">
-                        {isNo(row.pirate) && <X className="h-4 w-4 text-red-400" aria-hidden="true" />}
-                        {row.pirate}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

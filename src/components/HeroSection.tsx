@@ -70,10 +70,10 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-2"
         >
-          <span className="text-white">Best IPTV UK 2026 — </span>
-          <br />
-          <span className="text-white">#1 Rated IPTV Service For </span>
-          <span className="gradient-text-hero">British Viewers</span>
+          <span className="text-white">Best IPTV UK — </span>
+          
+          <span className="text-white">#1 Rated IPTV Service<br /> For </span>
+          <span className="gradient-text-hero">British IPTV Viewers</span>
         </motion.h1>
 
         {/* Subtitle */}

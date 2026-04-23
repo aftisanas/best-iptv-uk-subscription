@@ -16,12 +16,15 @@ import {
   SITE_URL,
 } from "@/lib/constants";
 
+const EXCLUDED_FAQ_QUESTION = "How many UK channels are included with the best IPTV UK service?";
+
 export default function HomePage() {
   const organizationId = `${SITE_URL}/#organization`;
   const websiteId = `${SITE_URL}/#website`;
   const webpageId = `${SITE_URL}/#webpage`;
   const productId = `${SITE_URL}/#product`;
   const logoUrl = `${SITE_URL}/buy-iptv-uk.webp`;
+  const faqItems = FAQ_ITEMS.filter((item) => item.question !== EXCLUDED_FAQ_QUESTION);
 
   return (
     <>
@@ -126,7 +129,7 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: FAQ_ITEMS.map((item) => ({
+            mainEntity: faqItems.map((item) => ({
               "@type": "Question",
               name: item.question,
               acceptedAnswer: {

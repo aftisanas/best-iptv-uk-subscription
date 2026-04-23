@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Shield, CreditCard, Star, Crown, Gem, Award, Medal } from "lucide-react";
-import { PRICING_PLANS, HOW_IT_WORKS } from "@/lib/constants";
+import { PRICING_PLANS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import OrderSummaryModal from "./OrderSummaryModal";
 
@@ -113,36 +113,8 @@ export default function PricingSection() {
             <span className="gradient-text">Ranked By Value</span>
           </h2>
           <p className="mx-auto max-w-2xl text-base text-muted leading-relaxed">
-            Every plan unlocks the same top-ranked best IPTV UK service. The only variable is term length — longer plans give the best monthly price.
+            Every plan unlocks the same top-ranked best IPTV UK service. The only variable is term length &mdash; longer plans give the best monthly price.
           </p>
-        </motion.div>
-
-        {/* How it works — 3 steps (collapsed from §7) */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-14"
-        >
-          <h3 className="text-center text-xl sm:text-2xl font-bold text-foreground mb-6">
-            Join The Best IPTV UK Service In Three Steps
-          </h3>
-          <ol className="grid sm:grid-cols-3 gap-4">
-            {HOW_IT_WORKS.map((item, i) => (
-              <li
-                key={item.title}
-                className="relative rounded-xl border border-violet-100/60 bg-white p-5"
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-cyan-500 text-xs font-bold text-white">
-                    {i + 1}
-                  </span>
-                  <h4 className="text-sm font-semibold text-foreground">{item.title}</h4>
-                </div>
-                <p className="text-sm text-muted leading-relaxed">{item.description}</p>
-              </li>
-            ))}
-          </ol>
         </motion.div>
 
         {/* 4-plan grid */}
@@ -200,16 +172,20 @@ export default function PricingSection() {
                 <div className="relative p-6">
                   {/* Tier icon + discount row */}
                   <div className="flex items-center justify-between mb-5">
-                    <div className={cn(
-                      "flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br",
-                      meta.iconBg
-                    )}>
+                    <div
+                      className={cn(
+                        "flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br",
+                        meta.iconBg
+                      )}
+                    >
                       <TierIcon className={cn("h-5 w-5", meta.accent)} />
                     </div>
-                    <span className={cn(
-                      "inline-block rounded-lg px-3 py-1.5 text-xs font-bold",
-                      meta.discount
-                    )}>
+                    <span
+                      className={cn(
+                        "inline-block rounded-lg px-3 py-1.5 text-xs font-bold",
+                        meta.discount
+                      )}
+                    >
                       {plan.discount}
                     </span>
                   </div>
@@ -224,33 +200,37 @@ export default function PricingSection() {
                   <div className="mb-6">
                     <div className="flex items-baseline gap-2">
                       <span className="text-sm text-muted/60 line-through">
-                        £{plan.originalPrice.toFixed(2)}
+                        &pound;{plan.originalPrice.toFixed(2)}
                       </span>
                     </div>
                     <div className="flex items-baseline gap-1 mt-1">
                       <span className="text-4xl font-extrabold text-foreground">
-                        £{plan.price.toFixed(2)}
+                        &pound;{plan.price.toFixed(2)}
                       </span>
                     </div>
-                    <p className="text-xs text-muted mt-1.5">One-time payment · {plan.subtitle}</p>
+                    <p className="text-xs text-muted mt-1.5">One-time payment &middot; {plan.subtitle}</p>
                   </div>
 
                   {/* Divider */}
-                  <div className={cn(
-                    "h-px mb-5",
-                    isPopular
-                      ? "bg-gradient-to-r from-transparent via-violet-200 to-transparent"
-                      : "bg-gray-100"
-                  )} />
+                  <div
+                    className={cn(
+                      "h-px mb-5",
+                      isPopular
+                        ? "bg-gradient-to-r from-transparent via-violet-200 to-transparent"
+                        : "bg-gray-100"
+                    )}
+                  />
 
                   {/* Features */}
                   <ul className="space-y-2.5 mb-6">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2.5">
-                        <div className={cn(
-                          "mt-0.5 flex h-4.5 w-4.5 items-center justify-center rounded-full shrink-0",
-                          isPopular ? "bg-violet-100" : "bg-gray-50"
-                        )}>
+                        <div
+                          className={cn(
+                            "mt-0.5 flex h-4.5 w-4.5 items-center justify-center rounded-full shrink-0",
+                            isPopular ? "bg-violet-100" : "bg-gray-50"
+                          )}
+                        >
                           <Check className={cn("h-3 w-3", meta.check)} />
                         </div>
                         <span className="text-sm text-gray-600">{feature}</span>
