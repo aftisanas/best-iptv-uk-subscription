@@ -34,7 +34,7 @@ export const FEATURES = [
   {
     title: "Best IPTV Service UK For Sports Fans",
     description:
-      "Every Sky Sports feed, TNT Sports and Premier Sports stream live with near-zero delay on a UK grid. Premier League, F1, UFC and rugby all run in native 4K where broadcast.",
+      "Every major live UK sports broadcast streams with near-zero delay on a UK grid. Top-flight football, European cup nights, motorsport, combat sports and rugby all run in native 4K wherever the original feed is produced in that format.",
     icon: "Tv" as const,
   },
   {
@@ -347,7 +347,7 @@ export const CHANNEL_CATEGORIES = [
     count: "5,500+",
     icon: "Trophy" as const,
     channels:
-      "Sky Sports Main Event, Sky Sports Football, TNT Sports 1 to 5, Premier Sports and Eurosport all stream live. Every Premier League fixture, every Champions League night and every Six Nations match runs in HD or 4K.",
+      "Every major UK sports broadcast streams live in one place, with full coverage of domestic top-flight football, European cup nights, international rugby tournaments and the leagues UK fans follow most. Matches play in HD or 4K wherever the original feed is produced in that format.",
     linkHref: "/blog/premier-league-streaming-guide",
     linkLabel: "Premier League streaming guide",
   },
@@ -356,7 +356,7 @@ export const CHANNEL_CATEGORIES = [
     count: "500+",
     icon: "Tv" as const,
     channels:
-      "BBC One, Two, Three, Four, ITV1 to ITV4, Channel 4, E4, Dave, Sky Max and Gold come bundled with every plan. Regional variants and +1 timeshift channels ship as standard.",
+      "Every flagship British free-to-air and premium entertainment feed comes bundled with every plan — drama, comedy, reality, soaps, panel shows and award-night broadcasts all included. Regional variants and +1 timeshift feeds ship as standard.",
     linkHref: "/#pricing",
     linkLabel: "Compare best IPTV UK plans",
   },
@@ -365,7 +365,7 @@ export const CHANNEL_CATEGORIES = [
     count: "198,000+",
     icon: "Film" as const,
     channels:
-      "Sky Cinema, Paramount+, Film4 and international premiere feeds sit inside a single menu. New blockbusters land the moment they hit digital release.",
+      "Every major premium film service and international premiere feed sits inside a single on-demand menu, covering the latest blockbusters, classic cinema, original series and world-cinema highlights. New releases land the moment they hit digital and the library refreshes daily.",
     linkHref: "/blog/iptv-vs-sky-comparison",
     linkLabel: "Best IPTV UK vs Sky comparison",
   },
@@ -374,7 +374,7 @@ export const CHANNEL_CATEGORIES = [
     count: "1,200+",
     icon: "Newspaper" as const,
     channels:
-      "BBC News, Sky News, GB News, CNN International, Al Jazeera, Bloomberg, History, National Geographic and Discovery round out the news and documentary pack.",
+      "Every UK rolling news desk, global current-affairs feed, financial markets bulletin and leading documentary strand rounds out the news and factual pack. Breaking stories, long-form investigations, history, science and wildlife content all stream in HD.",
     linkHref: "/#faq",
     linkLabel: "Read the best IPTV UK FAQ",
   },
@@ -383,7 +383,7 @@ export const CHANNEL_CATEGORIES = [
     count: "800+",
     icon: "Baby" as const,
     channels:
-      "CBBC, CBeebies, Nickelodeon, Nick Jr, Cartoon Network and Disney stream in HD. Lock any channel behind a four-digit PIN from the parental control tab in two taps.",
+      "Every major children's channel — pre-school, animation, live-action adventures and family-movie feeds — streams in HD with safe browsing on by default. Lock any channel behind a four-digit PIN from the parental control tab in two taps.",
     linkHref: "/#features",
     linkLabel: "See best IPTV UK safety features",
   },
@@ -392,7 +392,7 @@ export const CHANNEL_CATEGORIES = [
     count: "17,000+",
     icon: "Globe" as const,
     channels:
-      "Arabic, Urdu, Hindi, Polish, Portuguese, Turkish, French and Somali feeds stream in full HD. The sidebar filter groups channels by country for quick switching.",
+      "Every major UK community is covered, with live feeds spanning Arabic, South Asian, Eastern European, African, Latin and Far-Eastern audiences in full HD. The sidebar filter groups feeds by country and language for quick switching.",
     linkHref: "/#testimonials",
     linkLabel: "Read best IPTV UK reviews",
   },

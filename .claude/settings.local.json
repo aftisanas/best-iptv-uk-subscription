@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/**)",
+      "Bash(sudo -u best-iptv-uk-subscription bash -lc 'pm2 list')",
+      "Bash(sudo -u best-iptv-uk-subscription bash -lc 'source ~/.nvm/nvm.sh && pm2 list')",
+      "Bash(chown best-iptv-uk-subscription:best-iptv-uk-subscription /home/best-iptv-uk-subscription/htdocs/best-iptv-uk-subscription.com/src/lib/constants.ts)",
+      "Bash(sudo -u best-iptv-uk-subscription bash -lc 'source ~/.nvm/nvm.sh && npm run build')",
+      "Bash(sudo -u best-iptv-uk-subscription bash -lc 'source ~/.nvm/nvm.sh && pm2 restart best-iptv-uk-subscription')",
+      "Bash(curl -s http://127.0.0.1:3011/)",
+      "Bash(grep -oE \"Every major children\\(.{1,10}\\)s channel\")"
+    ]
+  }
+}
