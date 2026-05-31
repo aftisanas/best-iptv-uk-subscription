@@ -30,7 +30,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted leading-relaxed mb-6">
-              The best IPTV UK service 50,000 British subscribers trust. 37,000 live channels, 198,000 films and series, 4K UHD and a built-in VPN — from £4.99/month on the 12-month term.
+              A UK IPTV subscription trusted by 50,000+ British subscribers. 37,000 live channels, 198,000 films and series, 4K UHD and a built-in VPN — from £3.75/month equivalent on the 24-month term.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-muted">
@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="lg:justify-self-center">
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              Best IPTV UK Quick Links
+              Quick Links
             </h3>
             <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
@@ -66,7 +66,7 @@ export default function Footer() {
           {/* Legal */}
           <div className="lg:justify-self-start">
             <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-              Best IPTV UK Legal
+              Legal
             </h3>
             <ul className="space-y-3">
               {LEGAL_LINKS.map((link) => (
@@ -88,7 +88,7 @@ export default function Footer() {
         <div className="border-t border-violet-100/50 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted text-center sm:text-left">
-              © {new Date().getFullYear()} best-iptv-uk-subscription.com — Best IPTV UK 2026 | Top Rated UK IPTV Service | #1 British IPTV Provider
+              © {new Date().getFullYear()} best-iptv-uk-subscription.com — UK IPTV subscription with full broadcaster coverage
             </p>
             <p className="text-xs text-gray-500 text-center sm:text-right max-w-md">
               {SITE_NAME} is not affiliated with any television networks or content providers.

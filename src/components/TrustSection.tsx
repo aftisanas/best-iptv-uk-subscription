@@ -7,27 +7,27 @@ import Link from "next/link";
 const trustItems = [
   {
     icon: Shield,
-    title: "Best IPTV UK 30-Day Full Refund Guarantee",
+    title: "30-Day Full Refund Guarantee",
     description:
-      "Contact support within 30 days of any purchase and every penny returns the same day. No forms, no retention calls, no fine-print excuses — the refund policy the best IPTV UK service is happy to put in writing.",
+      "Contact support within 30 days of any purchase and every penny returns the same day. No forms, no retention calls, no fine-print excuses — the refund policy is published in plain English and applies to every first purchase.",
   },
   {
     icon: Wifi,
-    title: "Best IPTV UK 99.9% Uptime — Published Live",
+    title: "99.9% Uptime — Published Live",
     description:
-      "A public status page tracks uptime minute by minute. Credits apply automatically if the number ever dips below the promise — transparent infrastructure separates the best IPTV UK service from the unreliable.",
+      "A public status page tracks uptime minute by minute. Credits apply automatically if the number ever dips below the promise — verifiable infrastructure rather than a marketing figure.",
   },
   {
     icon: Lock,
-    title: "Best IPTV UK Free VPN — Privacy Without Extra Cost",
+    title: "Built-In VPN — Privacy Without Extra Cost",
     description:
-      "Every plan ships with a built-in VPN for unlimited use. No bandwidth cap, no logs, no upsell. Most rival best IPTV UK offers charge £5 – £10 a month for a comparable add-on.",
+      "Every plan ships with a built-in VPN for unlimited use. No bandwidth cap, no logs, no upsell. Most rival IPTV services charge £5 – £10 a month for a comparable privacy add-on.",
   },
   {
     icon: ServerCog,
-    title: "Best IPTV UK Rated #1 — 4.9/5 From 50,000 Users",
+    title: "Trusted By 50,000+ UK Subscribers",
     description:
-      "The rating updates in real time on Trustpilot. No curated reviews, no removed feedback — the score is earned, not edited. Live chat, WhatsApp and email staffed 24/7 by a named British team back it up.",
+      "A British support team handles live chat, WhatsApp and email 24/7. Subscriber feedback covers real-world performance, picture stability and response times — the metrics that matter once the subscription goes live.",
   },
 ];
 
@@ -47,11 +47,11 @@ export default function TrustSection() {
             Four Hard Promises
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            The Best IPTV UK Guarantee &mdash;{" "}
-            <span className="gradient-text">Four Ways This Service Stands Behind Rank #1</span>
+            The Subscription Guarantee &mdash;{" "}
+            <span className="gradient-text">Four Promises We Publish In Writing</span>
           </h2>
           <p className="mx-auto max-w-xl text-lg text-muted">
-            The &ldquo;best&rdquo; label is only real if it is backed. Every commitment below is published, measured and covered by a full{" "}
+            A subscription promise is only meaningful if it is verifiable. Every commitment below is published, measured and covered by a full{" "}
             <Link href="/refund" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
               same-day refund
             </Link>{" "}subscribers can verify before paying.

@@ -56,15 +56,15 @@ export default function CTASection() {
           </motion.div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Join The Best IPTV UK Service Today &mdash;{" "}
-            <span className="gradient-text-hero">Rank #1 For A Reason</span>
+            Join 50,000+ UK Subscribers Today &mdash;{" "}
+            <span className="gradient-text-hero">Built For British Viewers</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-300/90 mb-10 leading-relaxed">
-            Over 50,000 UK households already switched to the top-rated best IPTV UK option of 2026. The 24-month{" "}
+            Over 50,000 UK households already trust this IPTV service in 2026. The 24-month{" "}
             <SectionLink href="/#pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
-              best IPTV UK plan
+              subscription plan
             </SectionLink>{" "}
-            locks the lowest price while covering the full 37,000-channel library, 198,000 films and a built-in VPN. The first channel plays in under two minutes after payment — backed by a{" "}
+            locks the lowest monthly rate while covering the full 37,000-channel library, 198,000 films and a built-in VPN. The first channel plays in under two minutes after payment — backed by a{" "}
             <Link href="/refund" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
               30-day refund guarantee
             </Link>{" "}
@@ -80,7 +80,7 @@ export default function CTASection() {
               className="group relative flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98] w-full sm:w-auto justify-center"
             >
               <Play className="h-5 w-5 fill-current" />
-              Start The Best IPTV UK Plan — From £4.99/mo
+              View Subscription Plans — From £3.75/mo
               <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
             </SectionLink>
             <SectionLink
