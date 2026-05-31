@@ -80,9 +80,9 @@ export default function BlogContent() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6"
           >
-            <span className="text-white">Best IPTV UK 2026 —</span>
+            <span className="text-white">IPTV UK Buyer&apos;s Guide —</span>
             <br />
-            <span className="gradient-text-hero">Guides &amp; Streaming Tips</span>
+            <span className="gradient-text-hero">Setup, Comparisons &amp; Tips</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -94,8 +94,8 @@ export default function BlogContent() {
           >
             In-depth articles on setup, streaming optimisation, device coverage and the current state of British television — the research layer behind every{" "}
             <Link href="/#pricing" className="text-cyan-300 hover:text-cyan-200 underline-offset-2 hover:underline">
-              best IPTV UK subscription
-            </Link>{" "}decision.
+              subscription decision
+            </Link>.
           </motion.p>
         </div>
 

@@ -16,7 +16,7 @@ import {
   SITE_URL,
 } from "@/lib/constants";
 
-const EXCLUDED_FAQ_QUESTION = "How many UK channels are included with the best IPTV UK service?";
+const EXCLUDED_FAQ_QUESTION = "How many UK channels are included?";
 
 export default function HomePage() {
   const organizationId = `${SITE_URL}/#organization`;
@@ -77,7 +77,7 @@ export default function HomePage() {
                 "@type": "WebPage",
                 "@id": webpageId,
                 url: SITE_URL,
-                name: "Best IPTV UK 2026 | #1 Rated 4K Service From £4.99",
+                name: "Best IPTV UK 2026 | Premium 4K UHD Streaming From £3.75/mo",
                 inLanguage: "en-GB",
                 isPartOf: {
                   "@id": websiteId,
@@ -86,7 +86,7 @@ export default function HomePage() {
                   "@id": organizationId,
                 },
                 description:
-                  "Best IPTV UK 2026 — rated 4.9/5 by 50,000 viewers. 37,000 channels, 4K UHD, built-in VPN, UK support. 30-day refund on every plan.",
+                  "UK IPTV subscription trusted by 50,000+ subscribers. 37,000 channels, 4K UHD, built-in VPN, UK support. 30-day refund on every plan.",
               },
             ],
           }),
@@ -103,7 +103,7 @@ export default function HomePage() {
             url: SITE_URL,
             image: [logoUrl],
             description:
-              "Best IPTV UK subscription with 37,000+ live channels, 198,000+ on-demand titles, 4K UHD, five screens and a built-in VPN — from £4.99/month on the 12-month term.",
+              "UK IPTV subscription with 37,000+ live channels, 198,000+ on-demand titles, 4K UHD, five screens and a built-in VPN — from £3.75/month equivalent on the 24-month term.",
             brand: { "@type": "Brand", name: SITE_NAME },
             offers: PRICING_PLANS.map((plan) => ({
               "@type": "Offer",

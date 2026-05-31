@@ -8,7 +8,7 @@ import SectionLink from "./SectionLink";
 import { FAQ_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-const EXCLUDED_FAQ_QUESTION = "How many UK channels are included with the best IPTV UK service?";
+const EXCLUDED_FAQ_QUESTION = "How many UK channels are included?";
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -29,7 +29,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Best IPTV UK 2026 &mdash;{" "}
+            IPTV UK FAQ &mdash;{" "}
             <span className="gradient-text">Answers To Common Questions</span>
           </h2>
           <p className="text-lg text-muted">
@@ -39,7 +39,7 @@ export default function FAQSection() {
             </Link>{" "}
             before choosing a{" "}
             <SectionLink href="/#pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
-              best IPTV UK subscription
+              subscription plan
             </SectionLink>{" "}in 2026.
           </p>
         </motion.div>

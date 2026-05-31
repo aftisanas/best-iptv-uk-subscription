@@ -71,8 +71,8 @@ export default function HeroSection() {
           className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-2"
         >
           <span className="text-white">Best IPTV UK — </span>
-          
-          <span className="text-white">#1 Rated IPTV Service<br /> For </span>
+
+          <span className="text-white">Premium 4K Streaming<br /> For </span>
           <span className="gradient-text-hero">British IPTV Viewers</span>
         </motion.h1>
 
@@ -83,7 +83,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.18 }}
           className="text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0"
         >
-          Crowned the best IPTV UK choice by 50,000 customers, with a 4.9-star average on independent review boards. Stream 37,000 channels in 4K with UK-based support on call around the clock.
+          Trusted by 50,000+ UK subscribers. Stream 37,000 channels in 4K UHD with a built-in VPN, five concurrent screens and UK-based support on call around the clock — backed by a 30-day refund.
         </motion.p>
 
         {/* Promo banner — replaces hero device image */}
@@ -108,7 +108,7 @@ export default function HeroSection() {
             className="group relative flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-lg shadow-purple-900/40 transition-all hover:shadow-2xl hover:shadow-purple-500/40 active:scale-[0.98] w-full sm:w-auto justify-center"
           >
             <Play className="h-5 w-5 fill-current" />
-            <span>Start The Best IPTV UK Plan — From £4.99/mo</span>
+            <span>View Subscription Plans — From £3.75/mo</span>
             <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
           </SectionLink>

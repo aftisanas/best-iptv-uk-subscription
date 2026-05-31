@@ -23,24 +23,21 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Best IPTV UK 2026 | #1 Rated 4K Service From £4.99",
+    default: "Best IPTV UK 2026 | Premium 4K UHD Streaming From £3.75/mo",
     template: "%s | Best IPTV UK",
   },
   description:
-    "Best IPTV UK 2026 — rated 4.9/5 by 50,000 viewers. 37,000 channels, 4K UHD, built-in VPN, 24/7 UK support. Compare plans and start watching today. 30-day refund.",
+    "UK IPTV subscription trusted by 50,000+ subscribers. 37,000 channels, 4K UHD, built-in VPN, 24/7 UK support. Compare plans and start watching today. 30-day refund.",
   keywords: [
-    "best iptv uk",
-    "best iptv uk 2026",
-    "best uk iptv",
-    "best iptv provider uk",
-    "best iptv service uk",
-    "best iptv subscription uk",
-    "best iptv reseller uk",
-    "top iptv uk",
-    "best iptv for firestick uk",
-    "best iptv with vpn uk",
     "iptv uk",
+    "uk iptv",
+    "iptv subscription uk",
+    "iptv provider uk",
+    "iptv service uk",
+    "iptv for firestick uk",
+    "iptv with vpn uk",
     "british iptv",
+    "4k iptv uk",
   ],
   authors: [{ name: "Best IPTV UK" }],
   creator: "Best IPTV UK",
@@ -70,15 +67,15 @@ export const metadata: Metadata = {
     locale: "en_GB",
     siteName: "Best IPTV UK",
     url: SITE_URL,
-    title: "Best IPTV UK 2026 — The #1 Rated IPTV Service For British Homes",
+    title: "Best IPTV UK 2026 — Premium 4K UHD Streaming For British Homes",
     description:
-      "Why this service ranks #1 for best IPTV UK in 2026: 37,000 channels, 4K UHD, built-in VPN, UK servers, 99.9% uptime and a 30-day money-back promise.",
+      "A complete IPTV subscription for UK households: 37,000 channels, 4K UHD, built-in VPN, UK servers, 99.9% uptime and a 30-day money-back promise.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best IPTV UK 2026 — The #1 Rated 4K IPTV Service",
+    title: "Best IPTV UK 2026 — Premium 4K UHD Streaming Service",
     description:
-      "Best IPTV UK 2026 — 37,000 channels, 4K UHD, built-in VPN, five screens, 30-day guarantee. Rated 4.9/5 by 50,000 UK subscribers.",
+      "37,000 channels, 4K UHD, built-in VPN, five screens, 30-day guarantee. Trusted by 50,000+ UK subscribers.",
   },
   robots: {
     index: true,

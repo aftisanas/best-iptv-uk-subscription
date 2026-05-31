@@ -29,13 +29,13 @@ export default function FeaturesSection() {
             Eight Measured Pillars
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Why We Rank As The Best IPTV UK{" "}
-            <span className="gradient-text">Service In 2026</span>
+            Why UK Viewers Pick This{" "}
+            <span className="gradient-text">IPTV Service In 2026</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted">
-            Eight pillars put this service at the top of the leaderboard. Every one is measured, published and backed by the 30-day refund on every{" "}
+            Eight pillars define what a complete IPTV subscription should deliver. Every one is measured, published and backed by the 30-day refund on every{" "}
             <SectionLink href="/#pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
-              best IPTV UK subscription
+              subscription plan
             </SectionLink>.
           </p>
         </motion.div>
