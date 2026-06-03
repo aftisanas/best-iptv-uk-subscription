@@ -1,6 +1,6 @@
 export const SITE_NAME = "Best IPTV UK";
 export const SITE_URL = "https://best-iptv-uk-subscription.com";
-export const CONTACT_EMAIL = "support@best-iptv-uk-subscription.com";
+export const CONTACT_EMAIL = "contact@buy-iptv-uk.com";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -395,6 +395,103 @@ export const CHANNEL_CATEGORIES = [
       "Every major UK community is covered, with live feeds spanning Arabic, South Asian, Eastern European, African, Latin and Far-Eastern audiences in full HD. The sidebar filter groups feeds by country and language for quick switching.",
     linkHref: "/#testimonials",
     linkLabel: "Read subscriber reviews",
+  },
+] as const;
+
+export const AUTHOR_BYLINE = {
+  name: "James Whitford",
+  role: "Editor — Best IPTV UK",
+  description: "British IPTV reviewer covering UK streaming services since 2023.",
+  publishedDate: "2026-06-01",
+  updatedDate: "2026-06-01",
+} as const;
+
+// Sub-page cluster links (v2 plan Section H — footer "Guides" column)
+export const GUIDES_LINKS = [
+  { label: "Best IPTV UK 2026 Buyer's Guide", href: "/best-iptv-uk-2026" },
+  { label: "Best IPTV Subscription UK", href: "/best-iptv-subscription-uk" },
+  { label: "IPTV on Fire Stick UK", href: "/best-iptv-uk-firestick" },
+  { label: "Is IPTV Legal in the UK?", href: "/is-iptv-legal-uk" },
+  { label: "IPTV vs Traditional UK Pay-TV", href: "/best-iptv-uk-vs-traditional-tv" },
+] as const;
+
+// Homepage Augmentation A — Evaluation Criteria (v2 plan Section B)
+// Order matches Section D linking matrix: C6 = Device Coverage (→/best-iptv-uk-firestick),
+// C7 = GBP Pricing (→/best-iptv-subscription-uk).
+export const EVALUATION_CRITERIA = [
+  {
+    id: "channel-count",
+    name: "Channel Count — Verifiable, Not Inflated",
+    why_it_matters:
+      "Channel count is the most-quoted UK IPTV metric — and the easiest to inflate. A real count is one any buyer can verify inside the EPG before paying, not a number that lives only on a marketing page. A service quoting 37,000 channels should expose every feed pre-purchase.",
+    what_to_look_for:
+      "Published live channel lists, EPG screenshots, and a refund window long enough for a new subscriber to count for themselves.",
+    red_flag: "Walk away if a provider won't show the live channel list before payment.",
+    icon: "Tv" as const,
+  },
+  {
+    id: "uptime",
+    name: "Uptime — Published Live, Not Promised",
+    why_it_matters:
+      "Uptime determines whether the subscription works on a Saturday afternoon. A promised 99.9% on a marketing page is worth nothing — what matters is a live status page refreshing minute-by-minute against real infrastructure. Providers that publish uptime live stand apart from those that only claim it.",
+    what_to_look_for:
+      "A public status page that refreshes automatically, plus service credits if uptime ever dips below the published number.",
+    red_flag: "Treat any uptime claim with no live, verifiable status page as marketing copy.",
+    icon: "Activity" as const,
+  },
+  {
+    id: "refund-window",
+    name: "Refund Window — 30 Days, In Plain English",
+    why_it_matters:
+      "The refund window is the single most reliable trust signal in UK IPTV. A real 30-day money-back guarantee carries chargeback risk and processor cost — providers willing to publish one expect to retain subscribers on quality, not lock-in. Seven days is the bare minimum; under that, walk away.",
+    what_to_look_for:
+      "A 30-day refund policy published in plain English in the footer, applying to every first purchase with no conditions.",
+    red_flag: "Anything under 14 days — or \"no refund for digital subscriptions\" — is the wrong category entirely.",
+    icon: "ShieldCheck" as const,
+  },
+  {
+    id: "four-k-coverage",
+    name: "4K UHD Coverage — Native, Not Upscaled",
+    why_it_matters:
+      "4K UHD on every plan separates a complete service from a tiered one. Most premium pay-TV bundles still gate 4K behind a higher tier; a fair UK IPTV provider includes it across every plan and streams it natively. Adaptive bitrate then holds the picture if the line dips.",
+    what_to_look_for:
+      "Plans labelled 4K UHD on the pricing grid (not as an upsell), with adaptive-bitrate streaming confirmed in the description.",
+    red_flag: "4K marketed as \"premium tier only\" — or upscaled HD passed off as 4K — is the downgrade.",
+    icon: "Monitor" as const,
+  },
+  {
+    id: "uk-support",
+    name: "UK Support — Named Team, British Hours",
+    why_it_matters:
+      "A buffering issue on a Sunday evening needs a human who answers in British hours, not a 24-hour email queue. Live chat and WhatsApp match the pace of a live broadcast going wrong; named teams reply faster than anonymous ticket systems. Email-only support can't recover an evening.",
+    what_to_look_for:
+      "24/7 live chat or WhatsApp, a named support team identifying themselves in replies, and a published average response time.",
+    red_flag: "Email-only support, WhatsApp-only with no other channel, or replies that routinely take more than 24 hours.",
+    icon: "Headphones" as const,
+  },
+  {
+    id: "device-coverage",
+    name: "Device Coverage — Six Platforms, One Login",
+    why_it_matters:
+      "A plan that runs on only one or two device classes is rarely enough. UK households spread streaming across Fire Stick, smart TV, Apple TV, mobile, tablet and desktop. A subscription supporting all six under one login — with five concurrent screens — covers a typical household; one-device plans are a different category.",
+    what_to_look_for:
+      "Confirmed support for Fire Stick, Smart TV, Apple TV, Android, iOS, Windows/Mac and MAG/Enigma2, plus multiple concurrent screens.",
+    red_flag: "Device support listed as \"Fire Stick only\" or \"TV only\" — either signals a thinly-resourced service.",
+    icon: "LayoutGrid" as const,
+    crossLinkHref: "/best-iptv-uk-firestick",
+    crossLinkAnchor: "device-by-device setup walkthrough",
+  },
+  {
+    id: "gbp-pricing",
+    name: "GBP Pricing — Transparent, No Hidden Renewals",
+    why_it_matters:
+      "UK buyers expect prices in pounds on the front page, with no conversion games at checkout. USD with \"approximate GBP\", hidden auto-renewals or second-year escalation clauses all signal that the buyer is the product, not the customer. Every plan on this service prices in GBP up-front.",
+    what_to_look_for:
+      "GBP prices on the front page, the total plan cost shown (not just per-month rate), and renewal terms in plain English.",
+    red_flag: "USD-only pricing, opaque \"starting from\" rates, or auto-renewal terms hidden in a separate PDF.",
+    icon: "PoundSterling" as const,
+    crossLinkHref: "/best-iptv-subscription-uk",
+    crossLinkAnchor: "UK subscription plans compared",
   },
 ] as const;
 

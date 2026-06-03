@@ -1,11 +1,14 @@
 import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
+import EvaluationCriteriaSection from "@/components/EvaluationCriteriaSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import ComparisonSection from "@/components/ComparisonSection";
 import PricingSection from "@/components/PricingSection";
 import DevicesSection from "@/components/DevicesSection";
 import ChannelsSection from "@/components/ChannelsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
+import EvaluationMethodologySection from "@/components/EvaluationMethodologySection";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
 import {
@@ -30,12 +33,15 @@ export default function HomePage() {
     <>
       <HeroSection />
       <StatsBar />
+      <EvaluationCriteriaSection />
       <FeaturesSection />
+      <ComparisonSection />
       <PricingSection />
       <DevicesSection />
       <ChannelsSection />
       <TestimonialsSection />
       <FAQSection />
+      <EvaluationMethodologySection />
       <TrustSection />
       <CTASection />
 

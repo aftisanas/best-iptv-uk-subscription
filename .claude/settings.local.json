@@ -8,7 +8,11 @@
       "Bash(sudo -u best-iptv-uk-subscription bash -lc 'source ~/.nvm/nvm.sh && npm run build')",
       "Bash(sudo -u best-iptv-uk-subscription bash -lc 'source ~/.nvm/nvm.sh && pm2 restart best-iptv-uk-subscription')",
       "Bash(curl -s http://127.0.0.1:3011/)",
-      "Bash(grep -oE \"Every major children\\(.{1,10}\\)s channel\")"
+      "Bash(grep -oE \"Every major children\\(.{1,10}\\)s channel\")",
+      "PowerShell(git log --all --full-history -- \"docs/best-iptv-research-and-plan-v2.md\" 2>&1 | Select-Object -First 20; Write-Output \"---\"; git log --all --oneline -- docs/ 2>&1 | Select-Object -First 20)",
+      "Bash(powershell -c \"\\(Get-Content 'D:\\\\iptv-lp\\\\best-iptv-uk-subscription\\\\docs\\\\best-iptv-research-and-plan-v2.md'\\).Length\")",
+      "PowerShell(npm run *)",
+      "PowerShell(node -e \"const pkg = require\\('./node_modules/lucide-react/package.json'\\); console.log\\('version=' + pkg.version\\)\")"
     ]
   }
 }

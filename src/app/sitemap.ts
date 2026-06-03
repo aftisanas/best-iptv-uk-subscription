@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { BLOG_POSTS, SITE_URL } from "@/lib/constants";
+import { AUTHOR_BYLINE, BLOG_POSTS, SITE_URL } from "@/lib/constants";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -7,6 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const parsed = new Date(value);
     return Number.isNaN(parsed.getTime()) ? now : parsed;
   };
+
+  const clusterLastModified = parseDateOrNow(AUTHOR_BYLINE.updatedDate);
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
@@ -18,6 +20,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/refund`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
   ];
 
+  // Phase 2 cluster pages — v2 plan Section C
+  const clusterRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/best-iptv-uk-2026`,
+      lastModified: clusterLastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/best-iptv-subscription-uk`,
+      lastModified: clusterLastModified,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/best-iptv-uk-firestick`,
+      lastModified: clusterLastModified,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    },
+    {
+      url: `${SITE_URL}/is-iptv-legal-uk`,
+      lastModified: clusterLastModified,
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
+      url: `${SITE_URL}/best-iptv-uk-vs-traditional-tv`,
+      lastModified: clusterLastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ];
+
   const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.filter((post) =>
     Boolean(post.slug)
   ).map((post) => ({
@@ -27,5 +63,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  return [...staticRoutes, ...clusterRoutes, ...blogRoutes];
 }
