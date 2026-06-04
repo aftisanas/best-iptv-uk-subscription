@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { X, Lock, Shield } from "lucide-react";
 import Link from "next/link";
+import { buildWhatsAppCheckoutUrl } from "@/lib/constants";
 
 type OrderSummaryModalProps = {
   open: boolean;
@@ -148,15 +149,17 @@ export default function OrderSummaryModal({
             </span>
           </div>
 
-          <button
-            type="button"
+          <a
+            href={buildWhatsAppCheckoutUrl({ planName, planPrice })}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={onCheckout}
             aria-label="Proceed to secure checkout"
             className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-6 py-3.5 text-sm font-bold tracking-wide text-white transition-all hover:shadow-lg hover:shadow-purple-500/30 active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
           >
             <Lock className="h-4 w-4" aria-hidden="true" />
             SECURE CHECKOUT
-          </button>
+          </a>
 
           <div className="flex items-center justify-center gap-2 text-xs text-muted">
             <Shield className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />

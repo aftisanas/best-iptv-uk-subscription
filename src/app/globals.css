@@ -86,8 +86,6 @@
 
 ::selection { background: var(--color-primary); color: white; }
 
-html { scroll-behavior: smooth; }
-
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
