@@ -495,6 +495,21 @@ export const EVALUATION_CRITERIA = [
   },
 ] as const;
 
+export const WHATSAPP_NUMBER = "447878757831";
+
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+export function buildWhatsAppCheckoutUrl({
+  planName,
+  planPrice,
+}: {
+  planName: string;
+  planPrice: number | string;
+}): string {
+  const message = `Hi Best IPTV UK team! I'd like to subscribe to:\n\nPlan: ${planName} — £${planPrice}\n\nPlease send me the next steps to complete payment.`;
+  return `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`;
+}
+
 export const BLOG_POSTS = [
   {
     slug: "best-iptv-uk-guide-2026",

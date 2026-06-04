@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Play, MessageCircle, Sparkles } from "lucide-react";
 import Link from "next/link";
 import SectionLink from "./SectionLink";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 export default function CTASection() {
   return (
@@ -83,13 +84,15 @@ export default function CTASection() {
               View Subscription Plans — From £3.75/mo
               <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
             </SectionLink>
-            <SectionLink
-              href="/#pricing"
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-2.5 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-purple-400/30 hover:bg-white/10 w-full sm:w-auto justify-center"
             >
               <MessageCircle className="h-5 w-5 text-cyan-400" />
               Chat With UK Support
-            </SectionLink>
+            </a>
           </div>
 
           <p className="mt-8 text-sm text-gray-400">
