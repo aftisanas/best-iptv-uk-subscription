@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowLeft, Tag, Clock, User, ChevronDown, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import ParticleBackground from "./ParticleBackground";
@@ -328,24 +328,23 @@ export default function SubPageShell({
                         )}
                       />
                     </button>
-                    <AnimatePresence>
-                      {isOpen && (
-                        <motion.div
-                          id={`subpage-faq-panel-${i}`}
-                          role="region"
-                          aria-labelledby={`subpage-faq-trigger-${i}`}
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-5 py-4 text-sm text-muted leading-relaxed">
-                            {item.answer}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    <motion.div
+                      id={`subpage-faq-panel-${i}`}
+                      role="region"
+                      aria-labelledby={`subpage-faq-trigger-${i}`}
+                      aria-hidden={!isOpen}
+                      initial={false}
+                      animate={{
+                        height: isOpen ? "auto" : 0,
+                        opacity: isOpen ? 1 : 0,
+                      }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 py-4 text-sm text-muted leading-relaxed">
+                        {item.answer}
+                      </div>
+                    </motion.div>
                   </div>
                 );
               })}
