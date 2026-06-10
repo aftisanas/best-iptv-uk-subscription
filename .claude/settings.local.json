@@ -14,7 +14,8 @@
       "PowerShell(npm run *)",
       "PowerShell(node -e \"const pkg = require\\('./node_modules/lucide-react/package.json'\\); console.log\\('version=' + pkg.version\\)\")",
       "Bash(npm run *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(git *)"
     ]
   }
 }

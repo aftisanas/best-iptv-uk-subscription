@@ -111,8 +111,40 @@ const proseClasses = [
   "hover:prose-a:underline prose-a:underline-offset-2",
 ].join(" ");
 
+const articleProvenanceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": `${CANONICAL}#article`,
+      citation: [
+        {
+          "@type": "CreativeWork",
+          name: "Media Nations 2025",
+          url: "https://www.ofcom.org.uk/research-and-data/tv-radio-and-on-demand/media-nations-reports",
+        },
+        {
+          "@type": "CreativeWork",
+          name: "Consumer Rights Act 2015",
+          url: "https://www.legislation.gov.uk/ukpga/2015/15/contents",
+        },
+        {
+          "@type": "CreativeWork",
+          name: "The Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013",
+          url: "https://www.legislation.gov.uk/uksi/2013/3134/contents",
+        },
+      ],
+      about: [
+        { "@type": "Thing", name: "IPTV" },
+        { "@type": "Thing", name: "United Kingdom" },
+      ],
+    },
+  ],
+};
+
 export default function Page() {
   return (
+    <>
     <SubPageShell
       slug={SLUG}
       title="Best IPTV UK 2026 — A Seven-Criteria Buyer's Guide"
@@ -124,6 +156,16 @@ export default function Page() {
       faqItems={faqItems}
     >
       <div className={proseClasses}>
+        <h2>What is IPTV UK in 2026?</h2>
+        <p>
+          IPTV UK is internet protocol television delivered to British
+          households over a broadband connection rather than satellite,
+          aerial or coaxial cable. The category bundles live UK terrestrial
+          channels, on-demand films, sport and an electronic programme guide
+          into a single flat-fee subscription billed in sterling, with
+          UK-based support and a refund policy that aligns with UK consumer
+          law.
+        </p>
         <p className="lead text-lg sm:text-xl text-foreground/90 font-medium leading-relaxed">
           The phrase &ldquo;best IPTV UK&rdquo; gets searched around 3,800 times
           a month in Britain, and most of those searches land on pages that read
@@ -220,6 +262,7 @@ export default function Page() {
         </p>
 
         <h2>Channel Count — Why 37,000+ Matters For UK Households</h2>
+        <h3>Why headline channel counts inflate</h3>
         <p>
           Channel count is the headline number on every IPTV landing page, and
           the figure is almost always inflated by listing the same channel
@@ -238,10 +281,14 @@ export default function Page() {
           European cup nights, international rugby tournaments, motorsport,
           combat sports), the rolling news desks, children&apos;s channels with
           regional safe-browsing variants, and the 40-plus language packs that
-          serve British households with family abroad. The realistic ask sits
-          between 4,000 and 8,000 channels before a subscription qualifies as
-          &ldquo;complete&rdquo; for a typical UK family.
+          serve British households with family abroad.
         </p>
+        <p>
+          The realistic ask sits between 4,000 and 8,000 channels before a
+          subscription qualifies as &ldquo;complete&rdquo; for a typical UK
+          family.
+        </p>
+        <h3>The UK pack number that matters</h3>
         <p>
           Anything north of 30,000 is luxury territory — breadth of
           international coverage and depth of niche premium movie channels.
@@ -256,8 +303,10 @@ export default function Page() {
           breakdown (&ldquo;over 30,000 channels!&rdquo;) usually means total
           feed slots rather than unique channels. Ask for the UK pack count
           separately. If it is not published, the headline figure is doing the
-          work for both numbers. To see how the channel pack maps to plan
-          length, view{" "}
+          work for both numbers.
+        </p>
+        <p>
+          To see how the channel pack maps to plan length, view{" "}
           <Link href="/#pricing">the four subscription lengths</Link>.
         </p>
 
@@ -432,10 +481,13 @@ export default function Page() {
           norm. Entry-tier bundles from the dominant pay-TV platform sit at
           £15 to £18 per month, with sport and cinema add-ons pushing the
           household bill into the £40 to £100 band depending on broadband
-          package. The UK TV licence currently runs at £174.50 a year for
-          households watching live broadcast television — an additional fixed
-          cost on top of the traditional pay-TV bundle. Those numbers reset
-          the baseline a UK buyer should compare an IPTV subscription against.
+          package.
+        </p>
+        <p>
+          The UK TV licence currently runs at £174.50 a year for households
+          watching live broadcast television — an additional fixed cost on
+          top of the traditional pay-TV bundle. Those numbers reset the
+          baseline a UK buyer should compare an IPTV subscription against.
         </p>
         <p>
           What to watch for: an &ldquo;annual&rdquo; headline price that is
@@ -446,18 +498,71 @@ export default function Page() {
           operators take the lump-sum payment and disappear inside three to
           six months.
         </p>
-        <p>
-          This service publishes four plan lengths in GBP only. Three months
-          at £25.99 (£8.66/month), six at £39.99 (£6.66/month), twelve at
-          £59.99 (£4.99/month), 24 at £89.99 (£3.75/month). No auto-renewal
-          trap, no foreign-currency conversion, no hidden charges at checkout.
-          The 30-day refund window applies to all four. To see the breakdown
-          side by side,{" "}
-          <Link href="/best-iptv-subscription-uk">
-            compare IPTV subscription plans for the UK
-          </Link>
-          .
-        </p>
+        <div className="overflow-x-auto not-prose my-6">
+          <table className="w-full text-sm sm:text-base border-collapse rounded-lg overflow-hidden border border-violet-100">
+            <caption className="sr-only">
+              UK IPTV subscription plans in GBP — total price, per-month
+              equivalent and refund window.
+            </caption>
+            <thead className="bg-violet-50 text-foreground">
+              <tr>
+                <th scope="col" className="text-left font-semibold px-4 py-3">
+                  Plan
+                </th>
+                <th scope="col" className="text-left font-semibold px-4 py-3">
+                  Length
+                </th>
+                <th scope="col" className="text-left font-semibold px-4 py-3">
+                  Total (£)
+                </th>
+                <th scope="col" className="text-left font-semibold px-4 py-3">
+                  Per month (£)
+                </th>
+                <th scope="col" className="text-left font-semibold px-4 py-3">
+                  Refund
+                </th>
+              </tr>
+            </thead>
+            <tbody className="text-muted">
+              <tr className="border-t border-violet-100">
+                <th scope="row" className="text-left font-medium text-foreground px-4 py-3">
+                  Bronze
+                </th>
+                <td className="px-4 py-3">3 months</td>
+                <td className="px-4 py-3">£25.99</td>
+                <td className="px-4 py-3">£8.66</td>
+                <td className="px-4 py-3">30 days</td>
+              </tr>
+              <tr className="border-t border-violet-100 bg-violet-50/30">
+                <th scope="row" className="text-left font-medium text-foreground px-4 py-3">
+                  Silver
+                </th>
+                <td className="px-4 py-3">6 months</td>
+                <td className="px-4 py-3">£39.99</td>
+                <td className="px-4 py-3">£6.66</td>
+                <td className="px-4 py-3">30 days</td>
+              </tr>
+              <tr className="border-t border-violet-100">
+                <th scope="row" className="text-left font-medium text-foreground px-4 py-3">
+                  Gold
+                </th>
+                <td className="px-4 py-3">12 months</td>
+                <td className="px-4 py-3">£59.99</td>
+                <td className="px-4 py-3">£4.99</td>
+                <td className="px-4 py-3">30 days</td>
+              </tr>
+              <tr className="border-t border-violet-100 bg-violet-50/30">
+                <th scope="row" className="text-left font-medium text-foreground px-4 py-3">
+                  Diamond
+                </th>
+                <td className="px-4 py-3">24 months</td>
+                <td className="px-4 py-3">£89.99</td>
+                <td className="px-4 py-3">£3.75</td>
+                <td className="px-4 py-3">30 days</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <h2>Direct Reseller vs Affiliate Review Sites</h2>
         <p>
@@ -473,9 +578,11 @@ export default function Page() {
           own site rather than on a third-party affiliate page is that the
           bias is visible. We are not pretending to be neutral. We are
           publishing the criteria a thoughtful UK buyer should apply, and we
-          are positioning this service against them in the same paragraph. A
-          reader who applies the framework, checks a third-party review, then
-          comes back gets the most useful comparison — better than three
+          are positioning this service against them in the same paragraph.
+        </p>
+        <p>
+          A reader who applies the framework, checks a third-party review,
+          then comes back gets the most useful comparison — better than three
           &ldquo;Top 10 Best IPTV UK&rdquo; affiliate pages listing the same
           seven providers in different orders because the commissions vary
           month to month.
@@ -486,15 +593,22 @@ export default function Page() {
           homepage, the 99.9 percent uptime is on the public status page, the
           30-day refund is in the footer terms, the GBP-only pricing is on
           every plan card. Nothing in the framework above is asserted without
-          the corresponding evidence sitting one click away. A direct service
-          that hides its evidence is selling on hope. A direct service that
-          publishes its evidence is at worst telling the truth selectively —
-          and at best handing you the same checklist you would use against any
-          rival. For the position on{" "}
+          the corresponding evidence sitting one click away.
+        </p>
+        <p>
+          A direct service that hides its evidence is selling on hope. A
+          direct service that publishes its evidence is at worst telling the
+          truth selectively — and at best handing you the same checklist you
+          would use against any rival. For the position on{" "}
           <Link href="/is-iptv-legal-uk">legality before payment</Link>, the
           standalone guide covers it in detail.
         </p>
       </div>
     </SubPageShell>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(articleProvenanceSchema) }}
+    />
+    </>
   );
 }
