@@ -83,7 +83,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.18 }}
           className="text-base sm:text-lg text-gray-300/90 max-w-3xl mb-3 px-2 sm:px-0"
         >
-          Trusted by 50,000+ UK subscribers. Stream 37,000 channels in 4K UHD with a built-in VPN, five concurrent screens and UK-based support on call around the clock — backed by a 30-day refund.
+          Stream 37,000+ live channels and 198,000+ films in 4K UHD across five simultaneous screens. UK-focused infrastructure, optional Secure Proxy add-on, and 24/7 UK-based support — backed by a 30-day money-back.
         </motion.p>
 
         {/* Promo banner — replaces hero device image */}
