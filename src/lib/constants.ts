@@ -399,11 +399,17 @@ export const CHANNEL_CATEGORIES = [
 ] as const;
 
 export const AUTHOR_BYLINE = {
-  name: "James Whitford",
-  role: "Editor — Best IPTV UK",
-  description: "British IPTV reviewer covering UK streaming services since 2023.",
+  name: "Best IPTV UK Editorial",
+  role: "Editorial Team",
+  description: "Editorial coverage of UK IPTV services since 2023.",
   publishedDate: "2026-06-01",
   updatedDate: "2026-06-01",
+} as const;
+
+export const REVIEWER_BYLINE = {
+  name: "Editorial Review Team",
+  role: "Compliance & Standards",
+  description: "Independent compliance and standards review.",
 } as const;
 
 // Sub-page cluster links (v2 plan Section H — footer "Guides" column)
@@ -516,7 +522,8 @@ export const BLOG_POSTS = [
     title: "IPTV UK 2026 — The Complete Buyer's Guide To Picking A Service",
     excerpt:
       "Choosing an IPTV service in 2026 comes down to seven verifiable signals — channel count, uptime, 4K coverage, support speed, refund policy, device support and transparent GBP pricing. Every criterion broken down in order.",
-    date: "2026-04-01",
+    publishedDate: "2026-04-01",
+    updatedDate: "2026-06-15",
     readTime: "12 min read",
     category: "Guide",
   },
@@ -525,7 +532,8 @@ export const BLOG_POSTS = [
     title: "IPTV On Fire Stick — Full Install Guide In Under 5 Minutes",
     excerpt:
       "A step-by-step walkthrough for loading an IPTV service onto an Amazon Fire Stick. Credentials paste, channel guide loads and the first stream plays in under five minutes, start to finish.",
-    date: "2026-03-20",
+    publishedDate: "2026-03-20",
+    updatedDate: "2026-06-16",
     readTime: "6 min read",
     category: "Tutorial",
   },
@@ -534,7 +542,8 @@ export const BLOG_POSTS = [
     title: "IPTV Vs Traditional Pay-TV — Which Wins For British Viewers In 2026",
     excerpt:
       "A line-by-line comparison of IPTV against traditional UK pay-TV. Price, channel count, picture quality, contract length and long-term value — everything needed to decide whether to make the switch.",
-    date: "2026-03-15",
+    publishedDate: "2026-03-15",
+    updatedDate: "2026-06-17",
     readTime: "8 min read",
     category: "Comparison",
   },
@@ -543,7 +552,8 @@ export const BLOG_POSTS = [
     title: "Live UK Sports Streaming Guide — Football, Rugby & Motorsport In 4K",
     excerpt:
       "Top-tier UK football fixtures, European cup nights and international rugby tournaments — all in 4K UHD where available. How the sports pack covers live UK sport broadcasts in a single subscription.",
-    date: "2026-03-10",
+    publishedDate: "2026-03-10",
+    updatedDate: "2026-06-18",
     readTime: "5 min read",
     category: "Sports",
   },

@@ -42,7 +42,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-semibold text-foreground mb-3">6. Uptime Commitment</h2>
-            <p>The published target is 99.9% monthly uptime. Planned maintenance windows are notified in advance where practical; if verified uptime drops below the target in any calendar month, service credits apply automatically.</p>
+            <p>Service availability may be affected by maintenance, infrastructure issues or third-party disruptions. Planned maintenance windows are communicated where practical.</p>
           </section>
 
           <section>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, ArrowLeft, Tag } from "lucide-react";
+import { Clock, ArrowLeft, Tag, User, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import SectionLink from "@/components/SectionLink";
 
@@ -10,14 +10,18 @@ interface BlogPostContentProps {
     slug: string;
     title: string;
     excerpt: string;
-    date: string;
+    publishedDate: string;
+    updatedDate: string;
     readTime: string;
     category: string;
   };
   content: string[];
+  author: { name: string; role: string };
+  reviewer: { name: string; role: string };
+  relatedContent: ReadonlyArray<{ label: string; href: string }>;
 }
 
-export default function BlogPostContent({ post, content }: BlogPostContentProps) {
+export default function BlogPostContent({ post, content, author, reviewer, relatedContent }: BlogPostContentProps) {
   return (
     <div className="pt-20">
       <article className="py-16 lg:py-24">
@@ -42,21 +46,27 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
             animate={{ opacity: 1, y: 0 }}
             className="mb-12"
           >
-            <div className="flex items-center gap-4 text-sm text-muted mb-4">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-muted mb-6">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
                 <Tag className="h-3 w-3" />
                 {post.category}
               </span>
-              <span>
-                {new Date(post.date).toLocaleDateString("en-GB", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
+              
+              <span className="flex items-center gap-1.5 font-medium text-foreground">
+                <User className="h-4 w-4 text-purple-500" />
+                {author.name}
               </span>
-              <span className="flex items-center gap-1">
-                <Clock className="h-3 w-3" />
-                {post.readTime}
+              
+              <span className="flex items-center gap-1.5 font-medium text-foreground">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                Reviewed by {reviewer.name}
+              </span>
+
+              <span className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4" />
+                Updated {new Date(post.updatedDate).toLocaleDateString("en-GB", {
+                  day: "numeric", month: "long", year: "numeric"
+                })}
               </span>
             </div>
 
@@ -130,6 +140,32 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
             })}
           </motion.div>
 
+          {/* Related Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-16 pt-8 border-t border-primary/10"
+          >
+            <h3 className="text-xl font-bold text-foreground mb-6">Related UK IPTV Guides</h3>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {relatedContent.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="flex flex-col gap-1 p-4 rounded-xl border border-primary/10 bg-white hover:border-violet-300 hover:shadow-sm transition-all group"
+                >
+                  <span className="font-semibold text-foreground group-hover:text-violet-700">
+                    {link.label}
+                  </span>
+                  <span className="text-sm text-violet-600 font-medium inline-flex items-center gap-1">
+                    Read guide <ArrowRight className="h-3 w-3" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+
           {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -141,7 +177,7 @@ export default function BlogPostContent({ post, content }: BlogPostContentProps)
               Ready To Compare The Subscription Plans?
             </h3>
             <p className="text-muted mb-6">
-              Trusted by 50,000+ UK subscribers. Plans from £3.75/month equivalent with a 30-day money-back guarantee.
+              Trusted UK IPTV provider. Plans from £3.75/month equivalent with a 30-day money-back guarantee.
             </p>
             <SectionLink
               href="/#pricing"

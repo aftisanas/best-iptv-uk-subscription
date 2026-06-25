@@ -136,7 +136,7 @@ export default function BlogContent() {
 
                   <div className="p-6">
                     <div className="flex items-center gap-4 text-xs text-muted mb-3">
-                      <span>{new Date(post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span>
+                      <span>{new Date(post.publishedDate).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span>
                       <span className="flex items-center gap-1">
                         <Clock className="h-3 w-3" />
                         {post.readTime}

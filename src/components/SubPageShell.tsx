@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Tag, Clock, User, ChevronDown, ChevronRight } from "lucide-react";
+import { ArrowLeft, Tag, Clock, User, ChevronDown, ChevronRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import ParticleBackground from "./ParticleBackground";
 import PricingSection from "./PricingSection";
@@ -29,12 +29,29 @@ export interface SubPageFAQItem {
   readonly answer: string;
 }
 
+export interface SubPageReviewer {
+  readonly name: string;
+  readonly role: string;
+}
+
+export interface SubPageCitation {
+  readonly name: string;
+  readonly url: string;
+}
+
+export interface SubPageEntity {
+  readonly name: string;
+}
+
 export interface SubPageShellProps {
   readonly slug: string;
   readonly title: string;
   readonly category: string;
   readonly intro: string;
   readonly byline: SubPageByline;
+  readonly reviewer?: SubPageReviewer;
+  readonly citations?: ReadonlyArray<SubPageCitation>;
+  readonly aboutEntities?: ReadonlyArray<SubPageEntity>;
   readonly readTime?: string;
   readonly relatedGuides: ReadonlyArray<SubPageRelatedGuide>;
   readonly faqItems: ReadonlyArray<SubPageFAQItem>;
@@ -54,6 +71,9 @@ export default function SubPageShell({
   category,
   intro,
   byline,
+  reviewer,
+  citations,
+  aboutEntities,
   readTime,
   relatedGuides,
   faqItems,
@@ -75,11 +95,29 @@ export default function SubPageShell({
     datePublished: byline.publishedDate,
     dateModified: byline.updatedDate,
     author: {
-      "@type": "Person",
+      "@type": "Organization",
       name: byline.name,
-      jobTitle: byline.role,
       description: byline.description,
     },
+    ...(reviewer && {
+      reviewedBy: {
+        "@type": "Organization",
+        name: reviewer.name,
+      },
+    }),
+    ...(citations && citations.length > 0 && {
+      citation: citations.map((c) => ({
+        "@type": "CreativeWork",
+        name: c.name,
+        url: c.url,
+      })),
+    }),
+    ...(aboutEntities && aboutEntities.length > 0 && {
+      about: aboutEntities.map((e) => ({
+        "@type": "Thing",
+        name: e.name,
+      })),
+    }),
     publisher: {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
@@ -259,6 +297,12 @@ export default function SubPageShell({
               <span className="text-gray-200 font-medium">{byline.name}</span>
               <span className="text-gray-500">— {byline.role}</span>
             </span>
+            {reviewer && (
+              <span className="inline-flex items-center gap-1.5 text-gray-300">
+                <span aria-hidden="true" className="h-1 w-1 rounded-full bg-green-500/70" />
+                <span className="font-medium text-gray-200">Reviewed by {reviewer.name}</span>
+              </span>
+            )}
             <span className="inline-flex items-center gap-1.5">
               <span aria-hidden="true" className="h-1 w-1 rounded-full bg-gray-500" />
               <span>Updated {formatDate(byline.updatedDate)}</span>
@@ -360,7 +404,6 @@ export default function SubPageShell({
           <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="mb-8 text-center">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-                Continue Reading —{" "}
                 <span className="gradient-text">Related UK IPTV Guides</span>
               </h2>
               <p className="text-sm text-muted">
