@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Best IPTV UK",
   },
   description:
-    "UK IPTV subscription trusted by 50,000+ subscribers. 37,000 channels, 4K UHD, built-in VPN, 24/7 UK support. Compare plans and start watching today. 30-day refund.",
+    "UK IPTV subscription with 37,000 channels, 4K UHD, optional Secure Proxy, 24/7 UK support. Compare plans and start watching today. 30-day refund.",
   keywords: [
     "iptv uk",
     "uk iptv",
@@ -69,13 +69,13 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "Best IPTV UK 2026 — Premium 4K UHD Streaming For British Homes",
     description:
-      "A complete IPTV subscription for UK households: 37,000 channels, 4K UHD, built-in VPN, UK servers, 99.9% uptime and a 30-day money-back promise.",
+      "A complete IPTV subscription for UK households: 37,000 channels, 4K UHD, optional Secure Proxy, UK servers, published uptime and a 30-day money-back promise.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Best IPTV UK 2026 — Premium 4K UHD Streaming Service",
     description:
-      "37,000 channels, 4K UHD, built-in VPN, five screens, 30-day guarantee. Trusted by 50,000+ UK subscribers.",
+      "37,000 channels, 4K UHD, optional Secure Proxy, five screens, 30-day guarantee. UK IPTV subscription with 24/7 support.",
   },
   robots: {
     index: true,

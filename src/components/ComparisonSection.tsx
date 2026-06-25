@@ -9,7 +9,7 @@ const renderCell = (value: string, kind: "ours" | "typical" | "unlicensed") => {
   const lower = value.toLowerCase();
   const isPositive =
     lower.startsWith("yes") ||
-    lower.includes("99.9%") ||
+    lower.includes("published") ||
     lower.includes("24/7") ||
     lower.includes("30 days") ||
     lower.startsWith("up to 5") ||
@@ -224,7 +224,7 @@ export default function ComparisonSection() {
             </h3>
             <p className="text-sm text-muted leading-relaxed">
               The unlicensed free-streams column is the category to walk away
-              from. No 4K, no built-in VPN, no UK support, no refund window —
+              from. No 4K, no privacy proxy, no UK support, no refund window —
               and an unstable picture that drops the moment demand spikes. Free
               is not the same as cheap. For any UK household watching live
               sport, on-demand cinema or kids&apos; channels, the unlicensed

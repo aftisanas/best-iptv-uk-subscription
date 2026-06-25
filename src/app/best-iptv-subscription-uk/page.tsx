@@ -4,7 +4,7 @@ import SubPageShell, {
   type SubPageFAQItem,
   type SubPageRelatedGuide,
 } from "@/components/SubPageShell";
-import { AUTHOR_BYLINE, SITE_URL } from "@/lib/constants";
+import { AUTHOR_BYLINE, REVIEWER_BYLINE, SITE_URL } from "@/lib/constants";
 
 const SLUG = "best-iptv-subscription-uk";
 const CANONICAL = `${SITE_URL}/${SLUG}`;
@@ -41,7 +41,7 @@ const faqItems: ReadonlyArray<SubPageFAQItem> = [
   {
     question: "How much does a UK IPTV subscription cost in 2026?",
     answer:
-      "The honest band for a complete UK IPTV subscription is £4-£10 per month, billed annually or biennially. Our four plans run £8.66/month for Bronze (3 months total £25.99), £6.66 for Silver (£39.99), £4.99 for Gold (£59.99) and £3.75 for Diamond (£89.99). Below £3 a month suggests an oversubscribed shared server or an unlicensed feed; above £15 a month is reseller markup the wholesale supply chain does not justify. Compare these against the £60-£80 monthly streaming spend the average UK household carries across multiple popular streaming platforms.",
+      "The honest band for a complete UK IPTV subscription is £4-£10 per month, billed annually or biennially. Our four plans run £8.66/month for Bronze (3 months total £25.99), £6.66 for Silver (£39.99), £4.99 for Gold (£59.99) and £3.75 for Diamond (£89.99). Below £3 a month suggests an oversubscribed shared server or an unlicensed feed; prices above £15 per month may not represent the same value as lower-cost alternatives. Compare these against the £60-£80 monthly streaming spend the average UK household carries across multiple popular streaming platforms.",
   },
   {
     question: 'Are "lifetime" IPTV subscriptions a scam?',
@@ -112,9 +112,19 @@ export default function Page() {
       category="Subscriptions"
       intro="A strong UK IPTV subscription in 2026 is more than a monthly price. Term length, refund window, payment method, cancellation behaviour and what's included in the base plan all separate the services worth subscribing to from the ones to walk away from. This guide compares UK IPTV subscription lengths from three months to 24, lays out the per-month cost across each tier in GBP, explains why one-off 'lifetime' deals are a scam signal, and applies the seven evaluation criteria specifically to subscriptions rather than features. Built for UK households deciding how long to commit."
       byline={AUTHOR_BYLINE}
+      reviewer={REVIEWER_BYLINE}
       readTime="10 min read"
       relatedGuides={relatedGuides}
       faqItems={faqItems}
+      citations={[
+        { name: "Digital Markets, Competition and Consumers Act 2024", url: "https://www.legislation.gov.uk/ukpga/2024/13/enacted" },
+        { name: "Consumer Contracts Regulations 2013", url: "https://www.legislation.gov.uk/uksi/2013/3134/contents" }
+      ]}
+      aboutEntities={[
+        { name: "Subscription business model" },
+        { name: "IPTV" },
+        { name: "United Kingdom" }
+      ]}
     >
       <div className={proseClasses}>
         <p className="lead text-lg sm:text-xl text-foreground/90 font-medium leading-relaxed">
@@ -451,7 +461,7 @@ export default function Page() {
         </p>
         <p>
           24/7 dedicated UK support through live chat and WhatsApp.
-          Built-in VPN at no extra cost — most rival operators charge
+          Secure Proxy available as an optional add-on — most rival operators charge
           £5-£10 a month for a comparable privacy add-on. Instant
           activation under 60 seconds. 30-day money-back guarantee applied
           to every plan length without exemption.

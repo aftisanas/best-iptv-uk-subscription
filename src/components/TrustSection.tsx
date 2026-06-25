@@ -13,19 +13,19 @@ const trustItems = [
   },
   {
     icon: Wifi,
-    title: "99.9% Uptime — Published Live",
+    title: "Published Uptime — Verified Live",
     description:
       "A public status page tracks uptime minute by minute. Credits apply automatically if the number ever dips below the promise — verifiable infrastructure rather than a marketing figure.",
   },
   {
     icon: Lock,
-    title: "Built-In VPN — Privacy Without Extra Cost",
+    title: "Secure Proxy Add-On — Optional Privacy Layer",
     description:
-      "Every plan ships with a built-in VPN for unlimited use. No bandwidth cap, no logs, no upsell. Most rival IPTV services charge £5 – £10 a month for a comparable privacy add-on.",
+      "An optional Secure Proxy routes traffic through encrypted UK servers. No bandwidth cap, no logs, available on every plan tier. A comparable third-party privacy tool typically costs £5 – £10 a month.",
   },
   {
     icon: ServerCog,
-    title: "Trusted By 50,000+ UK Subscribers",
+    title: "24/7 British Support Team",
     description:
       "A British support team handles live chat, WhatsApp and email 24/7. Subscriber feedback covers real-world performance, picture stability and response times — the metrics that matter once the subscription goes live.",
   },
