@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import {
-  Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield, Star,
+  Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield, Activity,
 } from "lucide-react";
 import SectionLink from "./SectionLink";
 import { FEATURES } from "@/lib/constants";
 
 const iconMap = {
-  Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield, Star,
+  Tv, Monitor, Clock, Film, Smartphone, LayoutGrid, Zap, Shield, Activity,
 } as const;
 
 export default function FeaturesSection() {

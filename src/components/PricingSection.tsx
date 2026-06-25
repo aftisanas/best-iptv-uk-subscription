@@ -264,7 +264,7 @@ export default function PricingSection() {
           className="mt-14 flex flex-wrap items-center justify-center gap-6 lg:gap-10"
         >
           {[
-            { icon: Shield, label: "SSL-secured Stripe & PayPal checkout" },
+            { icon: Shield, label: "Secure WhatsApp ordering · GBP pricing" },
             { icon: CreditCard, label: "30-day money-back guarantee" },
             { icon: Star, label: "Instant delivery" },
           ].map((item) => (

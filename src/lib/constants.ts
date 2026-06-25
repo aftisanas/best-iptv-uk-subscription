@@ -20,16 +20,16 @@ export const LEGAL_LINKS = [
 export const STATS = [
   { value: "37,000+", label: "Live Channels" },
   { value: "198,000+", label: "Films & Series" },
-  { value: "99.9%", label: "Uptime" },
-  { value: "50,000+", label: "UK Subscribers" },
+  { value: "60s", label: "Activation" },
+  { value: "30 Days", label: "Money-Back" },
 ] as const;
 
 export const FEATURES = [
   {
-    title: "Trusted By 50,000+ UK Subscribers",
+    title: "37,000+ Live Channels With Full UK Coverage",
     description:
-      "Built around what UK households actually need from a streaming subscription — full channel coverage, fair pricing in GBP, no contracts, and a 30-day refund window that lets you test the service risk-free before committing.",
-    icon: "Star" as const,
+      "Full UK terrestrial, premium entertainment, sport, news, kids, and 17,000+ international feeds across 40+ languages. One subscription, every category — no gated tiers or extra channel packs.",
+    icon: "Tv" as const,
   },
   {
     title: "Built For Live UK Sports — Low Latency, 4K Where Available",
@@ -50,9 +50,9 @@ export const FEATURES = [
     icon: "LayoutGrid" as const,
   },
   {
-    title: "Built-In VPN At No Extra Cost — Privacy Without Add-Ons",
+    title: "Optional Secure Proxy Add-On — From £4.75/Term",
     description:
-      "A built-in VPN encrypts every stream at no extra cost. Privacy stays intact on public Wi-Fi, mobile data or shared home networks.",
+      "An optional Secure Proxy add-on encrypts your stream traffic and reduces ISP-side filtering. Available at checkout from £4.75 per term, priced by plan length.",
     icon: "Shield" as const,
   },
   {
@@ -62,28 +62,28 @@ export const FEATURES = [
     icon: "Monitor" as const,
   },
   {
-    title: "Buy Direct, Skip The Reseller Markup",
+    title: "Five Screens On One Subscription",
     description:
-      "Skip the reseller markup. Buy direct for lower prices, faster server response and official support with a named UK team behind it.",
-    icon: "Zap" as const,
+      "Every plan includes 5 simultaneous streams on one account — split across Firestick, Smart TV, phone, laptop in any combination. Add Extra Connections at checkout for £7.25 per additional stream.",
+    icon: "LayoutGrid" as const,
   },
   {
-    title: "99.9% Uptime, Published Live",
+    title: "Reliable UK Infrastructure — Tuned For Peak Hours",
     description:
-      "Live uptime sits at 99.9% and refreshes each minute on a public status page — verifiable before purchase, not a marketing number.",
-    icon: "Clock" as const,
+      "Built on UK-focused infrastructure tuned for low-latency playback during peak evening hours and major event windows. Adaptive bitrate keeps the picture stable when broadband dips.",
+    icon: "Activity" as const,
   },
 ] as const;
 
 export const COMPARISON_ROWS = [
-  { feature: "Live Channels", ours: "37,000+", typical: "8,000 – 15,000", unlicensed: "Variable" },
-  { feature: "4K UHD Streaming", ours: "Yes — every plan", typical: "Premium tier only", unlicensed: "No" },
-  { feature: "Built-In VPN", ours: "Yes — included", typical: "Rarely", unlicensed: "No" },
-  { feature: "Simultaneous Screens", ours: "Up to 5", typical: "1 – 2", unlicensed: "1" },
-  { feature: "Uptime (Verified)", ours: "99.9%", typical: "Not published", unlicensed: "Unstable" },
-  { feature: "UK Support", ours: "24/7 live chat + WhatsApp", typical: "Email only", unlicensed: "None" },
-  { feature: "Money-Back Guarantee", ours: "30 days, full refund", typical: "3 – 7 days", unlicensed: "None" },
-  { feature: "Starting Price", ours: "From £3.75/month", typical: "£15 – £25/month", unlicensed: "Free (risk)" },
+  { feature: "Live Channels", ours: "37,000+", typical: "Variable", unlicensed: "Variable" },
+  { feature: "4K UHD Streaming", ours: "Yes — every plan", typical: "Often premium-tier only", unlicensed: "No" },
+  { feature: "Secure Proxy Option", ours: "Add-on from £4.75/term", typical: "Rarely offered", unlicensed: "No" },
+  { feature: "Simultaneous Screens", ours: "Up to 5", typical: "Limited", unlicensed: "1" },
+  { feature: "Uptime", ours: "UK-focused infrastructure", typical: "Variable", unlicensed: "Unstable" },
+  { feature: "UK Support", ours: "WhatsApp + email", typical: "Often email-only", unlicensed: "None" },
+  { feature: "Money-Back Window", ours: "30 days", typical: "Often shorter", unlicensed: "None" },
+  { feature: "Starting Price", ours: "From £3.75/month", typical: "Variable", unlicensed: "Free (risk)" },
 ] as const;
 
 export const HOW_IT_WORKS = [
@@ -128,7 +128,7 @@ export const PRICING_PLANS = [
       "HD, Full HD and 4K UHD streaming",
       "Five simultaneous screens on one account",
       "24/7 dedicated UK support",
-      "Built-in VPN included at no extra cost",
+      "Secure Proxy add-on available (from £4.75/term)",
       "30-day money-back guarantee",
       "Instant activation in under 60 seconds",
     ],
@@ -155,7 +155,7 @@ export const PRICING_PLANS = [
       "HD, Full HD and 4K UHD streaming",
       "Five simultaneous screens on one account",
       "24/7 dedicated UK support",
-      "Built-in VPN included at no extra cost",
+      "Secure Proxy add-on available (from £4.75/term)",
       "30-day money-back guarantee",
       "Instant activation in under 60 seconds",
     ],
@@ -182,7 +182,7 @@ export const PRICING_PLANS = [
       "HD, Full HD and 4K UHD streaming",
       "Five simultaneous screens on one account",
       "24/7 dedicated UK support",
-      "Built-in VPN included at no extra cost",
+      "Secure Proxy add-on available (from £4.75/term)",
       "30-day money-back guarantee",
       "Instant activation in under 60 seconds",
     ],
@@ -209,7 +209,7 @@ export const PRICING_PLANS = [
       "HD, Full HD and 4K UHD streaming",
       "Five simultaneous screens on one account",
       "24/7 dedicated UK support",
-      "Built-in VPN included at no extra cost",
+      "Secure Proxy add-on available (from £4.75/term)",
       "30-day money-back guarantee",
       "Instant activation in under 60 seconds",
     ],
@@ -238,7 +238,7 @@ export const TESTIMONIALS = [
   {
     name: "Daniel O.",
     location: "Belfast",
-    text: "The built-in VPN sold the subscription. Most rival IPTV services charge extra for privacy — here it just works from the first play.",
+    text: "Added the Secure Proxy at checkout after my old IPTV was throttled by the ISP. Picture has been clean ever since — well worth the small add-on cost.",
     rating: 5,
     avatar: "DO",
     since: "February 2026",
@@ -282,7 +282,7 @@ export const FAQ_ITEMS = [
   {
     question: "What should I look for when choosing an IPTV service in 2026?",
     answer:
-      "Three measurable signals matter: total channel count (this service offers 37,000+ channels with full UK coverage), published uptime (99.9% verified live), and a refund window that lets you test before committing (30 days, full refund). Together they tell you whether a provider stands behind its service.",
+      "Three measurable signals matter: total channel count (this service offers 37,000+ channels with full UK coverage), published uptime, and a refund window that lets you test before committing (30 days, full refund). Together they tell you whether a provider stands behind its service.",
   },
   {
     question: "How does an IPTV subscription compare with traditional UK pay-TV?",
@@ -325,9 +325,9 @@ export const FAQ_ITEMS = [
       "Yes. Every plan includes five simultaneous screens so four family members can stream at the same time on different devices.",
   },
   {
-    question: "Is the built-in VPN really free?",
+    question: "Does the Secure Proxy add-on slow down streaming?",
     answer:
-      "Yes. The VPN is built into the app at no extra cost. Most rival IPTV services charge £5 – £10 a month for a comparable privacy add-on.",
+      "No — the Secure Proxy add-on is engineered for IPTV streaming specifically, unlike general-purpose VPNs that route all traffic through a distant server. The proxy operates close to the streaming infrastructure and reduces ISP-side filtering rather than re-routing every packet. Available at checkout from £4.75 per term (tiered: £4.75 / £9.50 / £19 / £38 for 3 / 6 / 12 / 24 months). Customers without the add-on can use the service normally — the Secure Proxy is optional and recommended only for households that have experienced ISP-side filtering on previous IPTV services.",
   },
   {
     question: "What internet speed is needed for stable streaming?",
@@ -433,7 +433,7 @@ export const EVALUATION_CRITERIA = [
     id: "uptime",
     name: "Uptime — Published Live, Not Promised",
     why_it_matters:
-      "Uptime determines whether the subscription works on a Saturday afternoon. A promised 99.9% on a marketing page is worth nothing — what matters is a live status page refreshing minute-by-minute against real infrastructure. Providers that publish uptime live stand apart from those that only claim it.",
+      "Uptime determines whether the subscription works on a Saturday afternoon. An uptime figure quoted on a marketing page is worth nothing on its own — what matters is whether it is verifiable on a public status page refreshing minute-by-minute against real infrastructure. Providers that publish uptime live stand apart from those that only claim it.",
     what_to_look_for:
       "A public status page that refreshes automatically, plus service credits if uptime ever dips below the published number.",
     red_flag: "Treat any uptime claim with no live, verifiable status page as marketing copy.",

@@ -1,14 +1,11 @@
 import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
-import EvaluationCriteriaSection from "@/components/EvaluationCriteriaSection";
 import FeaturesSection from "@/components/FeaturesSection";
-import ComparisonSection from "@/components/ComparisonSection";
 import PricingSection from "@/components/PricingSection";
 import DevicesSection from "@/components/DevicesSection";
 import ChannelsSection from "@/components/ChannelsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
-import EvaluationMethodologySection from "@/components/EvaluationMethodologySection";
 import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
 import {
@@ -33,15 +30,12 @@ export default function HomePage() {
     <>
       <HeroSection />
       <StatsBar />
-      <EvaluationCriteriaSection />
       <FeaturesSection />
-      <ComparisonSection />
       <PricingSection />
       <DevicesSection />
       <ChannelsSection />
       <TestimonialsSection />
       <FAQSection />
-      <EvaluationMethodologySection />
       <TrustSection />
       <CTASection />
 
@@ -92,7 +86,7 @@ export default function HomePage() {
                   "@id": organizationId,
                 },
                 description:
-                  "UK IPTV subscription trusted by 50,000+ subscribers. 37,000 channels, 4K UHD, built-in VPN, UK support. 30-day refund on every plan.",
+                  "UK IPTV subscription with 37,000+ live channels, 198,000+ films and series, 4K UHD streaming, optional Secure Proxy add-on, and a 30-day money-back. Setup in under two minutes on Firestick, Smart TV or phone.",
               },
             ],
           }),
@@ -109,7 +103,7 @@ export default function HomePage() {
             url: SITE_URL,
             image: [logoUrl],
             description:
-              "UK IPTV subscription with 37,000+ live channels, 198,000+ on-demand titles, 4K UHD, five screens and a built-in VPN — from £3.75/month equivalent on the 24-month term.",
+              "UK IPTV subscription with 37,000+ live channels, 198,000+ on-demand titles, 4K UHD, five simultaneous streams and an optional Secure Proxy add-on — from £3.75/month equivalent on the 24-month term.",
             brand: { "@type": "Brand", name: SITE_NAME },
             offers: PRICING_PLANS.map((plan) => ({
               "@type": "Offer",
@@ -120,12 +114,6 @@ export default function HomePage() {
               itemCondition: "https://schema.org/NewCondition",
               url: `${SITE_URL}/#pricing`,
             })),
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "50000",
-              bestRating: "5",
-            },
           }),
         }}
       />
