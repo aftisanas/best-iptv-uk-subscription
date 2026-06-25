@@ -114,6 +114,7 @@ export const PRICING_PLANS = [
     name: "3 Months",
     subtitle: "The shortest commitment to test the full service",
     price: 25.99,
+    proxyPrice: 4.75,
     originalPrice: 49.99,
     perMonth: 8.66,
     period: "3 months",
@@ -141,6 +142,7 @@ export const PRICING_PLANS = [
     name: "6 Months",
     subtitle: "Six months of full-service 4K streaming",
     price: 39.99,
+    proxyPrice: 9.50,
     originalPrice: 69.99,
     perMonth: 6.66,
     period: "6 months",
@@ -168,6 +170,7 @@ export const PRICING_PLANS = [
     name: "12 Months",
     subtitle: "A full year of complete service at the lowest annual rate",
     price: 59.99,
+    proxyPrice: 19.00,
     originalPrice: 99.99,
     perMonth: 4.99,
     period: "year",
@@ -195,6 +198,7 @@ export const PRICING_PLANS = [
     name: "24 Months",
     subtitle: "Two years locked at the lowest monthly rate available",
     price: 89.99,
+    proxyPrice: 38.00,
     originalPrice: 199.99,
     perMonth: 3.75,
     period: "2 years",
@@ -505,16 +509,17 @@ export const WHATSAPP_NUMBER = "447878757831";
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
-export function buildWhatsAppCheckoutUrl({
-  planName,
-  planPrice,
-}: {
-  planName: string;
-  planPrice: number | string;
-}): string {
-  const message = `Hi Best IPTV UK team! I'd like to subscribe to:\n\nPlan: ${planName} — £${planPrice}\n\nPlease send me the next steps to complete payment.`;
-  return `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`;
-}
+export const EXTRA_CONNECTION_PRICE = 7.25;
+export const EXTRA_CONNECTIONS_MAX = 4;
+
+export const CHECKOUT_COPY = {
+  extraConnectionsLabel: "Extra Connections",
+  extraConnectionsHelp: "Add additional simultaneous streams beyond the 5 included with every plan.",
+  extraConnectionsPriceLabel: `+ £${(7.25).toFixed(2)} per extra connection`,
+  buttonLabelPrefix: "Confirm Order On WhatsApp",
+  buttonSubtitle: "Opens WhatsApp · UK support replies during peak hours",
+  footerNote: "Order details sent privately via WhatsApp",
+} as const;
 
 export const BLOG_POSTS = [
   {

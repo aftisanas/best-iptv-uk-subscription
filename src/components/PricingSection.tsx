@@ -281,6 +281,7 @@ export default function PricingSection() {
         onClose={() => setSelectedPlan(null)}
         planName={selectedPlan ? toAccessLabel(selectedPlan.name) : ""}
         planPrice={selectedPlan?.price ?? 0}
+        proxyPrice={selectedPlan?.proxyPrice ?? 0}
       />
     </section>
   );
