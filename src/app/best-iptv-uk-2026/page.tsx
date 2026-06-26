@@ -53,7 +53,7 @@ const faqItems: ReadonlyArray<SubPageFAQItem> = [
   {
     question: "What's a fair price for an annual IPTV subscription in the UK?",
     answer:
-      "The honest band in 2026 is £4 to £10 per month, billed annually or biennially. Below £3 a month suggests either an oversubscribed shared server or an unlicensed feed. Above £15 a month is reseller markup — the wholesale supply chain does not justify the price. Traditional UK pay-TV entry tiers sit at £15 to £18 per month for the base package and £40 to £100 with broadband and sport add-ons. A fair IPTV price compares on coverage at roughly a third of the cost. Annual and 24-month plans typically halve the per-month figure of the three-month plan.",
+      "The honest band in 2026 is £4 to £10 per month, billed annually or biennially. Below £3 a month suggests either an oversubscribed shared server or an unlicensed feed. Above £15 a month sits well above what the wholesale supply chain typically justifies. Traditional UK pay-TV entry tiers sit at £15 to £18 per month for the base package and £40 to £100 with broadband and sport add-ons. A fair IPTV price compares on coverage at roughly a third of the cost. Annual and 24-month plans typically halve the per-month figure of the three-month plan.",
   },
   {
     question: "Is 4K UHD really available on every plan, or just the top tier?",
@@ -172,8 +172,8 @@ export default function Page() {
           like vending machines. Lists of providers. Stars next to names. No
           criteria. We have spent the last 90 days testing this service against
           the same framework we would apply to any rival: 37,000+ channels live,
-          99.9% uptime published openly, refund window measured in weeks rather
-          than days. The seven criteria below are the ones that decide whether a
+          a published refund window measured in weeks rather than days, and UK
+          infrastructure tuned for peak-hour load. The seven criteria below are the ones that decide whether a
           UK household keeps a subscription or claims its refund. Read them in
           order. The provider rankings on every other guide on this topic only
           make sense once you have something to rank against.
@@ -310,15 +310,16 @@ export default function Page() {
           <Link href="/#pricing">the four subscription lengths</Link>.
         </p>
 
-        <h2>Uptime — How To Verify A Provider&apos;s 99.9% Claim</h2>
+        <h2>Uptime — How To Verify Any Provider's Reliability Claim</h2>
         <p>
-          99.9 percent uptime is the IPTV equivalent of &ldquo;fast
-          broadband&rdquo; — a phrase every operator uses and almost none of
-          them prove. The maths is worth running. 99.9 percent translates to a
-          maximum of 8 hours 45 minutes of downtime across a full year, or 43
-          minutes per month. If a provider advertises 99.9 percent and you
-          experience a single peak-time outage longer than 45 minutes inside
-          any 30-day window, the claim has already failed.
+          High-uptime promises are the IPTV equivalent of "fast
+          broadband" — a phrase every operator uses and almost none of
+          them prove. The maths is worth running. A typical "three-nines"
+          uptime claim translates to a maximum of around 8 hours 45 minutes
+          of downtime across a full year, or roughly 43 minutes per month. If a
+          provider advertises that level of reliability and you experience a
+          single peak-time outage longer than 45 minutes inside any 30-day
+          window, the claim has already failed.
         </p>
         <p>
           UK households feel uptime failure at predictable times. Peak demand
@@ -339,12 +340,12 @@ export default function Page() {
           incident history searchable by date.
         </p>
         <p>
-          This service publishes its 99.9 percent figure live on a public
-          status panel that refreshes each minute. Subscribers verify it before
-          purchase rather than after the first outage. The 30-day refund
-          window covers the scenario where the verified figure stops being
-          accurate. For the load patterns that separate stable services from
-          the rest, read{" "}
+          The honest answer for any buyer is this: hold the provider to the
+          refund window rather than the uptime number. The 30-day refund
+          window covers the scenario where real performance fails to match
+          the marketing copy, regardless of whether a status page exists.
+          For the load patterns that separate stable services from the rest,
+          read{" "}
           <Link href="/best-iptv-uk-vs-traditional-tv">
             how IPTV compares with traditional UK pay-TV
           </Link>
@@ -590,10 +591,10 @@ export default function Page() {
         <p>
           The other half of the answer is the publishing record. The seven
           criteria are auditable: the 37,000+ channel count sits on the
-          homepage, the 99.9 percent uptime is on the public status page, the
-          30-day refund is in the footer terms, the GBP-only pricing is on
-          every plan card. Nothing in the framework above is asserted without
-          the corresponding evidence sitting one click away.
+          homepage, the 30-day refund is in the footer terms, the GBP-only
+          pricing is on every plan card, and the Secure Proxy add-on pricing
+          is itemised at checkout. Nothing in the framework above is asserted
+          without the corresponding evidence sitting one click away.
         </p>
         <p>
           A direct service that hides its evidence is selling on hope. A

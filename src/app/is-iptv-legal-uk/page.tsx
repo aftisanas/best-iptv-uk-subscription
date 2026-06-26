@@ -114,13 +114,13 @@ export default function Page() {
     >
       <div className={proseClasses}>
         <p className="lead text-lg sm:text-xl text-foreground/90 font-medium leading-relaxed">
-          &ldquo;Is IPTV legal in the UK?&rdquo; is the right question asked
-          the wrong way. The technology is unambiguously legal. The content
-          delivered through it is where the law actually engages — and where
-          the buyer&apos;s risk sits. This guide separates the two cleanly,
-          sets out what UK law says about end users in 2026, and lists the
-          verification checks any buyer should run before paying for any IPTV
-          service.
+          IPTV technology is legal in the UK. The law engages with the content
+          distributed through it, and only at the operator level — not at the
+          subscriber level — under the Copyright, Designs and Patents Act
+          1988. This guide separates the technology question from the content
+          question, sets out what UK law says about end users in 2026, and
+          lists the verification checks any buyer should run before paying for
+          any IPTV service.
         </p>
 
         <h2>The Short Answer — IPTV Technology vs IPTV Content</h2>
@@ -377,9 +377,9 @@ export default function Page() {
           windows.
         </p>
         <p>
-          Payment is processed in GBP through regulated card and PayPal
-          routes. The 99.9 percent uptime figure is published live on a
-          public status page, verifiable before purchase.
+          Payment is processed in GBP through WhatsApp ordering with itemised
+          totals before any payment is taken. Order details and the Secure
+          Proxy add-on price are confirmed in the chat before checkout.
         </p>
         <p>
           What this section deliberately does not do is claim the service

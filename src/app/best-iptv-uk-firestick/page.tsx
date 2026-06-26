@@ -112,7 +112,7 @@ export default function Page() {
       slug={SLUG}
       title="Best IPTV For Fire Stick UK 2026 — Setup Guide & Service Criteria"
       category="Device Guide"
-      intro="The Fire Stick is the most popular IPTV device in UK homes in 2026, but the experience splits sharply between Fire Stick generations and between IPTV services. This guide covers which Fire Stick model handles 4K UHD without dropping mid-stream, the five-minute install using IPTV Smarters Pro, the five fixes that actually solve peak-hour buffering, and the buyer's-guide criteria filtered specifically for Fire Stick households. Written for UK viewers who already own a Fire Stick — or are about to buy one — and want a single IPTV service to load that won't fail on Saturday afternoon."
+      intro="Installing an IPTV service on an Amazon Fire Stick takes three steps and works on every Fire Stick generation from 2018 onward. This guide covers the three-step install using IPTV Smarters Pro, which Fire Stick model handles 4K UHD without dropping mid-stream, the five fixes that actually solve peak-hour buffering, and the buyer's-guide criteria filtered specifically for Fire Stick households. Written for UK viewers who already own a Fire Stick — or are about to buy one — and want a single IPTV service to load that won't fail on Saturday afternoon."
       byline={AUTHOR_BYLINE}
       readTime="9 min read"
       relatedGuides={relatedGuides}
@@ -120,8 +120,8 @@ export default function Page() {
     >
       <div className={proseClasses}>
         <p className="lead text-lg sm:text-xl text-foreground/90 font-medium leading-relaxed">
-          The Amazon Fire Stick is the device most UK IPTV buyers actually
-          own. It is also the device that changed most in 2026 — the new
+          The Amazon Fire Stick is one of the most common IPTV devices in UK
+          households. It is also the device that changed most in 2026 — the new
           Fire TV Stick HD (2nd generation) and Fire TV Stick 4K Select run
           Vega OS, and Vega OS does not support sideloading at all. That
           single hardware shift breaks half the install guides currently
@@ -131,7 +131,7 @@ export default function Page() {
           against the IPTV workload.
         </p>
 
-        <h2>Why Fire Stick Is the UK&apos;s Default IPTV Device</h2>
+        <h2>Why the Fire Stick Suits IPTV Households</h2>
         <p>
           The Fire Stick won UK IPTV through price and ubiquity. A Fire
           Stick HD sits at £34.99 — the lowest entry into 4K-capable
@@ -240,6 +240,29 @@ export default function Page() {
             compare IPTV subscription plans for the UK
           </Link>
           .
+        </p>
+
+        <h2>Three-Step Fire Stick Install</h2>
+        <ol className="space-y-3 my-6 list-decimal pl-6">
+          <li>
+            <strong>Open the Amazon Appstore on your Fire Stick</strong> and search for
+            <em> IPTV Smarters Pro</em> or <em>TiviMate</em>. Both are free downloads on every
+            Fire Stick generation from 2018 onward.
+          </li>
+          <li>
+            <strong>Install the app and open it.</strong> Choose the option to add an Xtream Codes
+            playlist (the format used by most modern UK IPTV services).
+          </li>
+          <li>
+            <strong>Enter the Server URL, Username, and Password</strong> from your welcome email.
+            The full channel guide loads in about two minutes; the first channel typically plays
+            within five minutes of starting the install.
+          </li>
+        </ol>
+        <p className="text-sm text-muted">
+          The three steps above cover the standard route. For Vega OS units that block sideloading,
+          and for households running an unsupported app, the next section breaks down all three
+          install methods in full.
         </p>
 
         <h2>Installing IPTV on Fire Stick — The Three Working Methods</h2>
@@ -373,7 +396,7 @@ export default function Page() {
           trade-offs.
         </p>
         <p>
-          <strong>Fire Stick.</strong> Lowest cost (£34-£60), widest app
+          <strong>Fire Stick.</strong> Lowest cost (£34-£60), an extensive app
           catalogue on Fire OS units, sideload route now limited to
           legacy hardware. The 4K Max remains the best all-round
           price-to-performance unit for IPTV. The Vega OS shift on 2026
