@@ -11,6 +11,7 @@ import CTASection from "@/components/CTASection";
 import {
   CONTACT_EMAIL,
   FAQ_ITEMS,
+  LOGO_PATH,
   PRICING_PLANS,
   SITE_NAME,
   SITE_URL,
@@ -23,7 +24,7 @@ export default function HomePage() {
   const websiteId = `${SITE_URL}/#website`;
   const webpageId = `${SITE_URL}/#webpage`;
   const productId = `${SITE_URL}/#product`;
-  const logoUrl = `${SITE_URL}/buy-iptv-uk.webp`;
+  const logoUrl = `${SITE_URL}${LOGO_PATH}`;
   const faqItems = FAQ_ITEMS.filter((item) => item.question !== EXCLUDED_FAQ_QUESTION);
 
   return (
