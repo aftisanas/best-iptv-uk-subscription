@@ -397,8 +397,8 @@ export const CHANNEL_CATEGORIES = [
     icon: "Globe" as const,
     channels:
       "Every major UK community is covered, with live feeds spanning Arabic, South Asian, Eastern European, African, Latin and Far-Eastern audiences in full HD. The sidebar filter groups feeds by country and language for quick switching.",
-    linkHref: "/#testimonials",
-    linkLabel: "Read subscriber reviews",
+    linkHref: "/#pricing",
+    linkLabel: "See plans with international feeds",
   },
 ] as const;
 
