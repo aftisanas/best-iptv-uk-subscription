@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BLOG_POSTS, SITE_URL, SITE_NAME, AUTHOR_BYLINE, REVIEWER_BYLINE, GUIDES_LINKS } from "@/lib/constants";
+import { BLOG_POSTS, SITE_URL, SITE_NAME, LOGO_PATH, AUTHOR_BYLINE, REVIEWER_BYLINE, GUIDES_LINKS } from "@/lib/constants";
 import BlogPostContent from "./BlogPostContent";
 
 const blogContent: Record<string, { content: string[] }> = {
@@ -104,7 +104,7 @@ export default async function BlogPostPage({ params }: { params: Promise<PagePar
       name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/buy-iptv-uk.webp`,
+        url: `${SITE_URL}${LOGO_PATH}`,
       },
     },
     mainEntityOfPage: {

@@ -17,7 +17,10 @@
       "Bash(npx tsc *)",
       "Bash(git *)",
       "WebFetch(domain:best-iptv-uk-subscription.com)",
-      "Bash(grep -n \"Edit A.2\\\\|A\\\\\\\\.2\\\\|Three-Step Fire Stick\\\\|reseller markup\\\\|Edit B\\\\|Edit C\\\\|Edit D\\\\|Edit E\\\\|Edit F\\\\|Edit G\\\\|Edit H\\\\|three-nines\\\\|Reliability Claim\\\\|llms.txt\" \"C:/Users/Anas/.claude/projects/D--iptv-lp-best-iptv-uk-subscription/fdfe9a8b-2797-4490-9a44-435d9f9ed5e4.jsonl\")"
+      "Bash(grep -n \"Edit A.2\\\\|A\\\\\\\\.2\\\\|Three-Step Fire Stick\\\\|reseller markup\\\\|Edit B\\\\|Edit C\\\\|Edit D\\\\|Edit E\\\\|Edit F\\\\|Edit G\\\\|Edit H\\\\|three-nines\\\\|Reliability Claim\\\\|llms.txt\" \"C:/Users/Anas/.claude/projects/D--iptv-lp-best-iptv-uk-subscription/fdfe9a8b-2797-4490-9a44-435d9f9ed5e4.jsonl\")",
+      "Read(//c/Users/Anas/.agents/skills/seo-audit/**)",
+      "Read(//c/Users/Anas/.claude/plugins/**)",
+      "WebSearch"
     ]
   }
 }

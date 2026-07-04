@@ -1,12 +1,12 @@
 export const SITE_NAME = "Best IPTV UK";
 export const SITE_URL = "https://best-iptv-uk-subscription.com";
+export const LOGO_PATH = "/best-iptv-subscription.webp";
 export const CONTACT_EMAIL = "contact@buy-iptv-uk.com";
 
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Why Us", href: "/#features" },
   { label: "Pricing", href: "/#pricing" },
-  { label: "Reviews", href: "/#testimonials" },
   { label: "FAQ", href: "/#faq" },
 ] as const;
 
@@ -397,8 +397,8 @@ export const CHANNEL_CATEGORIES = [
     icon: "Globe" as const,
     channels:
       "Every major UK community is covered, with live feeds spanning Arabic, South Asian, Eastern European, African, Latin and Far-Eastern audiences in full HD. The sidebar filter groups feeds by country and language for quick switching.",
-    linkHref: "/#testimonials",
-    linkLabel: "Read subscriber reviews",
+    linkHref: "/#pricing",
+    linkLabel: "See plans with international feeds",
   },
 ] as const;
 

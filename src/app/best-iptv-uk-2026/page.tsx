@@ -111,37 +111,6 @@ const proseClasses = [
   "hover:prose-a:underline prose-a:underline-offset-2",
 ].join(" ");
 
-const articleProvenanceSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Article",
-      "@id": `${CANONICAL}#article`,
-      citation: [
-        {
-          "@type": "CreativeWork",
-          name: "Media Nations 2025",
-          url: "https://www.ofcom.org.uk/research-and-data/tv-radio-and-on-demand/media-nations-reports",
-        },
-        {
-          "@type": "CreativeWork",
-          name: "Consumer Rights Act 2015",
-          url: "https://www.legislation.gov.uk/ukpga/2015/15/contents",
-        },
-        {
-          "@type": "CreativeWork",
-          name: "The Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013",
-          url: "https://www.legislation.gov.uk/uksi/2013/3134/contents",
-        },
-      ],
-      about: [
-        { "@type": "Thing", name: "IPTV" },
-        { "@type": "Thing", name: "United Kingdom" },
-      ],
-    },
-  ],
-};
-
 export default function Page() {
   return (
     <>
@@ -154,6 +123,24 @@ export default function Page() {
       readTime="12 min read"
       relatedGuides={relatedGuides}
       faqItems={faqItems}
+      citations={[
+        {
+          name: "Media Nations 2025",
+          url: "https://www.ofcom.org.uk/research-and-data/tv-radio-and-on-demand/media-nations-reports",
+        },
+        {
+          name: "Consumer Rights Act 2015",
+          url: "https://www.legislation.gov.uk/ukpga/2015/15/contents",
+        },
+        {
+          name: "The Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013",
+          url: "https://www.legislation.gov.uk/uksi/2013/3134/contents",
+        },
+      ]}
+      aboutEntities={[
+        { name: "IPTV" },
+        { name: "United Kingdom" },
+      ]}
     >
       <div className={proseClasses}>
         <h2>What is IPTV UK in 2026?</h2>
@@ -606,10 +593,6 @@ export default function Page() {
         </p>
       </div>
     </SubPageShell>
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(articleProvenanceSchema) }}
-    />
     </>
   );
 }

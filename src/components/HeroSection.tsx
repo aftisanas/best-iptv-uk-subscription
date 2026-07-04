@@ -65,8 +65,8 @@ export default function HeroSection() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-[7.5rem] lg:pt-32 pb-12 md:pb-6 lg:pb-2 flex flex-col items-center text-center">
         {/* Headline — 2 lines, matches reference sizing */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 30 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-2"
         >

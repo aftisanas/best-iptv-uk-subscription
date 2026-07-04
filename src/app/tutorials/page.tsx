@@ -36,60 +36,6 @@ export default function TutorialsPage() {
   return (
     <>
       <TutorialsContent />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            name: "How to activate Best IPTV UK on Amazon Firestick",
-            description:
-              "Activate your Best IPTV UK subscription on Amazon Firestick / Fire TV using the Downloader app, IPTV Smarters Pro and your Xtream Codes credentials.",
-            totalTime: "PT5M",
-            supply: [
-              { "@type": "HowToSupply", name: "Amazon Firestick or Fire TV" },
-              { "@type": "HowToSupply", name: "Best IPTV UK welcome email credentials" },
-            ],
-            tool: [
-              { "@type": "HowToTool", name: "Downloader app (by AFTVnews)" },
-              { "@type": "HowToTool", name: "IPTV Smarters Pro" },
-            ],
-            step: [
-              {
-                "@type": "HowToStep",
-                position: 1,
-                name: "Allow unknown apps",
-                text: "Open Settings → My Fire TV → Developer Options and enable Apps from Unknown Sources.",
-              },
-              {
-                "@type": "HowToStep",
-                position: 2,
-                name: "Install Downloader",
-                text: "From the home screen use Find → Search, type Downloader and install it.",
-              },
-              {
-                "@type": "HowToStep",
-                position: 3,
-                name: "Download the player",
-                text: "In Downloader, enter https://www.iptvsmarters.com/download and press Go.",
-              },
-              {
-                "@type": "HowToStep",
-                position: 4,
-                name: "Install IPTV Smarters Pro",
-                text: "Let the download finish, then choose Install.",
-              },
-              {
-                "@type": "HowToStep",
-                position: 5,
-                name: "Sign in",
-                text: "Open IPTV Smarters Pro, choose Login with Xtream Codes API and enter the username, password and server URL from your Best IPTV UK welcome email.",
-              },
-            ],
-          }),
-        }}
-      />
     </>
   );
 }

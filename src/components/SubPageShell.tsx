@@ -7,7 +7,7 @@ import Link from "next/link";
 import ParticleBackground from "./ParticleBackground";
 import PricingSection from "./PricingSection";
 import CTASection from "./CTASection";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { LOGO_PATH, SITE_NAME, SITE_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export interface SubPageByline {
@@ -82,7 +82,7 @@ export default function SubPageShell({
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const canonicalUrl = `${SITE_URL}/${slug.replace(/^\/+/, "")}`;
-  const logoUrl = `${SITE_URL}/buy-iptv-uk.webp`;
+  const logoUrl = `${SITE_URL}${LOGO_PATH}`;
 
   const articleSchema = {
     "@type": "Article",
@@ -267,8 +267,8 @@ export default function SubPageShell({
 
           {/* H1 */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 30 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] text-white mb-5"
           >
