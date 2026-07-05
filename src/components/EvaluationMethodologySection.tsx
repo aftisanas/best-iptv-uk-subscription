@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { CheckCircle2, Calendar, Layers, FlaskConical } from "lucide-react";
 import Link from "next/link";
+import MotionReveal from "./MotionReveal";
 
 const methodologyPoints = [
   {
@@ -28,12 +26,7 @@ export default function EvaluationMethodologySection() {
       <div className="absolute inset-0 mesh-gradient" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10 lg:mb-12 max-w-3xl mx-auto"
-        >
+        <MotionReveal className="text-center mb-10 lg:mb-12 max-w-3xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-50 border border-violet-200 px-4 py-1.5 text-sm font-medium text-violet-700 mb-4">
             <FlaskConical className="h-4 w-4" />
             Editorial Methodology
@@ -46,18 +39,16 @@ export default function EvaluationMethodologySection() {
             The framework that underpins every page on this site, exposed in
             full so any UK buyer can apply the same test to a rival provider.
           </p>
-        </motion.div>
+        </MotionReveal>
 
         <div className="grid sm:grid-cols-3 gap-5 lg:gap-6">
           {methodologyPoints.map((point, i) => {
             const Icon = point.icon;
             return (
-              <motion.div
+              <MotionReveal
                 key={point.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
+                y={30}
+                delay={i * 0.08}
                 className="group relative flex flex-col rounded-2xl border border-violet-100/60 bg-white p-6 transition-all duration-500 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-100/40 premium-card"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-100 to-cyan-50">
@@ -69,18 +60,13 @@ export default function EvaluationMethodologySection() {
                 <p className="text-sm text-muted leading-relaxed">
                   {point.body}
                 </p>
-              </motion.div>
+              </MotionReveal>
             );
           })}
         </div>
 
         {/* Closing — anchors to /best-iptv-uk-2026 with the Section D row 5 anchor text */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mx-auto max-w-3xl text-center mt-12 lg:mt-14"
-        >
+        <MotionReveal className="mx-auto max-w-3xl text-center mt-12 lg:mt-14">
           <p className="text-base text-muted leading-relaxed">
             The full evaluation framework — every criterion expanded with what
             to look for, what to avoid, and how to verify each in five minutes —
@@ -95,7 +81,7 @@ export default function EvaluationMethodologySection() {
             competitor, or an unlicensed free stream alike. The criteria
             don&apos;t change between products.
           </p>
-        </motion.div>
+        </MotionReveal>
       </div>
     </section>
   );

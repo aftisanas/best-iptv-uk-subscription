@@ -8,6 +8,7 @@ import { AUTHOR_BYLINE, SITE_URL } from "@/lib/constants";
 
 const SLUG = "best-iptv-uk-2026";
 const CANONICAL = `${SITE_URL}/${SLUG}`;
+const PUBLISHED_DATE = "2026-06-09";
 
 // Title & description sourced from v2 plan Section C, page 3.1
 // (docs/best-iptv-research-and-plan-v2.md)
@@ -121,6 +122,7 @@ export default function Page() {
       intro="Choosing the best IPTV service in the UK in 2026 comes down to a small number of verifiable signals — total channel count, published uptime, refund window, 4K coverage, device breadth, transparent GBP pricing and named UK support. This guide walks through each criterion in turn, applies it to direct services and resellers, and explains what to verify on a provider's site before any card details are entered. It is built as a buyer's framework rather than a sales pitch: a clear way for any British household to test the claims of an IPTV subscription inside its 30-day refund window."
       byline={AUTHOR_BYLINE}
       readTime="12 min read"
+      publishedDate={PUBLISHED_DATE}
       relatedGuides={relatedGuides}
       faqItems={faqItems}
       citations={[
