@@ -1,9 +1,8 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Play, MessageCircle, Sparkles } from "lucide-react";
 import Link from "next/link";
 import SectionLink from "./SectionLink";
+import MotionReveal from "./MotionReveal";
+import MotionScaleIn from "./MotionScaleIn";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 export default function CTASection() {
@@ -40,21 +39,12 @@ export default function CTASection() {
       />
 
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <MotionReveal y={30}>
           {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-purple-400/20 bg-white/[0.07] backdrop-blur-md px-5 py-2 text-sm text-purple-300 mb-8"
-          >
+          <MotionScaleIn className="inline-flex items-center gap-2 rounded-full border border-purple-400/20 bg-white/[0.07] backdrop-blur-md px-5 py-2 text-sm text-purple-300 mb-8">
             <Sparkles className="h-4 w-4 text-cyan-400" />
             <span className="font-medium">Trusted UK IPTV Subscription</span>
-          </motion.div>
+          </MotionScaleIn>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
             Start Streaming In Under Two Minutes{" "}
@@ -98,7 +88,7 @@ export default function CTASection() {
           <p className="mt-8 text-sm text-gray-400">
             Questions before sign-up? Email contact@buy-iptv-uk.com — replies during peak hours.
           </p>
-        </motion.div>
+        </MotionReveal>
       </div>
     </section>
   );

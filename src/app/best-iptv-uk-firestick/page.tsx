@@ -8,6 +8,7 @@ import { AUTHOR_BYLINE, SITE_URL } from "@/lib/constants";
 
 const SLUG = "best-iptv-uk-firestick";
 const CANONICAL = `${SITE_URL}/${SLUG}`;
+const PUBLISHED_DATE = "2026-06-04";
 
 // Title & description sourced from v2 plan Section C, page 3.2
 const PAGE_TITLE = "Best IPTV For Fire Stick UK 2026 — Setup & Buyer's Guide";
@@ -115,6 +116,7 @@ export default function Page() {
       intro="Installing an IPTV service on an Amazon Fire Stick takes three steps and works on every Fire Stick generation from 2018 onward. This guide covers the three-step install using IPTV Smarters Pro, which Fire Stick model handles 4K UHD without dropping mid-stream, the five fixes that actually solve peak-hour buffering, and the buyer's-guide criteria filtered specifically for Fire Stick households. Written for UK viewers who already own a Fire Stick — or are about to buy one — and want a single IPTV service to load that won't fail on Saturday afternoon."
       byline={AUTHOR_BYLINE}
       readTime="9 min read"
+      publishedDate={PUBLISHED_DATE}
       relatedGuides={relatedGuides}
       faqItems={faqItems}
     >

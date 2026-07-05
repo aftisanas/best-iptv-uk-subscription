@@ -8,6 +8,7 @@ import { AUTHOR_BYLINE, SITE_URL } from "@/lib/constants";
 
 const SLUG = "best-iptv-uk-vs-traditional-tv";
 const CANONICAL = `${SITE_URL}/${SLUG}`;
+const PUBLISHED_DATE = "2026-06-04";
 
 // Title & description sourced from v2 plan Section C, page 3.4
 const PAGE_TITLE = "IPTV vs Traditional UK Pay-TV 2026 — Full Comparison";
@@ -114,6 +115,7 @@ export default function Page() {
       intro="Traditional UK pay-TV bundles cost the average household £80 to £110 a month once sport and cinema add-ons are layered on — between £1,500 and £1,800 a year. A modern UK IPTV subscription delivers a comparable channel mix for £5 to £15 a month. This guide compares the two categories line by line: monthly cost, channel count, picture quality, contract length, equipment, on-demand library and reliability under load. Written for UK households deciding whether to switch outright — or whether to run an IPTV service alongside an existing pay-TV box rather than replacing it."
       byline={AUTHOR_BYLINE}
       readTime="9 min read"
+      publishedDate={PUBLISHED_DATE}
       relatedGuides={relatedGuides}
       faqItems={faqItems}
     >

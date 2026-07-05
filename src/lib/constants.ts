@@ -11,6 +11,8 @@ export const NAV_LINKS = [
 ] as const;
 
 export const LEGAL_LINKS = [
+  { label: "About Us", href: "/about" },
+  { label: "Editorial Policy", href: "/editorial-policy" },
   { label: "Terms of Service", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "DMCA Policy", href: "/dmca" },
@@ -407,7 +409,7 @@ export const AUTHOR_BYLINE = {
   role: "Editorial Team",
   description: "Editorial coverage of UK IPTV services since 2023.",
   publishedDate: "2026-06-01",
-  updatedDate: "2026-06-01",
+  updatedDate: "2026-07-04",
 } as const;
 
 export const REVIEWER_BYLINE = {

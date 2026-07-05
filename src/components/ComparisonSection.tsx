@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Check, Minus, AlertTriangle, Scale } from "lucide-react";
 import Link from "next/link";
+import MotionReveal from "./MotionReveal";
 import { COMPARISON_ROWS } from "@/lib/constants";
 
 const renderCell = (value: string, kind: "ours" | "typical" | "unlicensed") => {
@@ -68,12 +66,7 @@ export default function ComparisonSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header — H2 + 120-word intro ABOVE the table */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10 lg:mb-12 max-w-4xl mx-auto"
-        >
+        <MotionReveal className="text-center mb-10 lg:mb-12 max-w-4xl mx-auto">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-50 border border-violet-200 px-4 py-1.5 text-sm font-medium text-violet-700 mb-4">
             <Scale className="h-4 w-4" />
             Category Comparison
@@ -97,14 +90,11 @@ export default function ComparisonSection() {
             categories more than any specific brand name. Read down each column
             to apply the same framework.
           </p>
-        </motion.div>
+        </MotionReveal>
 
         {/* Table — preserves COMPARISON_ROWS structure unchanged */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+        <MotionReveal
+          delay={0.1}
           className="overflow-hidden rounded-2xl border border-violet-100/60 bg-white shadow-sm"
         >
           {/* Desktop / tablet table */}
@@ -180,14 +170,11 @@ export default function ComparisonSection() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </MotionReveal>
 
         {/* Three-paragraph close — reading each column down (~180 words) */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.15 }}
+        <MotionReveal
+          delay={0.15}
           className="mt-10 lg:mt-12 grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto"
         >
           <div className="rounded-xl border border-violet-100/60 bg-white p-5">
@@ -231,14 +218,11 @@ export default function ComparisonSection() {
               option fails on every column the table measures.
             </p>
           </div>
-        </motion.div>
+        </MotionReveal>
 
         {/* H3 — Why categories, not brands (~60 words) + cross-link to /best-iptv-uk-vs-traditional-tv */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+        <MotionReveal
+          delay={0.2}
           className="mt-10 lg:mt-12 max-w-3xl mx-auto rounded-2xl border border-violet-100/60 bg-white/70 backdrop-blur-sm p-6 lg:p-8"
         >
           <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3">
@@ -259,7 +243,7 @@ export default function ComparisonSection() {
             </Link>
             .
           </p>
-        </motion.div>
+        </MotionReveal>
       </div>
     </section>
   );

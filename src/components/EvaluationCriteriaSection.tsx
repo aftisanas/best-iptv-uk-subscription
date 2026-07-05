@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import {
   Tv,
   Activity,
@@ -14,6 +11,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import SectionLink from "./SectionLink";
+import MotionReveal from "./MotionReveal";
 import { EVALUATION_CRITERIA } from "@/lib/constants";
 
 const iconMap = {
@@ -33,12 +31,7 @@ export default function EvaluationCriteriaSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12 lg:mb-14"
-        >
+        <MotionReveal className="text-center mb-12 lg:mb-14">
           <span className="inline-block rounded-full bg-violet-50 border border-violet-200 px-4 py-1.5 text-sm font-medium text-violet-700 mb-4">
             Seven-Criteria Buyer&apos;s Framework
           </span>
@@ -62,19 +55,17 @@ export default function EvaluationCriteriaSection() {
             — the same test readers can apply to every rival, with one
             red-flag warning per criterion.
           </p>
-        </motion.div>
+        </MotionReveal>
 
         {/* Criteria grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {EVALUATION_CRITERIA.map((criterion, i) => {
             const Icon = iconMap[criterion.icon];
             return (
-              <motion.div
+              <MotionReveal
                 key={criterion.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
+                y={30}
+                delay={i * 0.05}
                 className="group relative flex flex-col rounded-2xl border border-violet-100/60 bg-white p-6 transition-all duration-500 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-100/40 premium-card"
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-50/40 to-cyan-50/15 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -122,18 +113,13 @@ export default function EvaluationCriteriaSection() {
                     </Link>
                   )}
                 </div>
-              </motion.div>
+              </MotionReveal>
             );
           })}
         </div>
 
         {/* Closing — anchors to pricing grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mx-auto max-w-3xl text-center mt-12 lg:mt-14"
-        >
+        <MotionReveal className="mx-auto max-w-3xl text-center mt-12 lg:mt-14">
           <p className="text-base text-muted leading-relaxed">
             All seven signals are checkable in five minutes on any provider&apos;s
             site — together they form the buyer&apos;s framework that separates
@@ -148,7 +134,7 @@ export default function EvaluationCriteriaSection() {
             shows how every plan on this service meets all seven, backed by the
             30-day refund window.
           </p>
-        </motion.div>
+        </MotionReveal>
       </div>
     </section>
   );

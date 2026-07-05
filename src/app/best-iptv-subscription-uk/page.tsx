@@ -8,6 +8,7 @@ import { AUTHOR_BYLINE, REVIEWER_BYLINE, SITE_URL } from "@/lib/constants";
 
 const SLUG = "best-iptv-subscription-uk";
 const CANONICAL = `${SITE_URL}/${SLUG}`;
+const PUBLISHED_DATE = "2026-06-04";
 
 // Title & description sourced from v2 plan Section C, page 3.3
 const PAGE_TITLE = "Best IPTV Subscription UK 2026 — Plans, Pricing, Criteria";
@@ -114,6 +115,7 @@ export default function Page() {
       byline={AUTHOR_BYLINE}
       reviewer={REVIEWER_BYLINE}
       readTime="10 min read"
+      publishedDate={PUBLISHED_DATE}
       relatedGuides={relatedGuides}
       faqItems={faqItems}
       citations={[

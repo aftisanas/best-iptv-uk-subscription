@@ -8,6 +8,7 @@ import { AUTHOR_BYLINE, SITE_URL } from "@/lib/constants";
 
 const SLUG = "is-iptv-legal-uk";
 const CANONICAL = `${SITE_URL}/${SLUG}`;
+const PUBLISHED_DATE = "2026-06-04";
 
 // Title & description sourced from v2 plan Section C, page 3.5
 const PAGE_TITLE = "Is IPTV Legal in the UK? 2026 Buyer's Guide";
@@ -109,6 +110,7 @@ export default function Page() {
       intro="IPTV technology is legal to use in the UK in 2026, but the legality of any specific service depends on what is being distributed and under what licensing arrangement. This guide separates the technology question from the content question, sets out what UK buyers should verify on a provider's site before paying, explains the end-user position in plain English, and lists six checks any household can run in five minutes. Written as a factual buyer's reference rather than a legal document — and deliberately avoids the unverifiable claims that signal a low-trust provider."
       byline={AUTHOR_BYLINE}
       readTime="7 min read"
+      publishedDate={PUBLISHED_DATE}
       relatedGuides={relatedGuides}
       faqItems={faqItems}
     >

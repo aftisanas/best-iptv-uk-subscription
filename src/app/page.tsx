@@ -40,7 +40,7 @@ export default function HomePage() {
       <TrustSection />
       <CTASection />
 
-      {/* JSON-LD Structured Data */}
+      {/* JSON-LD Structured Data — single @graph */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -55,6 +55,8 @@ export default function HomePage() {
                 logo: {
                   "@type": "ImageObject",
                   url: logoUrl,
+                  width: 1024,
+                  height: 1024,
                 },
                 contactPoint: {
                   "@type": "ContactPoint",
@@ -89,49 +91,38 @@ export default function HomePage() {
                 description:
                   "UK IPTV subscription with 37,000+ live channels, 198,000+ films and series, 4K UHD streaming, optional Secure Proxy add-on, and a 30-day money-back. Setup in under two minutes on Firestick, Smart TV or phone.",
               },
-            ],
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Product",
-            "@id": productId,
-            name: `${SITE_NAME} Subscription`,
-            url: SITE_URL,
-            image: [logoUrl],
-            description:
-              "UK IPTV subscription with 37,000+ live channels, 198,000+ on-demand titles, 4K UHD, five simultaneous streams and an optional Secure Proxy add-on — from £3.75/month equivalent on the 24-month term.",
-            brand: { "@type": "Brand", name: SITE_NAME },
-            offers: PRICING_PLANS.map((plan) => ({
-              "@type": "Offer",
-              name: `${plan.name} Plan`,
-              price: plan.price.toFixed(2),
-              priceCurrency: "GBP",
-              availability: "https://schema.org/InStock",
-              itemCondition: "https://schema.org/NewCondition",
-              url: `${SITE_URL}/#pricing`,
-            })),
-          }),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqItems.map((item) => ({
-              "@type": "Question",
-              name: item.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: item.answer,
+              {
+                "@type": "Product",
+                "@id": productId,
+                name: `${SITE_NAME} Subscription`,
+                url: SITE_URL,
+                image: [logoUrl],
+                description:
+                  "UK IPTV subscription with 37,000+ live channels, 198,000+ on-demand titles, 4K UHD, five simultaneous streams and an optional Secure Proxy add-on — from £3.75/month equivalent on the 24-month term.",
+                brand: { "@type": "Brand", name: SITE_NAME },
+                offers: PRICING_PLANS.map((plan) => ({
+                  "@type": "Offer",
+                  name: `${plan.name} Plan`,
+                  price: plan.price.toFixed(2),
+                  priceCurrency: "GBP",
+                  availability: "https://schema.org/InStock",
+                  itemCondition: "https://schema.org/NewCondition",
+                  url: `${SITE_URL}/#pricing`,
+                })),
               },
-            })),
+              {
+                "@type": "FAQPage",
+                "@id": `${SITE_URL}/#faq`,
+                mainEntity: faqItems.map((item) => ({
+                  "@type": "Question",
+                  name: item.question,
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: item.answer,
+                  },
+                })),
+              },
+            ],
           }),
         }}
       />
