@@ -67,11 +67,6 @@ const faqItems: ReadonlyArray<SubPageFAQItem> = [
       "The Consumer Contracts Regulations 2013 give UK buyers a 14-day cooling-off period by default for distance-sold services. Once digital content has been provided with the buyer's express consent, that right can be waived. A 30-day window doubles the legal minimum and is the buyer-friendly standard. Anything below 7 days is a red flag — the service has either been designed to fail quietly inside the refund period or the operator does not expect to honour claims. The procedure should run through email to a named support address, with the policy text published on the same page as the price.",
   },
   {
-    question: "Which device gives the best IPTV experience in the UK?",
-    answer:
-      "For most UK households, the Amazon Fire TV Stick 4K Max is the best value device for IPTV. The 2 GB of RAM and quad-core processor handle 4K HEVC streams without buffering, the Wi-Fi 6E radio extends usable range across a typical UK home, and the Amazon Appstore version of the standard IPTV app installs in under a minute. Apple TV 4K delivers a slightly cleaner interface at roughly five times the hardware cost. Smart TVs sold since 2018 with HEVC decode work well as a second screen, and a mobile device covers the on-the-move use case for live sport.",
-  },
-  {
     question: "What's the difference between a direct IPTV service and a reseller?",
     answer:
       "A direct service operates the streaming infrastructure — owns or contracts the servers, ingests the feeds, manages the transcoders and runs the support team in-house. A reseller buys credentials in bulk from an upstream operator and rebadges them. The practical differences are price (no second margin layered on), server response time (fewer other customers on the same hardware), and support latency (a reseller forwarding a ticket upstream adds 24 to 48 hours to every reply). Verifiable signals of a direct service: a UK contact address, a published status page, a named support team and a refund policy honoured without escalation.",

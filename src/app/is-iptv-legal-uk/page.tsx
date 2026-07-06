@@ -40,11 +40,6 @@ export const metadata: Metadata = {
 // FAQ — 5 Q&A pairs from drafts/is-iptv-legal-uk.md lines 97-115
 const faqItems: ReadonlyArray<SubPageFAQItem> = [
   {
-    question: "Is IPTV legal in the UK in 2026?",
-    answer:
-      "The technology itself is legal. The content distributed through it is regulated under the Copyright, Designs and Patents Act 1988 — an operator is acting lawfully on content terms only if it carries rights or licences for the feeds it distributes. Buyers cannot independently verify those arrangements, so the practical test runs on documentary signals: a registered UK entity, a refund policy meeting the 14-day Consumer Contracts Regulations 2013 floor, a working DMCA contact and GBP pricing through a regulated processor. Services failing these checks should be avoided regardless of price.",
-  },
-  {
     question: "Will I personally get in trouble for watching IPTV?",
     answer:
       "Risk depends on the source. Section 11 of the Fraud Act 2006 — obtaining services dishonestly — applies where a buyer pays for a service knowing it is not properly licensed. FACT and UK police sent warning notices to more than 1,000 end users in December 2025 after seizing customer data from an unlicensed operator. End users are not anonymous. Buying through a registered UK operator with documentary signals in place is materially different from buying through a Telegram-only seller.",
