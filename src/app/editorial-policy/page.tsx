@@ -67,7 +67,7 @@ const faqItems: SubPageFAQItem[] = [
   {
     question: "What happens if you get something wrong?",
     answer:
-      "Send factual corrections to contact@best-iptv-uk-subscription.com. Corrections that materially affect a claim (a specific price, a specific channel count, a specific legal citation) are applied within 5 working days and stamped with a dateModified update in the page schema. Editorial disagreements about framing or emphasis are not corrections.",
+      "Send factual corrections to contact@buy-iptv-uk.com. Corrections that materially affect a claim (a specific price, a specific channel count, a specific legal citation) are applied within 5 working days and stamped with a dateModified update in the page schema. Editorial disagreements about framing or emphasis are not corrections.",
   },
   {
     question: "Do you accept sponsored content or affiliate placements?",
@@ -182,8 +182,8 @@ export default function EditorialPolicyPage() {
       <p>
         Factual corrections take precedence over editorial disagreements. If a
         specific claim on the site is factually wrong, email{" "}
-        <a href="mailto:contact@best-iptv-uk-subscription.com">
-          contact@best-iptv-uk-subscription.com
+        <a href="mailto:contact@buy-iptv-uk.com">
+          contact@buy-iptv-uk.com
         </a>{" "}
         with the URL, the specific claim, and (where possible) a link to a
         primary source that contradicts it.
@@ -210,8 +210,8 @@ export default function EditorialPolicyPage() {
       <h2>Contact</h2>
       <p>
         Editorial contact for corrections, sources, or coverage suggestions:{" "}
-        <a href="mailto:contact@best-iptv-uk-subscription.com">
-          contact@best-iptv-uk-subscription.com
+        <a href="mailto:contact@buy-iptv-uk.com">
+          contact@buy-iptv-uk.com
         </a>
       </p>
       <p>

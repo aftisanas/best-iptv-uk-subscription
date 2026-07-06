@@ -88,8 +88,23 @@ export default function HomePage() {
                 about: {
                   "@id": organizationId,
                 },
+                breadcrumb: {
+                  "@id": `${SITE_URL}/#breadcrumb`,
+                },
                 description:
                   "UK IPTV subscription with 37,000+ live channels, 198,000+ films and series, 4K UHD streaming, optional Secure Proxy add-on, and a 30-day money-back. Setup in under two minutes on Firestick, Smart TV or phone.",
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": `${SITE_URL}/#breadcrumb`,
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: `${SITE_URL}/`,
+                  },
+                ],
               },
               {
                 "@type": "Product",
@@ -107,6 +122,7 @@ export default function HomePage() {
                   priceCurrency: "GBP",
                   availability: "https://schema.org/InStock",
                   itemCondition: "https://schema.org/NewCondition",
+                  priceValidUntil: "2027-07-05",
                   url: `${SITE_URL}/#pricing`,
                 })),
               },

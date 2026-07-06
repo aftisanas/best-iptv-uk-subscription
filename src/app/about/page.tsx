@@ -67,7 +67,7 @@ const faqItems: SubPageFAQItem[] = [
   {
     question: "How can I contact the editorial team?",
     answer:
-      "Editorial contact for corrections, sources or coverage suggestions: contact@best-iptv-uk-subscription.com. Commercial support for customers of the recommended service is handled separately via WhatsApp — the number is on every plan card and the contact page.",
+      "Editorial contact for corrections, sources or coverage suggestions: contact@buy-iptv-uk.com. Commercial support for customers of the recommended service is handled separately via WhatsApp — the number is on every plan card and the contact page.",
   },
   {
     question: "Do you take advertising or affiliate revenue?",
@@ -182,8 +182,8 @@ export default function AboutPage() {
       <h2>Contact</h2>
       <p>
         Editorial contact — corrections, sources, coverage suggestions:{" "}
-        <a href="mailto:contact@best-iptv-uk-subscription.com">
-          contact@best-iptv-uk-subscription.com
+        <a href="mailto:contact@buy-iptv-uk.com">
+          contact@buy-iptv-uk.com
         </a>
       </p>
       <p>
