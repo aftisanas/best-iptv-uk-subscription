@@ -266,6 +266,15 @@ export default function Page() {
           and for households running an unsupported app, the next section breaks down all three
           install methods in full.
         </p>
+        <div className="not-prose my-6 rounded-xl border border-violet-200 bg-violet-50/60 p-4">
+          <p className="text-sm text-foreground/90 leading-relaxed">
+            Looking for step-by-step Fire Stick setup instructions with screenshots and a
+            video?{" "}
+            <Link href="/tutorials/firestick" className="font-semibold text-violet-600 hover:text-violet-700">
+              See our Fire Stick setup tutorial →
+            </Link>
+          </p>
+        </div>
 
         <h2>Installing IPTV on Fire Stick — The Three Working Methods</h2>
         <p>

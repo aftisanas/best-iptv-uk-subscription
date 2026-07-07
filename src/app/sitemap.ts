@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { BLOG_POSTS, SITE_URL } from "@/lib/constants";
+import { TUTORIAL_DEVICES } from "@/lib/tutorial-content";
 
 // Stable per-route publication/update anchors. Bump only when the page's
 // content materially changes. Do not use new Date() here — a moving
@@ -87,5 +88,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...clusterRoutes, ...blogRoutes];
+  // Setup-guide hub (now indexable) + 12 dedicated device routes.
+  const tutorialRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${SITE_URL}/tutorials`,
+      lastModified: parseDate("2026-07-05"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...TUTORIAL_DEVICES.map((device) => ({
+      url: `${SITE_URL}/tutorials/${device.slug}`,
+      lastModified: parseDate("2026-07-05"),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
+
+  return [...staticRoutes, ...clusterRoutes, ...tutorialRoutes, ...blogRoutes];
 }

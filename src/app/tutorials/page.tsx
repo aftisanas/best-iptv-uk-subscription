@@ -1,41 +1,58 @@
 import type { Metadata } from "next";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { TUTORIAL_DEVICES } from "@/lib/tutorial-content";
 import TutorialsContent from "./TutorialsContent";
 
 const pageUrl = `${SITE_URL}/tutorials`;
 
+const PAGE_TITLE = "IPTV Setup Guides — 12 Devices Covered";
+const PAGE_DESCRIPTION =
+  "Step-by-step IPTV setup guides for 12 devices — Fire Stick, Samsung and LG Smart TV, Apple TV, Android, iPhone, Windows, Mac, Formuler, Roku and BuzzTV. Pick your device and follow the walkthrough.";
+
 export const metadata: Metadata = {
-  title: "Best IPTV UK Setup Guides — Activate On Any Device",
-  description:
-    "Step-by-step Best IPTV UK activation guides for Firestick, Smart TV (Samsung, LG), Android, iPhone, Apple TV, Windows and Mac. Post-purchase help for Best IPTV UK customers.",
+  title: { absolute: PAGE_TITLE },
+  description: PAGE_DESCRIPTION,
   alternates: { canonical: pageUrl },
-  // Post-purchase content — must not compete with the homepage for organic traffic.
-  robots: {
-    index: false,
-    follow: true,
-    googleBot: { index: false, follow: true },
-  },
   openGraph: {
-    type: "article",
+    type: "website",
     locale: "en_GB",
     siteName: SITE_NAME,
     url: pageUrl,
-    title: "Best IPTV UK Setup Guides — Activate On Any Device",
-    description:
-      "Step-by-step Best IPTV UK activation guides for Firestick, Smart TV, Android, iPhone, PC and Mac.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best IPTV UK Setup Guides — Activate On Any Device",
-    description:
-      "Step-by-step Best IPTV UK activation guides for every device — Firestick, Smart TV, Android, iPhone, PC and Mac.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
   },
 };
 
 export default function TutorialsPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    inLanguage: "en-GB",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    hasPart: TUTORIAL_DEVICES.map((d) => ({
+      "@type": "Article",
+      "@id": `${SITE_URL}/tutorials/${d.slug}#article`,
+      headline: `${d.displayName} — Step-by-Step Guide (2026)`,
+      url: `${SITE_URL}/tutorials/${d.slug}`,
+    })),
+  };
+
   return (
     <>
       <TutorialsContent />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
     </>
   );
 }
