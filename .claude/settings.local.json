@@ -27,7 +27,9 @@
       "Bash(command -v python3)",
       "Bash(python3 -c \"from PIL import Image; im=Image.open\\('public/best-iptv-subscription.webp'\\); print\\(f'{im.size[0]}x{im.size[1]}'\\)\")",
       "Bash(command -v python)",
-      "Bash(python -c \"from PIL import Image; im=Image.open\\('public/best-iptv-subscription.webp'\\); print\\(f'{im.size[0]}x{im.size[1]}'\\)\")"
+      "Bash(python -c \"from PIL import Image; im=Image.open\\('public/best-iptv-subscription.webp'\\); print\\(f'{im.size[0]}x{im.size[1]}'\\)\")",
+      "Bash(node -e \"console.log\\(require\\('./package.json'\\).dependencies.next\\)\")",
+      "Bash(git add *)"
     ]
   }
 }
