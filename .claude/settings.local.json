@@ -29,7 +29,16 @@
       "Bash(command -v python)",
       "Bash(python -c \"from PIL import Image; im=Image.open\\('public/best-iptv-subscription.webp'\\); print\\(f'{im.size[0]}x{im.size[1]}'\\)\")",
       "Bash(node -e \"console.log\\(require\\('./package.json'\\).dependencies.next\\)\")",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Read(//c/Users/Anas/.claude/skills/seo-audit/**)",
+      "Read(//c/Users/Anas/.claude/skills/seo/**)",
+      "Bash(curl -sSL -A \"Mozilla/5.0 SEO-Audit-Bot\" \"https://best-iptv-uk-subscription.com/llms.txt\" -o /tmp/llms.txt -w \"HTTP: %{http_code}\\\\nContent-Type: %{content_type}\\\\nSize: %{size_download}\\\\n\")",
+      "Read(//tmp/**)",
+      "Bash(curl -sSL -A \"Mozilla/5.0 SEO-Audit-Bot\" \"https://best-iptv-uk-subscription.com/\" -o /tmp/home.html -w \"HTTP: %{http_code}\\\\nSize: %{size_download}\\\\n\")",
+      "Bash(curl *)",
+      "Bash(grep -oE '<h1[^>]*>[^<]{0,200}' /tmp/fs.html)",
+      "PowerShell(npx tsc --noEmit)",
+      "PowerShell(npm run build)"
     ]
   }
 }

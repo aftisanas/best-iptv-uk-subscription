@@ -66,7 +66,7 @@ export const FEATURES = [
   {
     title: "Five Screens On One Subscription",
     description:
-      "Every plan includes 5 simultaneous streams on one account — split across Firestick, Smart TV, phone, laptop in any combination. Add Extra Connections at checkout for £7.25 per additional stream.",
+      "Every plan includes 5 simultaneous streams on one account — split across Firestick, Smart TV, phone, laptop in any combination. Add Extra Connections at checkout from £7.25 per additional stream, priced by plan length.",
     icon: "LayoutGrid" as const,
   },
   {
@@ -117,6 +117,7 @@ export const PRICING_PLANS = [
     subtitle: "The shortest commitment to test the full service",
     price: 25.99,
     proxyPrice: 4.75,
+    extraConnectionPrice: 7.25,
     originalPrice: 49.99,
     perMonth: 8.66,
     period: "3 months",
@@ -143,8 +144,9 @@ export const PRICING_PLANS = [
     tier: "Silver — Balanced Choice",
     name: "6 Months",
     subtitle: "Six months of full-service 4K streaming",
-    price: 39.99,
+    price: 35.99,
     proxyPrice: 9.50,
+    extraConnectionPrice: 14.50,
     originalPrice: 69.99,
     perMonth: 6.66,
     period: "6 months",
@@ -171,9 +173,10 @@ export const PRICING_PLANS = [
     tier: "Gold — Most Popular",
     name: "12 Months",
     subtitle: "A full year of complete service at the lowest annual rate",
-    price: 59.99,
+    price: 49.99,
     proxyPrice: 19.00,
-    originalPrice: 99.99,
+    extraConnectionPrice: 29.00,
+    originalPrice: 89.99,
     perMonth: 4.99,
     period: "year",
     devices: 5,
@@ -199,9 +202,10 @@ export const PRICING_PLANS = [
     tier: "Diamond — Elite",
     name: "24 Months",
     subtitle: "Two years locked at the lowest monthly rate available",
-    price: 89.99,
+    price: 79.99,
     proxyPrice: 38.00,
-    originalPrice: 199.99,
+    extraConnectionPrice: 58.00,
+    originalPrice: 159.99,
     perMonth: 3.75,
     period: "2 years",
     devices: 5,
@@ -511,13 +515,18 @@ export const WHATSAPP_NUMBER = "447878757831";
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
+/**
+ * Fallback only — extra-connection pricing is per plan (`PRICING_PLANS[].extraConnectionPrice`)
+ * because the add-on covers the whole term. Used when no plan is in context.
+ */
 export const EXTRA_CONNECTION_PRICE = 7.25;
 export const EXTRA_CONNECTIONS_MAX = 4;
 
 export const CHECKOUT_COPY = {
   extraConnectionsLabel: "Extra Connections",
   extraConnectionsHelp: "Add additional simultaneous streams beyond the 5 included with every plan.",
-  extraConnectionsPriceLabel: `+ £${(7.25).toFixed(2)} per extra connection`,
+  extraConnectionsPriceLabel: (price: number) =>
+    `+ £${price.toFixed(2)} per extra connection, for the full term`,
   buttonLabelPrefix: "Confirm Order On WhatsApp",
   buttonSubtitle: "Opens WhatsApp · UK support replies during peak hours",
   footerNote: "Order details sent privately via WhatsApp",
