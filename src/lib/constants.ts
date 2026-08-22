@@ -28,49 +28,49 @@ export const STATS = [
 
 export const FEATURES = [
   {
-    title: "37,000+ Live Channels With Full UK Coverage",
+    title: "Best IPTV UK: 37,000+ Live Channels With Full UK Coverage",
     description:
       "Full UK terrestrial, premium entertainment, sport, news, kids, and 17,000+ international feeds across 40+ languages. One subscription, every category — no gated tiers or extra channel packs.",
     icon: "Tv" as const,
   },
   {
-    title: "Built For Live UK Sports — Low Latency, 4K Where Available",
+    title: "Best IPTV UK For Live Sport — Low Latency, 4K Where Available",
     description:
       "Top-tier UK football, European cup nights, motorsport, combat sports and rugby all stream with low-latency delivery on UK infrastructure. Wherever the original broadcast is produced in 4K UHD, the feed reaches your screen at that quality.",
     icon: "Tv" as const,
   },
   {
-    title: "198,000 On-Demand Films & Series, Refreshed Daily",
+    title: "Best IPTV UK On-Demand — 198,000 Films & Series, Refreshed Daily",
     description:
       "The on-demand library holds 198,000 films and series, refreshed each day. Premium movie channels, world cinema, and international premiere feeds all browse inside the same app interface.",
     icon: "Film" as const,
   },
   {
-    title: "Five Screens On One Account — Built For UK Families",
+    title: "Best IPTV UK On Five Screens — Built For UK Families",
     description:
       "Five simultaneous screens mean parents, kids and grandparents watch on their own terms. Parental locks, safe-search and four-digit PINs come built in.",
     icon: "LayoutGrid" as const,
   },
   {
-    title: "Optional Secure Proxy Add-On — From £4.75/Term",
+    title: "Best IPTV UK Secure Proxy Add-On — From £4.75/Term",
     description:
       "An optional Secure Proxy add-on encrypts your stream traffic and reduces ISP-side filtering. Available at checkout from £4.75 per term, priced by plan length.",
     icon: "Shield" as const,
   },
   {
-    title: "Native 4K UHD On Every Plan — Adaptive Bitrate Built In",
+    title: "Best IPTV UK In Native 4K UHD — Adaptive Bitrate Built In",
     description:
       "Every plan streams 4K UHD on channels that broadcast in the format. Adaptive bitrate keeps the picture smooth if the line dips mid-stream.",
     icon: "Monitor" as const,
   },
   {
-    title: "Five Screens On One Subscription",
+    title: "Best IPTV UK On One Subscription, Five Screens",
     description:
       "Every plan includes 5 simultaneous streams on one account — split across Firestick, Smart TV, phone, laptop in any combination. Add Extra Connections at checkout from £7.25 per additional stream, priced by plan length.",
     icon: "LayoutGrid" as const,
   },
   {
-    title: "Reliable UK Infrastructure — Tuned For Peak Hours",
+    title: "Best IPTV UK Infrastructure — Tuned For Peak Hours",
     description:
       "Built on UK-focused infrastructure tuned for low-latency playback during peak evening hours and major event windows. Adaptive bitrate keeps the picture stable when broadband dips.",
     icon: "Activity" as const,
@@ -424,7 +424,7 @@ export const REVIEWER_BYLINE = {
 
 // Sub-page cluster links (v2 plan Section H — footer "Guides" column)
 export const GUIDES_LINKS = [
-  { label: "Best IPTV UK 2026 Buyer's Guide", href: "/best-iptv-uk-2026" },
+  { label: "How We Evaluate UK IPTV Providers", href: "/best-iptv-uk-2026" },
   { label: "Best IPTV Subscription UK", href: "/best-iptv-subscription-uk" },
   { label: "IPTV on Fire Stick UK", href: "/best-iptv-uk-firestick" },
   { label: "Is IPTV Legal in the UK?", href: "/is-iptv-legal-uk" },

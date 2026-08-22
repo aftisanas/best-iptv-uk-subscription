@@ -80,7 +80,7 @@ export default function HomePage() {
                 "@type": "WebPage",
                 "@id": webpageId,
                 url: SITE_URL,
-                name: "Best IPTV UK 2026 | Premium 4K UHD Streaming From £3.75/mo",
+                name: "Best IPTV UK 2026 | 4K UHD Streaming From £3.75/mo",
                 inLanguage: "en-GB",
                 isPartOf: {
                   "@id": websiteId,

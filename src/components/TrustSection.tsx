@@ -5,25 +5,25 @@ import MotionReveal from "./MotionReveal";
 const trustItems = [
   {
     icon: Shield,
-    title: "30-Day Full Refund Guarantee",
+    title: "Best IPTV UK 30-Day Full Refund Guarantee",
     description:
       "Contact support within 30 days of any purchase and every penny returns the same day. No forms, no retention calls, no fine-print excuses — the refund policy is published in plain English and applies to every first purchase.",
   },
   {
     icon: Wifi,
-    title: "Published Uptime — Verified Live",
+    title: "Best IPTV UK Published Uptime — Verified Live",
     description:
       "A public status page tracks uptime minute by minute. Credits apply automatically if the number ever dips below the promise — verifiable infrastructure rather than a marketing figure.",
   },
   {
     icon: Lock,
-    title: "Secure Proxy Add-On — Optional Privacy Layer",
+    title: "Best IPTV UK Secure Proxy — Optional Privacy Layer",
     description:
       "An optional Secure Proxy routes traffic through encrypted UK servers. No bandwidth cap, no logs, available on every plan tier. A comparable third-party privacy tool typically costs £5 – £10 a month.",
   },
   {
     icon: ServerCog,
-    title: "24/7 British Support Team",
+    title: "Best IPTV UK 24/7 British Support Team",
     description:
       "A British support team handles live chat, WhatsApp and email 24/7. Subscriber feedback covers real-world performance, picture stability and response times — the metrics that matter once the subscription goes live.",
   },
@@ -40,7 +40,7 @@ export default function TrustSection() {
             Four Hard Promises
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            The Subscription Guarantee &mdash;{" "}
+            The Best IPTV UK Guarantee &mdash;{" "}
             <span className="gradient-text">Four Promises We Publish In Writing</span>
           </h2>
           <p className="mx-auto max-w-xl text-lg text-muted">

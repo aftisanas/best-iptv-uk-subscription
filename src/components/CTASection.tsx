@@ -47,8 +47,8 @@ export default function CTASection() {
           </MotionScaleIn>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Start Streaming In Under Two Minutes{" "}
-            <span className="gradient-text-hero">— Built For UK Households</span>
+            Start With Best IPTV UK{" "}
+            <span className="gradient-text-hero">— Ready In Under Two Minutes</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-300/90 mb-10 leading-relaxed">
             The 24-month{" "}

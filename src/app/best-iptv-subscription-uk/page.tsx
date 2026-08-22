@@ -11,7 +11,7 @@ const CANONICAL = `${SITE_URL}/${SLUG}`;
 const PUBLISHED_DATE = "2026-06-04";
 
 // Title & description sourced from v2 plan Section C, page 3.3
-const PAGE_TITLE = "Best IPTV Subscription UK 2026 — Plans, Pricing, Criteria";
+const PAGE_TITLE = "IPTV Subscription UK — Plans, Pricing & Terms Compared";
 const PAGE_DESCRIPTION =
   "Compare UK IPTV subscription lengths and prices for 2026. Three, six, twelve and 24-month options. GBP pricing, 30-day refund, no hidden renewals.";
 
@@ -75,7 +75,7 @@ const faqItems: ReadonlyArray<SubPageFAQItem> = [
 // (outbound rows 16, 17, 18 from /best-iptv-subscription-uk, excl. home)
 const relatedGuides: ReadonlyArray<SubPageRelatedGuide> = [
   {
-    title: "Best IPTV UK 2026 — Seven-Criteria Buyer's Guide",
+    title: "How We Evaluate UK IPTV Providers — Seven-Criteria Framework",
     href: "/best-iptv-uk-2026",
     description:
       "The seven evaluation criteria — channel count, uptime, refund, 4K, devices, GBP pricing, UK support — expanded into a full buyer's framework.",
@@ -109,7 +109,7 @@ export default function Page() {
   return (
     <SubPageShell
       slug={SLUG}
-      title="Best IPTV Subscription UK 2026 — Plans, Pricing & Buyer's Criteria"
+      title="IPTV Subscription UK — Plans, Pricing and Terms Compared"
       category="Subscriptions"
       intro="A strong UK IPTV subscription in 2026 is more than a monthly price. Term length, refund window, payment method, cancellation behaviour and what's included in the base plan all separate the services worth subscribing to from the ones to walk away from. This guide compares UK IPTV subscription lengths from three months to 24, lays out the per-month cost across each tier in GBP, explains why one-off 'lifetime' deals are a scam signal, and applies the seven evaluation criteria specifically to subscriptions rather than features. Built for UK households deciding how long to commit."
       byline={AUTHOR_BYLINE}

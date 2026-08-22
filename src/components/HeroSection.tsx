@@ -66,7 +66,7 @@ export default function HeroSection() {
           <span className="text-white">Best IPTV UK — </span>
 
           <span className="text-white">Premium 4K Streaming<br /> For </span>
-          <span className="gradient-text-hero">British IPTV Viewers</span>
+          <span className="gradient-text-hero">British Homes</span>
         </h1>
 
         {/* Subtitle */}

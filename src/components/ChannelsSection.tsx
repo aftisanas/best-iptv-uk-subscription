@@ -16,7 +16,7 @@ export default function ChannelsSection() {
             37,000 Live Channels
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            The Complete UK Channel Line-Up{" "}
+            The Best IPTV UK Channel Line-Up{" "}
             <span className="gradient-text">Organised By Category</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted">

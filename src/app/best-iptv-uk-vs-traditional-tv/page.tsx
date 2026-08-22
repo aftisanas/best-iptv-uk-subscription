@@ -76,13 +76,13 @@ const faqItems: ReadonlyArray<SubPageFAQItem> = [
 // (outbound rows 19, 20, 21 from /best-iptv-uk-vs-traditional-tv, excl. home)
 const relatedGuides: ReadonlyArray<SubPageRelatedGuide> = [
   {
-    title: "Best IPTV UK 2026 — Seven-Criteria Buyer's Guide",
+    title: "How We Evaluate UK IPTV Providers — Seven-Criteria Framework",
     href: "/best-iptv-uk-2026",
     description:
       "The full 2026 buyer's guide — seven criteria a UK household can verify on any IPTV provider's site before paying for a subscription.",
   },
   {
-    title: "Best IPTV Subscription UK 2026 — Plans Compared",
+    title: "IPTV Subscription UK — Plans & Terms Compared",
     href: "/best-iptv-subscription-uk",
     description:
       "UK IPTV subscription options — three to 24-month plans, GBP pricing, refund windows and what should be included in a fair UK plan.",

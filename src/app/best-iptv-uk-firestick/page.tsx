@@ -76,13 +76,13 @@ const faqItems: ReadonlyArray<SubPageFAQItem> = [
 // as the cluster's trust anchor, per the pillar→firestick pattern in row 11)
 const relatedGuides: ReadonlyArray<SubPageRelatedGuide> = [
   {
-    title: "Best IPTV UK 2026 — Seven-Criteria Buyer's Guide",
+    title: "How We Evaluate UK IPTV Providers — Seven-Criteria Framework",
     href: "/best-iptv-uk-2026",
     description:
       "The seven UK IPTV evaluation criteria — channel count, uptime, refund, 4K, devices, GBP pricing, support — applied to every service worth considering.",
   },
   {
-    title: "Best IPTV Subscription UK 2026 — Plans Compared",
+    title: "IPTV Subscription UK — Plans & Terms Compared",
     href: "/best-iptv-subscription-uk",
     description:
       "Choose a subscription length — three, six, twelve or 24 months — and see the per-month GBP rate across each tier, with refund and renewal terms.",

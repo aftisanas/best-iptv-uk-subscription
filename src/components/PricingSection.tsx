@@ -17,7 +17,7 @@ export default function PricingSection() {
             Transparent GBP Pricing
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-5">
-            Subscription Pricing &mdash;{" "}
+            Best IPTV UK Pricing &mdash;{" "}
             <span className="gradient-text">Pick The Right Term Length</span>
           </h2>
           <p className="mx-auto max-w-2xl text-base text-muted leading-relaxed">

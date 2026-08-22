@@ -23,22 +23,12 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Best IPTV UK 2026 | Premium 4K UHD Streaming From £3.75/mo",
+    default: "Best IPTV UK 2026 | 4K UHD Streaming From £3.75/mo",
     template: "%s | Best IPTV UK",
   },
   description:
     "UK IPTV subscription with 37,000 channels, 4K UHD, optional Secure Proxy, 24/7 UK support. Compare plans and start watching today. 30-day refund.",
-  keywords: [
-    "iptv uk",
-    "uk iptv",
-    "iptv subscription uk",
-    "iptv provider uk",
-    "iptv service uk",
-    "iptv for firestick uk",
-    "iptv with vpn uk",
-    "british iptv",
-    "4k iptv uk",
-  ],
+  keywords: ["best iptv uk"],
   authors: [{ name: "Best IPTV UK" }],
   creator: "Best IPTV UK",
   applicationName: "Best IPTV UK",
@@ -67,13 +57,13 @@ export const metadata: Metadata = {
     locale: "en_GB",
     siteName: "Best IPTV UK",
     url: SITE_URL,
-    title: "Best IPTV UK 2026 — Premium 4K UHD Streaming For British Homes",
+    title: "Best IPTV UK 2026 — 4K UHD Streaming For British Homes",
     description:
       "A complete IPTV subscription for UK households: 37,000 channels, 4K UHD, optional Secure Proxy, UK servers, published uptime and a 30-day money-back promise.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best IPTV UK 2026 — Premium 4K UHD Streaming Service",
+    title: "Best IPTV UK 2026 — 4K UHD Streaming For British Homes",
     description:
       "37,000 channels, 4K UHD, optional Secure Proxy, five screens, 30-day guarantee. UK IPTV subscription with 24/7 support.",
   },

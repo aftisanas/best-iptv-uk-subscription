@@ -17,7 +17,7 @@ export default function DevicesSection() {
             Runs Everywhere
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            One Subscription, Every{" "}
+            Best IPTV UK On Every{" "}
             <span className="gradient-text">Device You Already Own</span>
           </h2>
           <p className="mx-auto max-w-xl text-lg text-muted">

@@ -66,13 +66,13 @@ const faqItems: ReadonlyArray<SubPageFAQItem> = [
 // added as the third sub-page sibling — informational like the legal page)
 const relatedGuides: ReadonlyArray<SubPageRelatedGuide> = [
   {
-    title: "Best IPTV UK 2026 — Seven-Criteria Buyer's Guide",
+    title: "How We Evaluate UK IPTV Providers — Seven-Criteria Framework",
     href: "/best-iptv-uk-2026",
     description:
       "The buyer's guide for 2026 — the seven criteria a UK household can verify on any provider's site before paying for an IPTV subscription.",
   },
   {
-    title: "Best IPTV Subscription UK 2026 — Plans Compared",
+    title: "IPTV Subscription UK — Plans & Terms Compared",
     href: "/best-iptv-subscription-uk",
     description:
       "View UK IPTV subscription plans — three to 24-month options, GBP pricing, refund and renewal terms, and what a fair UK plan includes.",
