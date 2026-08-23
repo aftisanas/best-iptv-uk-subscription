@@ -15,7 +15,6 @@ import {
 import {
   CHECKOUT_COPY,
   CHECKOUT_HUB_URL,
-  CONTACT_EMAIL,
   EXTRA_CONNECTIONS_MAX,
   PRICING_PLANS,
   SITE_SLUG,
@@ -116,7 +115,12 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
         if (data.available) {
           setAvailability({ state: "available" });
         } else {
-          setAvailability({ state: "unavailable", whatsappUrl: data.whatsappUrl ?? "" });
+          // `||` not `??`: the hub returns an empty string for a slug it does
+          // not recognise, and that must still degrade to WhatsApp.
+          setAvailability({
+            state: "unavailable",
+            whatsappUrl: data.whatsappUrl || LOCAL_WHATSAPP_URL,
+          });
         }
       })
       .catch((err) => {
@@ -208,7 +212,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
       });
       // Hub sometimes returns whatsapp-kind with an empty URL — treat that
       // as a hub degradation, not "no WhatsApp configured", and use the
-      // site's own number instead of falling through to the mailto branch.
+      // site's own number.
       switchToWhatsapp(response.whatsappUrl || LOCAL_WHATSAPP_URL);
       setSubmitting(false);
     } catch (err) {
@@ -243,8 +247,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
       currency: CURRENCY,
     });
 
-    const { whatsappUrl } = availability;
-    if (!whatsappUrl) return; // handled in render — Contact us fallback
+    const whatsappUrl = availability.whatsappUrl || LOCAL_WHATSAPP_URL;
 
     const separator = whatsappUrl.includes("?") ? "&" : "?";
     window.open(
@@ -723,28 +726,18 @@ function CtaArea({
     );
   }
 
-  // unavailable
-  if (availability.whatsappUrl) {
-    return (
-      <button
-        type="button"
-        onClick={onWhatsapp}
-        aria-label="Continue on WhatsApp"
-        className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-green-500 px-6 py-3.5 text-sm font-bold tracking-wide text-white transition-all hover:bg-green-600 hover:shadow-lg hover:shadow-green-500/30 active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-green-700 focus-visible:outline-offset-2"
-      >
-        <MessageCircle className="h-4 w-4" aria-hidden="true" />
-        Continue on WhatsApp
-      </button>
-    );
-  }
-
+  // unavailable — always WhatsApp. There is no third state: the probe, the
+  // hub response and the mid-flight path all guarantee a WhatsApp URL.
   return (
-    <a
-      href={`mailto:${CONTACT_EMAIL}`}
-      className="flex w-full items-center justify-center gap-2.5 rounded-xl border border-gray-200 bg-white px-6 py-3.5 text-sm font-bold tracking-wide text-foreground transition-colors hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2"
+    <button
+      type="button"
+      onClick={onWhatsapp}
+      aria-label="Continue on WhatsApp"
+      className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-green-500 px-6 py-3.5 text-sm font-bold tracking-wide text-white transition-all hover:bg-green-600 hover:shadow-lg hover:shadow-green-500/30 active:scale-[0.99] focus-visible:outline-2 focus-visible:outline-green-700 focus-visible:outline-offset-2"
     >
-      Contact us to complete your order
-    </a>
+      <MessageCircle className="h-4 w-4" aria-hidden="true" />
+      Continue on WhatsApp
+    </button>
   );
 }
 
