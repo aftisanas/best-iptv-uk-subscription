@@ -3,6 +3,21 @@ export const SITE_URL = "https://best-iptv-uk-subscription.com";
 export const LOGO_PATH = "/best-iptv-subscription.webp";
 export const CONTACT_EMAIL = "contact@buy-iptv-uk.com";
 
+/** Identifies this site to the shared checkout hub. Must match the hub's store config. */
+export const SITE_SLUG = "best-iptv-uk-subscription";
+
+export const CHECKOUT_HUB_URL =
+  process.env.NEXT_PUBLIC_CHECKOUT_HUB_URL ?? "https://checkout.british-iptv-4k.com";
+
+/**
+ * "whatsapp" keeps the existing modal -> wa.me flow.
+ * "hub" routes plan CTAs to /checkout and calls the hub (Shopify) with a
+ * WhatsApp fallback when no store is available.
+ */
+export const CHECKOUT_MODE = (process.env.NEXT_PUBLIC_CHECKOUT_MODE ?? "whatsapp") as
+  | "whatsapp"
+  | "hub";
+
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Why Us", href: "/#features" },
@@ -514,6 +529,8 @@ export const EVALUATION_CRITERIA = [
 export const WHATSAPP_NUMBER = "447878757831";
 
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+export const WHATSAPP_DISPLAY = "+44 7878 757831";
 
 /**
  * Fallback only — extra-connection pricing is per plan (`PRICING_PLANS[].extraConnectionPrice`)

@@ -1,18 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Check, Star, Crown, Gem, Award, Medal } from "lucide-react";
-import { PRICING_PLANS } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { CHECKOUT_MODE, PRICING_PLANS } from "@/lib/constants";
+import { cn, toAccessLabel } from "@/lib/utils";
 import OrderSummaryModal from "./OrderSummaryModal";
 
 type PricingPlan = (typeof PRICING_PLANS)[number];
-
-const toAccessLabel = (planName: string) => {
-  const match = planName.match(/^(\d+)\s+Months?$/i);
-  return match ? `${match[1]}-Month Access` : `${planName} Access`;
-};
 
 const tierMeta: Record<string, {
   icon: React.ElementType;
@@ -87,8 +83,19 @@ const tierMeta: Record<string, {
 };
 
 export default function PricingPlansInteractive() {
+  const router = useRouter();
   const [hoveredPlan, setHoveredPlan] = useState<string | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<PricingPlan | null>(null);
+
+  // "hub" sends the buyer to the full /checkout flow (email capture -> Shopify,
+  // WhatsApp fallback). "whatsapp" keeps the original modal -> wa.me path.
+  const handleChoosePlan = (plan: PricingPlan) => {
+    if (CHECKOUT_MODE === "hub") {
+      router.push(`/checkout?plan=${plan.id}`);
+      return;
+    }
+    setSelectedPlan(plan);
+  };
 
   return (
     <>
@@ -215,7 +222,7 @@ export default function PricingPlansInteractive() {
                 {/* CTA Button */}
                 <button
                   type="button"
-                  onClick={() => setSelectedPlan(plan)}
+                  onClick={() => handleChoosePlan(plan)}
                   aria-label={`Choose ${plan.tier} plan — ${plan.name}`}
                   className={cn(
                     "flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-bold transition-all active:scale-[0.98] w-full",
