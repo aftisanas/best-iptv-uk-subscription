@@ -7,7 +7,7 @@ const pageUrl = `${SITE_URL}/tutorials`;
 
 const PAGE_TITLE = "IPTV Setup Guides — 12 Devices Covered";
 const PAGE_DESCRIPTION =
-  "Step-by-step IPTV setup guides for 12 devices — Fire Stick, Samsung and LG Smart TV, Apple TV, Android, iPhone, Windows, Mac, Formuler, Roku and BuzzTV. Pick your device and follow the walkthrough.";
+  "Step-by-step IPTV setup guides for 12 devices — Fire Stick, Samsung, LG, Apple TV, Android, iPhone, Windows, Mac, Formuler, Roku and BuzzTV.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

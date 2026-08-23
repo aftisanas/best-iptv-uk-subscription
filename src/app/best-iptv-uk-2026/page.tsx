@@ -14,7 +14,7 @@ const PUBLISHED_DATE = "2026-06-09";
 // (docs/best-iptv-research-and-plan-v2.md)
 const PAGE_TITLE = "How We Evaluate UK IPTV Providers — 7-Criteria Framework";
 const PAGE_DESCRIPTION =
-  "The seven criteria we apply to every UK IPTV provider before recommending one: channel count, published uptime, refund window, 4K coverage, device breadth, GBP pricing and named support.";
+  "The seven criteria we apply to every UK IPTV provider: channel count, uptime, refund window, 4K coverage, device breadth and GBP pricing.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Tv, Smartphone, Monitor, Flame, Box, Airplay } from "lucide-react";
 import SectionLink from "./SectionLink";
 import MotionReveal from "./MotionReveal";
@@ -35,17 +36,35 @@ export default function DevicesSection() {
               <MotionScaleCard
                 key={device.name}
                 delay={i * 0.05}
-                className="group flex flex-col items-center gap-4 rounded-2xl border border-violet-100/50 bg-white p-6 transition-all duration-300 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-100/40 cursor-default"
+                className="group rounded-2xl border border-violet-100/50 bg-white transition-all duration-300 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-100/40"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-100 to-cyan-50 transition-all group-hover:from-violet-200/80 group-hover:to-cyan-100/50 group-hover:shadow-md group-hover:shadow-violet-200/30">
-                  <Icon className="h-7 w-7 text-violet-600 transition-colors group-hover:text-purple-600" />
-                </div>
-                <span className="text-sm font-medium text-muted text-center transition-colors group-hover:text-foreground">
-                  {device.name}
-                </span>
+                <Link
+                  href={`/tutorials/${device.tutorialSlug}`}
+                  className="flex h-full flex-col items-center gap-4 rounded-2xl p-6 focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2"
+                  aria-label={`IPTV setup guide for ${device.name}`}
+                >
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-100 to-cyan-50 transition-all group-hover:from-violet-200/80 group-hover:to-cyan-100/50 group-hover:shadow-md group-hover:shadow-violet-200/30">
+                    <Icon className="h-7 w-7 text-violet-600 transition-colors group-hover:text-purple-600" />
+                  </div>
+                  <span className="text-sm font-medium text-muted text-center transition-colors group-hover:text-foreground">
+                    {device.name}
+                  </span>
+                  <span className="text-xs font-semibold text-violet-600 opacity-0 transition-opacity group-hover:opacity-100">
+                    Setup guide →
+                  </span>
+                </Link>
               </MotionScaleCard>
             );
           })}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/tutorials"
+            className="inline-flex items-center gap-2 rounded-xl border border-violet-200 bg-white px-6 py-3 text-sm font-semibold text-violet-700 transition-colors hover:bg-violet-50 focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2"
+          >
+            See all 12 device setup guides →
+          </Link>
         </div>
       </div>
     </section>

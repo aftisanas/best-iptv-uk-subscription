@@ -12,7 +12,7 @@ const PUBLISHED_DATE = "2026-06-04";
 
 const PAGE_TITLE = "Editorial Policy — Best IPTV UK";
 const PAGE_DESCRIPTION =
-  "Our editorial standards, evaluation methodology, corrections policy and contact route for factual disputes. How Best IPTV UK Editorial researches, cites and updates every guide.";
+  "Our editorial standards, evaluation methodology, corrections policy and contact route for factual disputes on every Best IPTV UK guide.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },

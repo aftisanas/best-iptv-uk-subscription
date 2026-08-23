@@ -14,6 +14,22 @@ export const CHECKOUT_HUB_URL =
  * "hub" routes plan CTAs to /checkout and calls the hub (Shopify) with a
  * WhatsApp fallback when no store is available.
  */
+/**
+ * Shared social preview. Next.js shallow-merges `metadata`, so a page that
+ * declares its own `openGraph` block does NOT inherit this from layout.tsx —
+ * every page must spread it explicitly.
+ *
+ * TODO: swap LOGO_PATH for a purpose-built 1200x630 asset, then wire into the
+ * openGraph + twitter blocks of all 13 pages. Not wired yet: the current logo
+ * is 1024x1024 and would centre-crop badly in a summary_large_image card.
+ */
+export const OG_IMAGE = {
+  url: LOGO_PATH,
+  width: 1024,
+  height: 1024,
+  alt: SITE_NAME,
+} as const;
+
 export const CHECKOUT_MODE = (process.env.NEXT_PUBLIC_CHECKOUT_MODE ?? "whatsapp") as
   | "whatsapp"
   | "hub";
@@ -243,64 +259,16 @@ export const PRICING_PLANS = [
   },
 ] as const;
 
-export const TESTIMONIALS = [
-  {
-    name: "Oliver B.",
-    location: "Sheffield",
-    text: "Tried three rival IPTV services before this one. None came close on sports lag. The football picture is cleaner here than the old satellite dish ever was.",
-    rating: 5,
-    avatar: "OB",
-    since: "September 2025",
-  },
-  {
-    name: "Hannah W.",
-    location: "Nottingham",
-    text: "Our family WhatsApp group all agreed after a week. Five screens, all 4K, zero freeze even during cup final weekend.",
-    rating: 5,
-    avatar: "HW",
-    since: "January 2026",
-  },
-  {
-    name: "Daniel O.",
-    location: "Belfast",
-    text: "Added the Secure Proxy at checkout after my old IPTV was throttled by the ISP. Picture has been clean ever since — well worth the small add-on cost.",
-    rating: 5,
-    avatar: "DO",
-    since: "February 2026",
-  },
-  {
-    name: "Zara M.",
-    location: "Southampton",
-    text: "Recommended by a friend after researching the market for a month. The recommendation was accurate — support replied on live chat in 90 seconds at 11pm.",
-    rating: 5,
-    avatar: "ZM",
-    since: "November 2025",
-  },
-  {
-    name: "Lewis P.",
-    location: "Swansea",
-    text: "Switched from a reseller after reading reviews. The direct service is cheaper, faster and the channel list is twice the size.",
-    rating: 5,
-    avatar: "LP",
-    since: "December 2025",
-  },
-  {
-    name: "Nadia R.",
-    location: "Aberdeen",
-    text: "A solid family choice. Kids' channels in HD for the children, rolling news for the grandparents, premium film channels for the parents. Everyone wins.",
-    rating: 5,
-    avatar: "NR",
-    since: "March 2026",
-  },
-] as const;
-
+// `tutorialSlug` maps each homepage device card to its /tutorials/<slug> guide.
+// Where a card covers more than one guide (Smart TV, Android/iOS, Windows/Mac)
+// it points at the highest-volume of the pair.
 export const DEVICES = [
-  { name: "Amazon Fire Stick", icon: "Flame" as const },
-  { name: "Smart TV", icon: "Tv" as const },
-  { name: "Android / iOS", icon: "Smartphone" as const },
-  { name: "Windows / Mac", icon: "Monitor" as const },
-  { name: "IPTV Box / MAG", icon: "Box" as const },
-  { name: "Apple TV", icon: "Airplay" as const },
+  { name: "Amazon Fire Stick", icon: "Flame" as const, tutorialSlug: "firestick" },
+  { name: "Smart TV", icon: "Tv" as const, tutorialSlug: "samsung-tv" },
+  { name: "Android / iOS", icon: "Smartphone" as const, tutorialSlug: "android-phone" },
+  { name: "Windows / Mac", icon: "Monitor" as const, tutorialSlug: "windows-pc" },
+  { name: "IPTV Box / MAG", icon: "Box" as const, tutorialSlug: "formuler" },
+  { name: "Apple TV", icon: "Airplay" as const, tutorialSlug: "apple-tv" },
 ] as const;
 
 export const FAQ_ITEMS = [

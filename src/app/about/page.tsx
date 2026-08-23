@@ -12,7 +12,7 @@ const PUBLISHED_DATE = "2026-06-04";
 
 const PAGE_TITLE = "About Best IPTV UK Editorial";
 const PAGE_DESCRIPTION =
-  "Who runs Best IPTV UK Editorial, what the site covers, and how it stays independent from the commercial IPTV market. UK editorial team covering IPTV since 2026.";
+  "Who runs Best IPTV UK Editorial, what we cover, and how the site stays independent from the commercial IPTV market.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },
