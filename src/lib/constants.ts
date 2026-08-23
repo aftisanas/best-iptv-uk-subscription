@@ -411,7 +411,7 @@ export const CHANNEL_CATEGORIES = [
 export const AUTHOR_BYLINE = {
   name: "Best IPTV UK Editorial",
   role: "Editorial Team",
-  description: "Editorial coverage of UK IPTV services since 2023.",
+  description: "Editorial coverage of UK IPTV services since 2026.",
   publishedDate: "2026-06-01",
   updatedDate: "2026-07-04",
 } as const;

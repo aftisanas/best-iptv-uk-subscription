@@ -18,7 +18,7 @@ export default function Footer() {
               <div className="relative h-12 w-12 shrink-0">
                 <Image
                   src="/best-iptv-subscription.webp"
-                  alt="Best IPTV Subscription logo"
+                  alt="Best IPTV UK logo"
                   fill
                   sizes="48px"
                   loading="lazy"

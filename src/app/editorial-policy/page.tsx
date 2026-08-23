@@ -87,7 +87,7 @@ export default function EditorialPolicyPage() {
       slug={SLUG}
       title="Editorial Policy"
       category="Editorial Standards"
-      intro="Best IPTV UK Editorial covers the UK IPTV market since 2023. This page documents the standards applied when researching, citing, evaluating and updating every guide on the site. It is the framework any reader can hold us to."
+      intro="Best IPTV UK Editorial covers the UK IPTV market since 2026. This page documents the standards applied when researching, citing, evaluating and updating every guide on the site. It is the framework any reader can hold us to."
       byline={AUTHOR_BYLINE}
       readTime="6 min read"
       relatedGuides={relatedGuides}

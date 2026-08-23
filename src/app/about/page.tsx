@@ -12,7 +12,7 @@ const PUBLISHED_DATE = "2026-06-04";
 
 const PAGE_TITLE = "About Best IPTV UK Editorial";
 const PAGE_DESCRIPTION =
-  "Who runs Best IPTV UK Editorial, what the site covers, and how it stays independent from the commercial IPTV market. UK editorial team covering IPTV since 2023.";
+  "Who runs Best IPTV UK Editorial, what the site covers, and how it stays independent from the commercial IPTV market. UK editorial team covering IPTV since 2026.";
 
 export const metadata: Metadata = {
   title: { absolute: PAGE_TITLE },
@@ -62,7 +62,7 @@ const faqItems: SubPageFAQItem[] = [
   {
     question: "How long have you been publishing?",
     answer:
-      "Since late 2023. Coverage started with the legal-framework work at /is-iptv-legal-uk, expanded through 2024 into device-specific setup guides, and formalised in 2026 into the seven-criteria buyer's framework used across the current cluster.",
+      "Since 2026. Coverage began with the legal-framework work at /is-iptv-legal-uk, expanded into device-specific setup guides across twelve platforms, and is organised around the seven-criteria evaluation framework applied throughout the guide cluster.",
   },
   {
     question: "How can I contact the editorial team?",
@@ -82,7 +82,7 @@ export default function AboutPage() {
       slug={SLUG}
       title="About Best IPTV UK Editorial"
       category="About"
-      intro="Best IPTV UK Editorial is a UK-based editorial team covering the IPTV market since late 2023. This page explains who runs the site, what we cover, and how the framework applied to every guide is designed to be replicable by any reader."
+      intro="Best IPTV UK Editorial is a UK-based editorial team covering the IPTV market since 2026. This page explains who runs the site, what we cover, and how the framework applied to every guide is designed to be replicable by any reader."
       byline={AUTHOR_BYLINE}
       readTime="4 min read"
       relatedGuides={relatedGuides}

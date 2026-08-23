@@ -48,7 +48,7 @@ export default function Navbar() {
               <div className="relative h-12 w-12 lg:h-14 lg:w-14 shrink-0">
                 <Image
                   src="/best-iptv-subscription.webp"
-                  alt="Best IPTV Subscription logo"
+                  alt="Best IPTV UK logo"
                   fill
                   sizes="(min-width: 1024px) 56px, 48px"
                   className="object-contain drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]"
