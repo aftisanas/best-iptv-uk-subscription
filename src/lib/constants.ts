@@ -271,7 +271,7 @@ export const FAQ_ITEMS = [
   {
     question: "What should I look for when choosing an IPTV service in 2026?",
     answer:
-      "Three measurable signals matter: total channel count (this service offers 37,000+ channels with full UK coverage), published uptime, and a refund window that lets you test before committing (30 days, full refund). Together they tell you whether a provider stands behind its service.",
+      "Three measurable signals matter: total channel count (this service offers 37,000+ channels with full UK coverage), 4K coverage that is not gated behind the top tier, and a refund window that lets you test before committing (30 days, full refund). Together they tell you whether a provider stands behind its service.",
   },
   {
     question: "How does an IPTV subscription compare with traditional UK pay-TV?",
@@ -296,7 +296,7 @@ export const FAQ_ITEMS = [
   {
     question: "How can I verify the service before subscribing?",
     answer:
-      "Read the public uptime page, compare the channel count against rivals, and review the 30-day refund policy. Every claim published on this page is verifiable before purchase, and the full refund window lets you test the actual service risk-free.",
+      "Compare the channel count against rivals, check that 4K is enabled on every plan tier rather than gated to the most expensive one, and review the 30-day refund policy. The refund window is the practical test: subscribe, use the service properly, and claim a full refund inside 30 days if it does not hold up.",
   },
   {
     question: "Is there a free trial?",

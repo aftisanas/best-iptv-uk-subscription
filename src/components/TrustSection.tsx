@@ -11,9 +11,9 @@ const trustItems = [
   },
   {
     icon: Wifi,
-    title: "Best IPTV UK Published Uptime — Verified Live",
+    title: "Best IPTV UK 4K On Every Plan — Never Gated",
     description:
-      "A public status page tracks uptime minute by minute. Credits apply automatically if the number ever dips below the promise — verifiable infrastructure rather than a marketing figure.",
+      "Native 4K UHD is enabled on every plan tier, not reserved for the most expensive one. Streams adapt bitrate in real time, so the picture holds when a line dips mid-stream instead of freezing — and the pricing table is the proof, checkable before payment.",
   },
   {
     icon: Lock,
