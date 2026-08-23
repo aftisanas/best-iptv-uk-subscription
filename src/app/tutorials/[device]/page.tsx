@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { AUTHOR_BYLINE, SITE_NAME, SITE_URL, LOGO_PATH } from "@/lib/constants";
+import { AUTHOR_BYLINE, SITE_NAME, SITE_URL, LOGO_PATH, OG_IMAGE } from "@/lib/constants";
 import { TUTORIAL_DEVICES } from "@/lib/tutorial-content";
 import DeviceTutorialContent from "./DeviceTutorialContent";
 
@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: device.metaDescription,
     alternates: { canonical },
     openGraph: {
+      images: [OG_IMAGE],
       type: "article",
       locale: "en_GB",
       url: canonical,
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       authors: [AUTHOR_BYLINE.name],
     },
     twitter: {
+      images: [OG_IMAGE.url],
       card: "summary_large_image",
       title: device.metaTitle,
       description: device.metaDescription,

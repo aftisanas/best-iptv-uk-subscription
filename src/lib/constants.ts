@@ -15,19 +15,15 @@ export const CHECKOUT_HUB_URL =
  * WhatsApp fallback when no store is available.
  */
 /**
- * Shared social preview. Next.js shallow-merges `metadata`, so a page that
- * declares its own `openGraph` block does NOT inherit this from layout.tsx —
- * every page must spread it explicitly.
- *
- * TODO: swap LOGO_PATH for a purpose-built 1200x630 asset, then wire into the
- * openGraph + twitter blocks of all 13 pages. Not wired yet: the current logo
- * is 1024x1024 and would centre-crop badly in a summary_large_image card.
+ * Shared social preview (1200x630). Next.js shallow-merges `metadata`, so a
+ * page declaring its own `openGraph` block does NOT inherit this from
+ * layout.tsx — every page spreads it explicitly.
  */
 export const OG_IMAGE = {
-  url: LOGO_PATH,
-  width: 1024,
-  height: 1024,
-  alt: SITE_NAME,
+  url: `${SITE_URL}/og-best-iptv-uk.jpg`,
+  width: 1200,
+  height: 630,
+  alt: "Best IPTV UK — 37,000+ channels, 4K UHD, UK support",
 } as const;
 
 export const CHECKOUT_MODE = (process.env.NEXT_PUBLIC_CHECKOUT_MODE ?? "whatsapp") as

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BLOG_POSTS, SITE_URL, SITE_NAME, LOGO_PATH, AUTHOR_BYLINE, REVIEWER_BYLINE, GUIDES_LINKS } from "@/lib/constants";
+import { BLOG_POSTS, SITE_URL, SITE_NAME, LOGO_PATH, AUTHOR_BYLINE, REVIEWER_BYLINE, GUIDES_LINKS, OG_IMAGE } from "@/lib/constants";
 import BlogPostContent from "./BlogPostContent";
 
 const blogContent: Record<string, { content: string[] }> = {
@@ -64,12 +64,21 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
     description: post.excerpt,
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
+      images: [OG_IMAGE],
       title: post.title,
       description: post.excerpt,
       type: "article",
       publishedTime: post.publishedDate,
       modifiedTime: post.updatedDate,
       url: `${SITE_URL}/blog/${post.slug}`,
+    },
+    // Without this, posts inherit the root twitter block and share under the
+    // homepage title instead of their own.
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [OG_IMAGE.url],
     },
   };
 }

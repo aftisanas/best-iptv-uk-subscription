@@ -3,7 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, OG_IMAGE } from "@/lib/constants";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -53,6 +53,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
+    images: [OG_IMAGE],
     type: "website",
     locale: "en_GB",
     siteName: "Best IPTV UK",
@@ -62,6 +63,7 @@ export const metadata: Metadata = {
       "A complete IPTV subscription for UK households: 37,000 channels, 4K UHD, optional Secure Proxy, UK servers, published uptime and a 30-day money-back promise.",
   },
   twitter: {
+    images: [OG_IMAGE.url],
     card: "summary_large_image",
     title: "Best IPTV UK 2026 — 4K UHD Streaming For British Homes",
     description:

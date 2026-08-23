@@ -4,7 +4,7 @@ import SubPageShell, {
   type SubPageFAQItem,
   type SubPageRelatedGuide,
 } from "@/components/SubPageShell";
-import { AUTHOR_BYLINE, SITE_URL } from "@/lib/constants";
+import { AUTHOR_BYLINE, SITE_URL, OG_IMAGE } from "@/lib/constants";
 
 const SLUG = "best-iptv-uk-vs-traditional-tv";
 const CANONICAL = `${SITE_URL}/${SLUG}`;
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   description: PAGE_DESCRIPTION,
   alternates: { canonical: CANONICAL },
   openGraph: {
+    images: [OG_IMAGE],
     type: "article",
     locale: "en_GB",
     url: CANONICAL,
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     authors: [AUTHOR_BYLINE.name],
   },
   twitter: {
+    images: [OG_IMAGE.url],
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,

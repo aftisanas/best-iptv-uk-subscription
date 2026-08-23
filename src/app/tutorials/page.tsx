@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { SITE_NAME, SITE_URL, OG_IMAGE } from "@/lib/constants";
 import { TUTORIAL_DEVICES } from "@/lib/tutorial-content";
 import TutorialsContent from "./TutorialsContent";
 
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description: PAGE_DESCRIPTION,
   alternates: { canonical: pageUrl },
   openGraph: {
+    images: [OG_IMAGE],
     type: "website",
     locale: "en_GB",
     siteName: SITE_NAME,
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
     description: PAGE_DESCRIPTION,
   },
   twitter: {
+    images: [OG_IMAGE.url],
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
