@@ -26,7 +26,7 @@ function renderStepText(text: string): React.ReactNode {
     parts.push(
       <code
         key={`${m.index}-${m[0]}`}
-        className="font-mono text-xs sm:text-sm bg-violet-50 text-violet-700 px-1.5 py-0.5 rounded border border-violet-100 break-all"
+        className="font-mono text-xs sm:text-sm bg-[color:var(--color-primary)]/8 text-[color:var(--color-primary)] px-1.5 py-0.5 rounded border border-[color:var(--color-border)] break-all"
       >
         {m[0]}
       </code>
@@ -60,54 +60,50 @@ export default function DeviceTutorialContent({
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0118] via-[#1a0a3e] to-[#0c1445]" />
-        <div className="aurora-blob w-[700px] h-[700px] bg-purple-600/25 -top-32 -left-32" style={{ animationDelay: "0s" }} />
-        <div className="aurora-blob w-[500px] h-[500px] bg-blue-500/20 top-1/4 right-[-8%]" style={{ animationDelay: "4s" }} />
-        <div className="aurora-blob w-[600px] h-[600px] bg-violet-500/15 bottom-[-15%] left-1/3" style={{ animationDelay: "8s" }} />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(124,58,237,0.2),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(6,182,212,0.12),transparent_50%)]" />
+      <section className="relative overflow-hidden section-wash-dark">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,188,125,0.16),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,30,30,0.10),transparent_55%)]" />
 
         <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 lg:pb-24">
           {/* Breadcrumb / back link */}
           <nav aria-label="Breadcrumb" className="mb-6">
             <Link
               href="/tutorials"
-              className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               All setup guides
             </Link>
           </nav>
 
-          <span className="inline-flex items-center gap-2 rounded-full border border-purple-400/25 bg-white/[0.07] backdrop-blur-md px-4 py-1.5 text-xs font-semibold tracking-wider text-purple-200 uppercase mb-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] backdrop-blur-md px-4 py-1.5 text-[11px] font-semibold tracking-[0.22em] uppercase text-[#ffbc7d] mb-6">
             <span aria-hidden="true" className="text-base leading-none">{device.emoji}</span>
-            Device Setup Guide
+            Best IPTV UK Device Guide
           </span>
 
           {/* H1 — LCP element, no motion wrapper */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] text-white mb-5">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.08] text-white mb-5">
             {headline}
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-300/90 leading-relaxed max-w-3xl mb-8">
+          <p className="text-base sm:text-lg text-white/75 leading-relaxed max-w-3xl mb-8">
             {device.subtitle} · Recommended app:{" "}
             <span className="text-white font-medium">{device.primaryApp}</span>
           </p>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-gray-400">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-white/60">
             <span className="inline-flex items-center gap-1.5">
-              <span aria-hidden="true" className="h-1 w-1 rounded-full bg-gray-500" />
+              <span aria-hidden="true" className="h-1 w-1 rounded-full bg-white/40" />
               <span>Updated {formatDate(updatedDate)}</span>
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5 text-cyan-300" />
+              <Clock className="h-3.5 w-3.5 text-[#ffbc7d]" />
               <span>~5 min setup</span>
             </span>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#fafbff] to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[color:var(--color-background)] to-transparent pointer-events-none" />
       </section>
 
       {/* ── Body ── */}
@@ -120,7 +116,7 @@ export default function DeviceTutorialContent({
           </p>
 
           {/* Recommended app / fallback */}
-          <div className="mt-8 rounded-2xl border border-violet-100/70 bg-white p-5 sm:p-6">
+          <div className="mt-8 rounded-2xl border border-[color:var(--color-border)] bg-white p-5 sm:p-6">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
               <div className="flex items-center gap-4">
                 {device.appImage && (
@@ -129,11 +125,11 @@ export default function DeviceTutorialContent({
                     alt={`${device.primaryApp} app icon`}
                     width={56}
                     height={56}
-                    className="h-14 w-14 shrink-0 rounded-xl border border-violet-100 object-contain bg-white p-1 shadow-sm"
+                    className="h-14 w-14 shrink-0 rounded-xl border border-[color:var(--color-border)] object-contain bg-white p-1 shadow-sm"
                   />
                 )}
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-violet-500 mb-1">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--color-primary)] mb-1">
                     Recommended app
                   </p>
                   <p className="text-sm sm:text-base font-semibold text-foreground">
@@ -143,7 +139,7 @@ export default function DeviceTutorialContent({
               </div>
               {device.fallbackApps && (
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-violet-500 mb-1">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--color-primary)] mb-1">
                     Fallback apps
                   </p>
                   <p className="text-sm sm:text-base text-foreground/80">
@@ -163,7 +159,7 @@ export default function DeviceTutorialContent({
           {/* Video */}
           {device.videoEmbedUrl && (
             <div className="mt-8">
-              <div className="aspect-video w-full max-w-2xl mx-auto rounded-xl overflow-hidden border border-violet-100/60 bg-white shadow-sm shadow-violet-100/30">
+              <div className="aspect-video w-full max-w-2xl mx-auto rounded-xl overflow-hidden border border-[color:var(--color-border)] bg-white shadow-sm">
                 <iframe
                   className="w-full h-full"
                   src={device.videoEmbedUrl}
@@ -185,7 +181,7 @@ export default function DeviceTutorialContent({
             {device.steps.map((step, i) => (
               <li
                 key={i}
-                className="text-sm sm:text-base text-muted leading-relaxed marker:text-violet-600 marker:font-semibold"
+                className="text-sm sm:text-base text-muted leading-relaxed marker:text-[color:var(--color-primary)] marker:font-semibold"
               >
                 {renderStepText(step.text)}
                 {step.substeps && (
@@ -193,7 +189,7 @@ export default function DeviceTutorialContent({
                     {step.substeps.map((sub, j) => (
                       <li
                         key={j}
-                        className="text-sm sm:text-base text-muted leading-relaxed marker:text-cyan-600"
+                        className="text-sm sm:text-base text-muted leading-relaxed marker:text-[#ff1e1e]"
                       >
                         {renderStepText(sub)}
                       </li>
@@ -206,8 +202,8 @@ export default function DeviceTutorialContent({
 
           {/* Notes */}
           {device.notes?.map((note, i) => (
-            <div key={i} className="mt-6 rounded-xl border border-amber-200 bg-amber-50/60 p-4">
-              <p className="text-sm text-amber-900 leading-relaxed">
+            <div key={i} className="mt-6 rounded-xl border border-[color:var(--color-neon)]/40 bg-[color:var(--color-neon)]/10 p-4">
+              <p className="text-sm text-foreground leading-relaxed">
                 <strong>Note:</strong> {renderStepText(note)}
               </p>
             </div>
@@ -216,7 +212,7 @@ export default function DeviceTutorialContent({
           {/* Troubleshooting */}
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mt-12 mb-4">
             <span className="inline-flex items-center gap-2">
-              <Wrench className="h-6 w-6 text-amber-500" />
+              <Wrench className="h-6 w-6 text-[color:var(--color-accent)]" />
               Troubleshooting {device.displayName}
             </span>
           </h2>
@@ -224,7 +220,7 @@ export default function DeviceTutorialContent({
             {device.troubleshooting.map((item, i) => (
               <li
                 key={i}
-                className="rounded-xl border border-violet-100/60 bg-white p-4 sm:p-5 text-sm text-muted leading-relaxed"
+                className="rounded-xl border border-[color:var(--color-border)] bg-white p-4 sm:p-5 text-sm text-muted leading-relaxed"
               >
                 {renderStepText(item)}
               </li>
@@ -233,7 +229,7 @@ export default function DeviceTutorialContent({
 
           {/* Firestick-specific cross-link to the buyer's guide cluster page */}
           {isFirestick && (
-            <div className="mt-10 rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50/80 to-cyan-50/50 p-6">
+            <div className="mt-10 rounded-2xl border border-[color:var(--color-primary)]/25 bg-gradient-to-br from-[#f2ecff] to-[#fff5ec] p-6">
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 Choosing a Fire Stick model?
               </h3>
@@ -244,7 +240,7 @@ export default function DeviceTutorialContent({
               </p>
               <Link
                 href="/best-iptv-uk-firestick"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-700"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[color:var(--color-primary)] hover:text-[color:var(--color-primary-hover)]"
               >
                 Read the Fire Stick buyer&apos;s guide
                 <ArrowRight className="h-4 w-4" />
@@ -253,7 +249,7 @@ export default function DeviceTutorialContent({
           )}
 
           {/* WhatsApp support CTA */}
-          <div className="mt-10 rounded-2xl border border-cyan-200 bg-gradient-to-br from-cyan-50/80 to-violet-50/60 p-6 sm:p-8 text-center">
+          <div className="mt-10 rounded-2xl border border-[#ffbc7d]/40 bg-gradient-to-br from-[#fff5ec] to-[#f2ecff] p-6 sm:p-8 text-center">
             <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
               Still stuck on {device.displayName}?
             </h3>
@@ -265,7 +261,7 @@ export default function DeviceTutorialContent({
               href={SUPPORT_WHATSAPP_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-purple-900/30 transition-all hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98]"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-hover)] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-[rgba(101,30,253,0.30)] transition-all active:scale-[0.98]"
             >
               <MessageCircle className="h-5 w-5" />
               WhatsApp us — {SUPPORT_WHATSAPP_NUMBER}
@@ -291,14 +287,14 @@ export default function DeviceTutorialContent({
               <Link
                 key={d.slug}
                 href={`/tutorials/${d.slug}`}
-                className="group relative flex flex-col rounded-2xl border border-violet-100/60 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet-300 hover:shadow-lg hover:shadow-violet-100/60"
+                className="group relative flex flex-col rounded-2xl border border-[color:var(--color-border)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[color:var(--color-primary)]/40 hover:shadow-lg hover:shadow-[rgba(101,30,253,0.10)]"
               >
                 <span aria-hidden="true" className="text-2xl mb-3">{d.emoji}</span>
-                <h3 className="text-base font-semibold text-foreground mb-1 group-hover:text-violet-700 transition-colors">
+                <h3 className="text-base font-semibold text-foreground mb-1 group-hover:text-[color:var(--color-primary)] transition-colors">
                   {d.displayName}
                 </h3>
                 <p className="text-sm text-muted leading-relaxed flex-1">{d.subtitle}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 group-hover:text-violet-700">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[color:var(--color-primary)] group-hover:text-[color:var(--color-primary-hover)]">
                   View setup guide
                   <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </span>
@@ -309,7 +305,7 @@ export default function DeviceTutorialContent({
           <div className="mt-10 text-center">
             <Link
               href="/tutorials"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-700"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[color:var(--color-primary)] hover:text-[color:var(--color-primary-hover)]"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to all 12 setup guides

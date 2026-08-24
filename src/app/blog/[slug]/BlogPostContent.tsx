@@ -53,7 +53,7 @@ export default function BlogPostContent({ post, content, author, reviewer, relat
               </span>
               
               <span className="flex items-center gap-1.5 font-medium text-foreground">
-                <User className="h-4 w-4 text-purple-500" />
+                <User className="h-4 w-4 text-[color:var(--color-primary)]" />
                 {author.name}
               </span>
               
@@ -153,12 +153,12 @@ export default function BlogPostContent({ post, content, author, reviewer, relat
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="flex flex-col gap-1 p-4 rounded-xl border border-primary/10 bg-white hover:border-violet-300 hover:shadow-sm transition-all group"
+                  className="flex flex-col gap-1 p-4 rounded-xl border border-[color:var(--color-border)] bg-white hover:border-[color:var(--color-primary)]/30 hover:shadow-sm transition-all group"
                 >
-                  <span className="font-semibold text-foreground group-hover:text-violet-700">
+                  <span className="font-semibold text-foreground group-hover:text-[color:var(--color-primary)]">
                     {link.label}
                   </span>
-                  <span className="text-sm text-violet-600 font-medium inline-flex items-center gap-1">
+                  <span className="text-sm text-[color:var(--color-primary)] font-medium inline-flex items-center gap-1">
                     Read guide <ArrowRight className="h-3 w-3" />
                   </span>
                 </Link>
@@ -181,7 +181,7 @@ export default function BlogPostContent({ post, content, author, reviewer, relat
             </p>
             <SectionLink
               href="/#pricing"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-primary/20"
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-indigo-deep)] px-8 py-3.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-primary/20"
             >
               View Subscription Plans
             </SectionLink>

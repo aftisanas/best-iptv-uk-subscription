@@ -104,8 +104,8 @@ const proseClasses = [
   "prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:mt-12 prose-h2:mb-5",
   "prose-p:text-muted prose-p:leading-relaxed",
   "prose-strong:text-foreground",
-  "prose-li:text-muted prose-li:marker:text-violet-500",
-  "prose-a:text-violet-600 prose-a:no-underline prose-a:font-medium",
+  "prose-li:text-muted prose-li:marker:text-[color:var(--color-primary)]",
+  "prose-a:text-[color:var(--color-primary)] prose-a:no-underline prose-a:font-medium",
   "hover:prose-a:underline prose-a:underline-offset-2",
 ].join(" ");
 
@@ -486,12 +486,12 @@ export default function Page() {
           six months.
         </p>
         <div className="overflow-x-auto not-prose my-6">
-          <table className="w-full text-sm sm:text-base border-collapse rounded-lg overflow-hidden border border-violet-100">
+          <table className="w-full text-sm sm:text-base border-collapse rounded-lg overflow-hidden border border-[color:var(--color-border)]">
             <caption className="sr-only">
               UK IPTV subscription plans in GBP — total price, per-month
               equivalent and refund window.
             </caption>
-            <thead className="bg-violet-50 text-foreground">
+            <thead className="bg-[color:var(--color-primary)]/10 text-foreground">
               <tr>
                 <th scope="col" className="text-left font-semibold px-4 py-3">
                   Plan
@@ -511,7 +511,7 @@ export default function Page() {
               </tr>
             </thead>
             <tbody className="text-muted">
-              <tr className="border-t border-violet-100">
+              <tr className="border-t border-[color:var(--color-border)]">
                 <th scope="row" className="text-left font-medium text-foreground px-4 py-3">
                   Bronze
                 </th>
@@ -520,7 +520,7 @@ export default function Page() {
                 <td className="px-4 py-3">£8.66</td>
                 <td className="px-4 py-3">30 days</td>
               </tr>
-              <tr className="border-t border-violet-100 bg-violet-50/30">
+              <tr className="border-t border-[color:var(--color-border)] bg-[color:var(--color-primary)]/5">
                 <th scope="row" className="text-left font-medium text-foreground px-4 py-3">
                   Silver
                 </th>
@@ -529,7 +529,7 @@ export default function Page() {
                 <td className="px-4 py-3">£6.66</td>
                 <td className="px-4 py-3">30 days</td>
               </tr>
-              <tr className="border-t border-violet-100">
+              <tr className="border-t border-[color:var(--color-border)]">
                 <th scope="row" className="text-left font-medium text-foreground px-4 py-3">
                   Gold
                 </th>
@@ -538,7 +538,7 @@ export default function Page() {
                 <td className="px-4 py-3">£4.99</td>
                 <td className="px-4 py-3">30 days</td>
               </tr>
-              <tr className="border-t border-violet-100 bg-violet-50/30">
+              <tr className="border-t border-[color:var(--color-border)] bg-[color:var(--color-primary)]/5">
                 <th scope="row" className="text-left font-medium text-foreground px-4 py-3">
                   Diamond
                 </th>

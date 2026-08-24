@@ -27,7 +27,7 @@ export default function EvaluationMethodologySection() {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <MotionReveal className="text-center mb-10 lg:mb-12 max-w-3xl mx-auto">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-50 border border-violet-200 px-4 py-1.5 text-sm font-medium text-violet-700 mb-4">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--color-primary)]/10 border border-[color:var(--color-primary)]/25 px-4 py-1.5 text-sm font-medium text-[color:var(--color-primary)] mb-4">
             <FlaskConical className="h-4 w-4" />
             Editorial Methodology
           </span>
@@ -49,12 +49,12 @@ export default function EvaluationMethodologySection() {
                 key={point.title}
                 y={30}
                 delay={i * 0.08}
-                className="group relative flex flex-col rounded-2xl border border-violet-100/60 bg-white p-6 transition-all duration-500 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-100/40 premium-card"
+                className="group relative flex flex-col rounded-2xl border border-[color:var(--color-border)] bg-white p-6 transition-all duration-500 hover:border-[color:var(--color-primary)]/30 hover:shadow-lg hover:shadow-[rgba(101,30,253,0.10)] premium-card"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-100 to-cyan-50">
-                  <Icon className="h-6 w-6 text-violet-600" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#f2ecff] to-[#fff5ec]">
+                  <Icon className="h-6 w-6 text-[color:var(--color-primary)]" />
                 </div>
-                <h3 className="text-base font-semibold text-foreground mb-3 leading-snug">
+                <h3 className="font-display text-lg font-semibold text-foreground mb-3 leading-snug">
                   {point.title}
                 </h3>
                 <p className="text-sm text-muted leading-relaxed">
@@ -73,7 +73,7 @@ export default function EvaluationMethodologySection() {
             is in{" "}
             <Link
               href="/best-iptv-uk-2026"
-              className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline font-medium"
+              className="text-[color:var(--color-primary)] hover:text-[color:var(--color-primary-hover)] underline-offset-2 hover:underline font-medium"
             >
               read the evaluation framework
             </Link>

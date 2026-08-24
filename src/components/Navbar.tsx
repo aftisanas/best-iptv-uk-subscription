@@ -37,7 +37,7 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isScrolled
-            ? "glass shadow-lg shadow-purple-900/5"
+            ? "glass shadow-lg shadow-[rgba(30,20,60,0.05)]"
             : "bg-transparent"
         )}
       >
@@ -51,7 +51,7 @@ export default function Navbar() {
                   alt="Best IPTV UK logo"
                   fill
                   sizes="(min-width: 1024px) 56px, 48px"
-                  className="object-contain drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]"
+                  className="object-contain drop-shadow-[0_0_8px_rgba(101,30,253,0.55)]"
                   priority
                   fetchPriority="high"
                 />
@@ -60,7 +60,7 @@ export default function Navbar() {
                 "text-lg font-bold tracking-tight lg:text-xl font-[var(--font-display)] transition-colors duration-500",
                 isScrolled ? "text-foreground" : "text-white"
               )}>
-                Best<span className={isScrolled ? "gradient-text" : "text-cyan-400"}> IPTV </span>UK
+                Best<span className={isScrolled ? "gradient-text" : "text-[#ffbc7d]"}> IPTV </span>UK
               </span>
             </Link>
 
@@ -81,8 +81,8 @@ export default function Navbar() {
                   <span className={cn(
                     "absolute bottom-0 left-1/2 h-0.5 w-0 transition-all duration-300 group-hover:left-4 group-hover:w-[calc(100%-2rem)]",
                     isScrolled
-                      ? "bg-gradient-to-r from-violet-600 to-cyan-500"
-                      : "bg-gradient-to-r from-purple-400 to-cyan-400"
+                      ? "bg-gradient-to-r from-[color:var(--color-primary)] to-[#ff1e1e]"
+                      : "bg-gradient-to-r from-[#ffbc7d] to-[#ff1e1e]"
                   )} />
                 </SectionLink>
               ))}
@@ -92,7 +92,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-3">
               <SectionLink
                 href="/#pricing"
-                className="relative overflow-hidden rounded-lg bg-gradient-to-r from-violet-600 to-cyan-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-lg hover:shadow-purple-500/20 active:scale-[0.98]"
+                className="relative overflow-hidden rounded-lg bg-[color:var(--color-primary)] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-[color:var(--color-primary-hover)] hover:shadow-lg hover:shadow-[rgba(101,30,253,0.30)] active:scale-[0.98]"
               >
                 <span className="relative z-10">Get Started</span>
               </SectionLink>
@@ -102,8 +102,8 @@ export default function Navbar() {
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-lg transition-colors lg:hidden focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2",
-                isScrolled ? "hover:bg-violet-50" : "hover:bg-white/10"
+                "flex h-10 w-10 items-center justify-center rounded-lg transition-colors lg:hidden focus-visible:outline-2 focus-visible:outline-[color:var(--color-primary)] focus-visible:outline-offset-2",
+                isScrolled ? "hover:bg-[color:var(--color-primary)]/5" : "hover:bg-white/10"
               )}
               aria-label={isMobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileOpen}
@@ -144,12 +144,12 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 h-full w-72 bg-white border-l border-violet-100 p-6 shadow-2xl"
+              className="absolute right-0 top-0 h-full w-72 bg-white border-l border-[color:var(--color-border)] p-6 shadow-2xl"
             >
               <div className="flex justify-end mb-8">
                 <button
                   onClick={() => setIsMobileOpen(false)}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg transition-colors hover:bg-violet-50"
+                  className="flex h-10 w-10 items-center justify-center rounded-lg transition-colors hover:bg-[color:var(--color-primary)]/5"
                 >
                   <X className="h-5 w-5 text-foreground" />
                 </button>
@@ -165,7 +165,7 @@ export default function Navbar() {
                     <SectionLink
                       href={link.href}
                       onClick={() => setIsMobileOpen(false)}
-                      className="block rounded-lg px-4 py-3 text-base font-medium text-muted transition-all hover:bg-violet-50 hover:text-foreground"
+                      className="block rounded-lg px-4 py-3 text-base font-medium text-muted transition-all hover:bg-[color:var(--color-primary)]/5 hover:text-foreground"
                     >
                       {link.label}
                     </SectionLink>
@@ -176,7 +176,7 @@ export default function Navbar() {
                 <SectionLink
                   href="/#pricing"
                   onClick={() => setIsMobileOpen(false)}
-                  className="rounded-lg bg-gradient-to-r from-violet-600 to-cyan-500 px-4 py-3 text-center text-sm font-semibold text-white"
+                  className="rounded-lg bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-hover)] px-4 py-3 text-center text-sm font-semibold text-white"
                 >
                   Get Started
                 </SectionLink>

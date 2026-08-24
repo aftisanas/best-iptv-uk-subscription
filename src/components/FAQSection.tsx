@@ -14,21 +14,25 @@ export default function FAQSection() {
       <div className="absolute inset-0 mesh-gradient" />
 
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <MotionReveal className="text-center mb-16">
-          <span className="inline-block rounded-full bg-violet-50 border border-violet-200 px-4 py-1.5 text-sm font-medium text-violet-700 mb-4">
-            Frequently Asked Questions
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        <MotionReveal className="text-center mb-14">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="editorial-rule" />
+            <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[color:var(--color-primary)]">
+              Frequently Asked Questions
+            </span>
+            <span className="editorial-rule" />
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight">
             Best IPTV UK &mdash;{" "}
             <span className="gradient-text">Your Questions Answered</span>
           </h2>
           <p className="text-lg text-muted">
             Essential answers to{" "}
-            <Link href="/blog" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
+            <Link href="/blog" className="text-[color:var(--color-primary)] hover:text-[color:var(--color-primary-hover)] underline-offset-2 hover:underline">
               review
             </Link>{" "}
             before choosing a{" "}
-            <SectionLink href="/#pricing" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
+            <SectionLink href="/#pricing" className="text-[color:var(--color-primary)] hover:text-[color:var(--color-primary-hover)] underline-offset-2 hover:underline">
               subscription plan
             </SectionLink>{" "}in 2026.
           </p>

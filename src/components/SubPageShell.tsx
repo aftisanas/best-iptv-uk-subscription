@@ -1,6 +1,5 @@
 import { ArrowLeft, Tag, Clock, User, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import ParticleBackground from "./ParticleBackground";
 import PricingSection from "./PricingSection";
 import CTASection from "./CTASection";
 import MotionFadeIn from "./MotionFadeIn";
@@ -189,57 +188,21 @@ export default function SubPageShell({
 
   return (
     <>
-      {/* ── Hero ── */}
-      <section className="relative overflow-hidden">
-        {/* Deep premium gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0118] via-[#1a0a3e] to-[#0c1445]" />
+      {/* ── Hero (editorial, section-wash-dark) ── */}
+      <section className="relative overflow-hidden section-wash-dark">
+        {/* Amber + red vignettes */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,188,125,0.16),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,30,30,0.10),transparent_55%)]" />
 
-        {/* Aurora blobs */}
+        {/* Faint editorial grid */}
         <div
-          className="aurora-blob w-[700px] h-[700px] bg-purple-600/25 -top-32 -left-32"
-          style={{ animationDelay: "0s" }}
-        />
-        <div
-          className="aurora-blob w-[500px] h-[500px] bg-blue-500/20 top-1/4 right-[-8%]"
-          style={{ animationDelay: "4s" }}
-        />
-        <div
-          className="aurora-blob w-[600px] h-[600px] bg-violet-500/15 bottom-[-15%] left-1/3"
-          style={{ animationDelay: "8s" }}
-        />
-        <div
-          className="aurora-blob w-[400px] h-[400px] bg-cyan-500/20 top-[60%] left-[-5%]"
-          style={{ animationDelay: "12s" }}
-        />
-
-        {/* Radial overlays */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(124,58,237,0.2),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(6,182,212,0.12),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.08),transparent_60%)]" />
-
-        {/* Mesh grid */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
+              "linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
           }}
         />
-
-        {/* Decorative floating orbs */}
-        <div className="absolute top-[15%] left-[10%] w-2 h-2 rounded-full bg-purple-400/60 animate-float" />
-        <div
-          className="absolute top-[35%] right-[15%] w-1.5 h-1.5 rounded-full bg-cyan-400/50 animate-float"
-          style={{ animationDelay: "2s" }}
-        />
-        <div
-          className="absolute bottom-[25%] left-[20%] w-1 h-1 rounded-full bg-blue-400/60 animate-float"
-          style={{ animationDelay: "4s" }}
-        />
-
-        {/* Particles */}
-        <ParticleBackground />
 
         {/* Hero content */}
         <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 lg:pb-24">
@@ -247,7 +210,7 @@ export default function SubPageShell({
           <MotionFadeIn x={-10} y={0} duration={0.5}>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors mb-6"
+              className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors mb-6"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Best IPTV UK
@@ -256,14 +219,14 @@ export default function SubPageShell({
 
           {/* Category badge */}
           <MotionScaleIn initialScale={0.95} delay={0.05}>
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-purple-400/25 bg-white/[0.07] backdrop-blur-md px-4 py-1.5 text-xs font-semibold tracking-wider text-purple-200 uppercase mb-6">
-              <Tag className="h-3 w-3 text-cyan-300" />
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.06] backdrop-blur-md px-4 py-1.5 text-[11px] font-semibold tracking-[0.22em] text-[#ffbc7d] uppercase mb-6">
+              <Tag className="h-3 w-3" />
               {category}
             </span>
           </MotionScaleIn>
 
           {/* H1 — LCP element, no motion wrapper */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] text-white mb-5">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.08] text-white mb-5">
             {title}
           </h1>
 
@@ -272,7 +235,7 @@ export default function SubPageShell({
             as="p"
             delay={0.18}
             duration={0.7}
-            className="text-base sm:text-lg text-gray-300/90 leading-relaxed max-w-3xl mb-8"
+            className="text-base sm:text-lg text-white/75 leading-relaxed max-w-3xl mb-8"
           >
             {intro}
           </MotionFadeIn>
@@ -281,26 +244,26 @@ export default function SubPageShell({
           <MotionFadeIn
             delay={0.25}
             duration={0.7}
-            className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-gray-400"
+            className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-white/60"
           >
             <span className="inline-flex items-center gap-1.5">
-              <User className="h-3.5 w-3.5 text-purple-300" />
-              <span className="text-gray-200 font-medium">{byline.name}</span>
-              <span className="text-gray-500">— {byline.role}</span>
+              <User className="h-3.5 w-3.5 text-[#ffbc7d]" />
+              <span className="text-white/90 font-medium">{byline.name}</span>
+              <span className="text-white/50">— {byline.role}</span>
             </span>
             {reviewer && (
-              <span className="inline-flex items-center gap-1.5 text-gray-300">
-                <span aria-hidden="true" className="h-1 w-1 rounded-full bg-green-500/70" />
-                <span className="font-medium text-gray-200">Reviewed by {reviewer.name}</span>
+              <span className="inline-flex items-center gap-1.5">
+                <span aria-hidden="true" className="h-1 w-1 rounded-full bg-[#ffbc7d]" />
+                <span className="font-medium text-white/85">Reviewed by {reviewer.name}</span>
               </span>
             )}
             <span className="inline-flex items-center gap-1.5">
-              <span aria-hidden="true" className="h-1 w-1 rounded-full bg-gray-500" />
+              <span aria-hidden="true" className="h-1 w-1 rounded-full bg-white/40" />
               <span>Updated {formatDate(resolvedUpdatedDate)}</span>
             </span>
             {readTime && (
               <span className="inline-flex items-center gap-1.5">
-                <Clock className="h-3.5 w-3.5 text-cyan-300" />
+                <Clock className="h-3.5 w-3.5 text-[#ff6fa1]" />
                 <span>{readTime}</span>
               </span>
             )}
@@ -308,7 +271,7 @@ export default function SubPageShell({
         </div>
 
         {/* Bottom gradient fade to site background */}
-        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[#fafbff] to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-[color:var(--color-background)] to-transparent pointer-events-none" />
       </section>
 
       {/* ── Article body slot ── */}
@@ -325,10 +288,14 @@ export default function SubPageShell({
           <div className="absolute inset-0 mesh-gradient" />
           <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10 text-center">
-              <span className="inline-block rounded-full bg-violet-50 border border-violet-200 px-4 py-1.5 text-sm font-medium text-violet-700 mb-4">
-                Frequently Asked Questions
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <span className="editorial-rule" />
+                <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[color:var(--color-primary)]">
+                  Frequently Asked Questions
+                </span>
+                <span className="editorial-rule" />
+              </div>
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground tracking-tight">
                 Questions UK Buyers Ask About{" "}
                 <span className="gradient-text">This Topic</span>
               </h2>
@@ -345,7 +312,7 @@ export default function SubPageShell({
           <div className="absolute inset-0 section-gradient-1" />
           <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="mb-8 text-center">
-              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-2 tracking-tight">
                 <span className="gradient-text">Related UK IPTV Guides</span>
               </h2>
               <p className="text-sm text-muted">
@@ -357,15 +324,15 @@ export default function SubPageShell({
                 <Link
                   key={guide.href}
                   href={guide.href}
-                  className="group relative flex flex-col rounded-2xl border border-violet-100/60 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet-300 hover:shadow-lg hover:shadow-violet-100/60"
+                  className="group relative flex flex-col rounded-2xl border border-[color:var(--color-border)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[color:var(--color-primary)]/40 hover:shadow-lg hover:shadow-[rgba(101,30,253,0.10)]"
                 >
-                  <h3 className="text-base font-semibold text-foreground mb-2 group-hover:text-violet-700 transition-colors">
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-2 leading-snug group-hover:text-[color:var(--color-primary)] transition-colors">
                     {guide.title}
                   </h3>
                   <p className="text-sm text-muted leading-relaxed flex-1">
                     {guide.description}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-600 group-hover:text-violet-700">
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[color:var(--color-primary)] group-hover:text-[color:var(--color-primary-hover)]">
                     Read the guide
                     <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </span>

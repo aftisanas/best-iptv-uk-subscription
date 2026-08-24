@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyCTA from "@/components/StickyCTA";
 import { SITE_URL, OG_IMAGE } from "@/lib/constants";
 
 const inter = Inter({
@@ -12,11 +13,12 @@ const inter = Inter({
   preload: true,
 });
 
-const outfit = Outfit({
+const fraunces = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
-  weight: ["600", "700"],
+  weight: ["600", "700", "800"],
+  style: ["normal"],
   preload: false,
 });
 
@@ -96,18 +98,19 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${inter.variable} ${outfit.variable} antialiased`}
+      className={`${inter.variable} ${fraunces.variable} antialiased`}
     >
       <body className="min-h-screen bg-background text-foreground font-(--font-sans)">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-foreground focus:shadow-lg focus:outline-2 focus:outline-violet-600"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-foreground focus:shadow-lg focus:outline-2 focus:outline-[color:var(--color-primary)]"
         >
           Skip to main content
         </a>
         <Navbar />
         <main id="main" className="flex-1">{children}</main>
         <Footer />
+        <StickyCTA />
       </body>
     </html>
   );

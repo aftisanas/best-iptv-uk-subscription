@@ -103,8 +103,8 @@ const proseClasses = [
   "prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:mt-12 prose-h2:mb-5",
   "prose-p:text-muted prose-p:leading-relaxed",
   "prose-strong:text-foreground",
-  "prose-li:text-muted prose-li:marker:text-violet-500",
-  "prose-a:text-violet-600 prose-a:no-underline prose-a:font-medium",
+  "prose-li:text-muted prose-li:marker:text-[color:var(--color-primary)]",
+  "prose-a:text-[color:var(--color-primary)] prose-a:no-underline prose-a:font-medium",
   "hover:prose-a:underline prose-a:underline-offset-2",
   "prose-code:text-foreground prose-code:bg-foreground/10 prose-code:px-1 prose-code:py-0.5 prose-code:rounded",
 ].join(" ");
@@ -268,11 +268,11 @@ export default function Page() {
           and for households running an unsupported app, the next section breaks down all three
           install methods in full.
         </p>
-        <div className="not-prose my-6 rounded-xl border border-violet-200 bg-violet-50/60 p-4">
+        <div className="not-prose my-6 rounded-xl border border-[color:var(--color-primary)]/25 bg-[color:var(--color-primary)]/5 p-4">
           <p className="text-sm text-foreground/90 leading-relaxed">
             Looking for step-by-step Fire Stick setup instructions with screenshots and a
             video?{" "}
-            <Link href="/tutorials/firestick" className="font-semibold text-violet-600 hover:text-violet-700">
+            <Link href="/tutorials/firestick" className="font-semibold text-[color:var(--color-primary)] hover:text-[color:var(--color-primary-hover)]">
               See our Fire Stick setup tutorial →
             </Link>
           </p>

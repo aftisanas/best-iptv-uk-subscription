@@ -97,7 +97,7 @@ export default function OrderSummaryModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="order-summary-title"
-        className="relative w-full max-w-md overflow-hidden rounded-2xl border border-violet-100/60 bg-white shadow-2xl shadow-purple-900/20"
+        className="relative w-full max-w-md overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-white shadow-2xl shadow-[rgba(30,20,60,0.20)]"
       >
         {/* Header */}
         <div className="flex items-center justify-between border-b border-gray-100 px-6 py-5">
@@ -112,7 +112,7 @@ export default function OrderSummaryModal({
             type="button"
             onClick={onClose}
             aria-label="Close order summary"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-muted transition-colors hover:bg-gray-200 hover:text-foreground focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-muted transition-colors hover:bg-gray-200 hover:text-foreground focus-visible:outline-2 focus-visible:outline-[color:var(--color-primary)] focus-visible:outline-offset-2"
           >
             <X className="h-4 w-4" aria-hidden="true" />
           </button>
@@ -148,7 +148,7 @@ export default function OrderSummaryModal({
                   <span className="text-sm font-semibold text-foreground">
                     Secure Proxy
                   </span>
-                  <span className="inline-flex items-center rounded-md bg-amber-100 px-2 py-0.5 text-[10px] font-bold tracking-[0.12em] text-amber-700">
+                  <span className="inline-flex items-center rounded-md bg-[color:var(--color-neon)]/20 px-2 py-0.5 text-[10px] font-bold tracking-[0.12em] text-[color:var(--color-accent)]">
                     POPULAR
                   </span>
                 </div>
@@ -159,9 +159,9 @@ export default function OrderSummaryModal({
                   aria-checked={proxyOn}
                   aria-label="Toggle Secure Proxy"
                   onClick={() => setProxyOn((v) => !v)}
-                  className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2 ${
+                  className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-[color:var(--color-primary)] focus-visible:outline-offset-2 ${
                     proxyOn
-                      ? "bg-gradient-to-r from-violet-600 to-cyan-500"
+                      ? "bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-indigo-deep)]"
                       : "bg-gray-200"
                   }`}
                 >
@@ -202,7 +202,7 @@ export default function OrderSummaryModal({
                     }
                     disabled={extraConnections === 0}
                     aria-label="Decrease extra connections"
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 bg-white text-foreground transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 bg-white text-foreground transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white focus-visible:outline-2 focus-visible:outline-[color:var(--color-primary)] focus-visible:outline-offset-2"
                   >
                     <Minus className="h-3.5 w-3.5" aria-hidden="true" />
                   </button>
@@ -221,7 +221,7 @@ export default function OrderSummaryModal({
                     }
                     disabled={extraConnections === EXTRA_CONNECTIONS_MAX}
                     aria-label="Increase extra connections"
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 bg-white text-foreground transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 bg-white text-foreground transition-colors hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white focus-visible:outline-2 focus-visible:outline-[color:var(--color-primary)] focus-visible:outline-offset-2"
                   >
                     <Plus className="h-3.5 w-3.5" aria-hidden="true" />
                   </button>
@@ -268,7 +268,7 @@ export default function OrderSummaryModal({
           </div>
 
           <div className="flex items-center justify-center gap-2 text-xs text-muted">
-            <Shield className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+            <Shield className="h-3.5 w-3.5 text-[color:var(--color-success)]" aria-hidden="true" />
             <span>{CHECKOUT_COPY.footerNote}</span>
           </div>
         </div>

@@ -1,11 +1,15 @@
 import HeroSection from "@/components/HeroSection";
 import StatsBar from "@/components/StatsBar";
 import FeaturesSection from "@/components/FeaturesSection";
+import MoviePostersStrip from "@/components/MoviePostersStrip";
 import PricingSection from "@/components/PricingSection";
+import SportsLeaguesStrip from "@/components/SportsLeaguesStrip";
 import DevicesSection from "@/components/DevicesSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import ChannelsSection from "@/components/ChannelsSection";
 import FAQSection from "@/components/FAQSection";
 import TrustSection from "@/components/TrustSection";
+import HomeBlogTeaser from "@/components/HomeBlogTeaser";
 import CTASection from "@/components/CTASection";
 import {
   CONTACT_EMAIL,
@@ -31,11 +35,15 @@ export default function HomePage() {
       <HeroSection />
       <StatsBar />
       <FeaturesSection />
+      <MoviePostersStrip />
       <PricingSection />
+      <SportsLeaguesStrip />
       <DevicesSection />
+      <HowItWorksSection />
       <ChannelsSection />
-      <FAQSection />
       <TrustSection />
+      <FAQSection />
+      <HomeBlogTeaser />
       <CTASection />
 
       {/* JSON-LD Structured Data — single @graph */}

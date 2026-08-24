@@ -35,35 +35,35 @@ export default function TrustSection() {
       <div className="absolute inset-0 section-gradient-2" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <MotionReveal className="text-center mb-16">
-          <span className="inline-block rounded-full bg-emerald-50 border border-emerald-200 px-4 py-1.5 text-sm font-medium text-emerald-700 mb-4">
-            Four Hard Promises
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+        <MotionReveal className="text-center mb-14">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="editorial-rule" />
+            <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[color:var(--color-primary)]">
+              Four Hard Promises
+            </span>
+            <span className="editorial-rule" />
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight">
             The Best IPTV UK Guarantee &mdash;{" "}
             <span className="gradient-text">Four Promises We Publish In Writing</span>
           </h2>
           <p className="mx-auto max-w-xl text-lg text-muted">
             A subscription promise is only meaningful if it is verifiable. Every commitment below is published, measured and covered by a full{" "}
-            <Link href="/refund" className="text-violet-600 hover:text-violet-700 underline-offset-2 hover:underline">
+            <Link href="/refund" className="text-[color:var(--color-primary)] hover:text-[color:var(--color-primary-hover)] underline-offset-2 hover:underline">
               same-day refund
             </Link>{" "}subscribers can verify before paying.
           </p>
         </MotionReveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {trustItems.map((item, i) => (
-            <MotionReveal
-              key={item.title}
-              delay={i * 0.1}
-              className="group text-center"
-            >
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-cyan-50 transition-all group-hover:border-emerald-200 group-hover:bg-emerald-100 group-hover:shadow-lg group-hover:shadow-emerald-100/50">
-                <item.icon className="h-7 w-7 text-emerald-600" />
+          {trustItems.map((item) => (
+            <div key={item.title} className="group text-center">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border border-[color:var(--color-primary)]/20 bg-gradient-to-br from-[#f2ecff] to-[#fff5ec] transition-all group-hover:border-[color:var(--color-primary)]/40 group-hover:shadow-lg group-hover:shadow-[rgba(101,30,253,0.15)]">
+                <item.icon className="h-7 w-7 text-[color:var(--color-primary)]" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+              <h3 className="font-display text-lg font-semibold text-foreground mb-2 leading-snug">{item.title}</h3>
               <p className="text-sm text-muted leading-relaxed">{item.description}</p>
-            </MotionReveal>
+            </div>
           ))}
         </div>
       </div>

@@ -102,8 +102,8 @@ const proseClasses = [
   "prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:mt-12 prose-h2:mb-5",
   "prose-p:text-muted prose-p:leading-relaxed",
   "prose-strong:text-foreground",
-  "prose-li:text-muted prose-li:marker:text-violet-500",
-  "prose-a:text-violet-600 prose-a:no-underline prose-a:font-medium",
+  "prose-li:text-muted prose-li:marker:text-[color:var(--color-primary)]",
+  "prose-a:text-[color:var(--color-primary)] prose-a:no-underline prose-a:font-medium",
   "hover:prose-a:underline prose-a:underline-offset-2",
 ].join(" ");
 

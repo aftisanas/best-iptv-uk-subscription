@@ -1,16 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Clock, MapPin, Headphones, Star, HeadphonesIcon } from "lucide-react";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { Mail, Clock, MapPin, Headphones, Star, MessageCircle } from "lucide-react";
+import { CONTACT_EMAIL, WHATSAPP_URL, WHATSAPP_NUMBER } from "@/lib/constants";
+
+const formatWhatsAppNumber = (raw: string) => {
+  const digits = raw.replace(/\D/g, "");
+  if (!digits.startsWith("44")) return `+${digits}`;
+  const rest = digits.slice(2);
+  return `+44 ${rest.slice(0, 4)} ${rest.slice(4, 7)} ${rest.slice(7)}`.trim();
+};
 
 const contactMethods = [
+  {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    description: "Fastest route — chat with the team on your phone.",
+    detail: formatWhatsAppNumber(WHATSAPP_NUMBER),
+    action: WHATSAPP_URL,
+    external: true,
+    badge: "Fastest",
+    badgeColor: "bg-accent/10 text-accent border border-accent/20",
+  },
   {
     icon: Mail,
     title: "Email Us",
     description: "For detailed enquiries and account-related questions.",
     detail: CONTACT_EMAIL,
     action: `mailto:${CONTACT_EMAIL}`,
+    external: false,
     badge: "24/7",
     badgeColor: "bg-primary/10 text-primary border border-primary/10",
   },
@@ -19,47 +37,18 @@ const contactMethods = [
 export default function ContactContent() {
   return (
     <div>
-      {/* ── Premium Hero Section ── */}
-      <section className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-24">
-        {/* Deep premium gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0118] via-[#1a0a3e] to-[#0c1445]" />
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden section-wash-dark pt-28 pb-20 lg:pt-36 lg:pb-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,188,125,0.16),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,30,30,0.10),transparent_55%)]" />
 
-        {/* Aurora blobs */}
         <div
-          className="aurora-blob w-[600px] h-[600px] bg-purple-600/20 -top-32 -left-32"
-          style={{ animationDelay: "0s" }}
-        />
-        <div
-          className="aurora-blob w-[450px] h-[450px] bg-blue-500/15 top-1/4 right-[-8%]"
-          style={{ animationDelay: "4s" }}
-        />
-        <div
-          className="aurora-blob w-[400px] h-[400px] bg-cyan-500/15 bottom-[-15%] left-1/3"
-          style={{ animationDelay: "8s" }}
-        />
-        <div
-          className="aurora-blob w-[300px] h-[300px] bg-fuchsia-500/12 top-[30%] left-[55%]"
-          style={{ animationDelay: "6s" }}
-        />
-
-        {/* Radial overlays */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(124,58,237,0.18),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(6,182,212,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.07),transparent_60%)]" />
-
-        {/* Subtle grid */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.05] pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)`,
+            backgroundSize: "72px 72px",
           }}
         />
-
-        {/* Floating orbs */}
-        <div className="absolute top-[20%] left-[12%] w-2 h-2 rounded-full bg-purple-400/50 animate-float" />
-        <div className="absolute top-[40%] right-[10%] w-1.5 h-1.5 rounded-full bg-cyan-400/40 animate-float" style={{ animationDelay: "3s" }} />
-        <div className="absolute bottom-[20%] left-[25%] w-1 h-1 rounded-full bg-blue-400/50 animate-float" style={{ animationDelay: "5s" }} />
 
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
@@ -68,11 +57,11 @@ export default function ContactContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-purple-400/20 bg-white/[0.07] backdrop-blur-md px-5 py-2.5 text-sm text-purple-200 mb-8"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] backdrop-blur-md px-5 py-2 text-[11px] font-semibold tracking-[0.22em] uppercase text-[#ffbc7d] mb-8"
           >
-            <HeadphonesIcon className="h-4 w-4 text-cyan-400" />
-            <span className="font-medium">Dedicated UK Support — 24/7</span>
-            <span className="flex gap-0.5 text-amber-400">
+            <Headphones className="h-3.5 w-3.5" />
+            <span>Support — 24/7</span>
+            <span className="flex gap-0.5 text-[#ffbc7d]">
               {[...Array(5)].map((_, i) => <Star key={i} className="h-3 w-3 fill-current" />)}
             </span>
           </motion.div>
@@ -82,10 +71,10 @@ export default function ContactContent() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6"
+            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-6"
           >
-            <span className="text-white">Contact The</span>{" "}
-            <span className="gradient-text-hero">UK Support Team</span>
+            <span className="text-white">Contact The Best IPTV UK</span>{" "}
+            <span className="gradient-text-hero">Support Team</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -93,28 +82,25 @@ export default function ContactContent() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mx-auto max-w-2xl text-lg text-gray-300/90 leading-relaxed"
+            className="mx-auto max-w-2xl text-lg text-white/75 leading-relaxed"
           >
-            The support crew is staffed around the clock across live chat, email and WhatsApp — named British agents with direct knowledge of the UK broadcaster market. Average first response sits under four minutes.
+            The support team is reachable around the clock on WhatsApp and email — real people who work UK IPTV setups every day. Pick whichever is easier and someone will pick it up.
           </motion.p>
         </div>
 
-        {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafbff] via-[#fafbff]/80 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[color:var(--color-background)] to-transparent pointer-events-none" />
       </section>
 
       {/* Contact Methods */}
       <section className="pb-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 max-w-md mx-auto">
-            {contactMethods.map((method, i) => (
-              <motion.a
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {contactMethods.map((method) => (
+              <a
                 key={method.title}
                 href={method.action}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                target={method.external ? "_blank" : undefined}
+                rel={method.external ? "noopener noreferrer" : undefined}
                 className="group relative rounded-2xl border border-gray-100 bg-white p-6 text-center transition-all duration-500 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
               >
                 <div className="absolute top-4 right-4">
@@ -127,10 +113,10 @@ export default function ContactContent() {
                   <method.icon className="h-6 w-6 text-primary" />
                 </div>
 
-                <h3 className="text-lg font-semibold text-foreground mb-2">{method.title}</h3>
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2 leading-snug">{method.title}</h3>
                 <p className="text-sm text-muted mb-3">{method.description}</p>
                 <p className="text-sm font-medium text-primary">{method.detail}</p>
-              </motion.a>
+              </a>
             ))}
           </div>
         </div>
@@ -148,21 +134,27 @@ export default function ContactContent() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Clock className="h-5 w-5 text-primary" />
-                <h3 className="text-lg font-semibold text-foreground">Support Hours</h3>
+                <h3 className="font-display text-lg font-semibold text-foreground">Support Hours</h3>
               </div>
               <div className="space-y-4">
                 {[
-                  { dept: "Customer Support", hours: "24/7 — Always Available" },
-                  { dept: "Technical Support", hours: "24/7 — Always Available" },
-                  { dept: "Sales Department", hours: "Mon–Fri, 9am–6pm GMT" },
-                  { dept: "Billing Enquiries", hours: "Mon–Fri, 9am–6pm GMT" },
+                  { channel: "WhatsApp", note: "24/7 — best for setup help" },
+                  { channel: "Email", note: "24/7 — best for account &amp; billing" },
                 ].map((item) => (
-                  <div key={item.dept} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
-                    <span className="text-sm text-muted">{item.dept}</span>
-                    <span className="text-sm font-medium text-foreground">{item.hours}</span>
+                  <div key={item.channel} className="flex items-center justify-between py-2 border-b border-gray-50 last:border-0">
+                    <span className="text-sm text-muted">{item.channel}</span>
+                    <span
+                      className="text-sm font-medium text-foreground"
+                      dangerouslySetInnerHTML={{ __html: item.note }}
+                    />
                   </div>
                 ))}
               </div>
+              <p className="mt-6 text-xs text-muted leading-relaxed">
+                One team covers both channels — pick whichever is easier. There
+                are no separate sales, billing or technical queues to route
+                through.
+              </p>
             </motion.div>
 
             <motion.div
@@ -174,7 +166,7 @@ export default function ContactContent() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Headphones className="h-5 w-5 text-primary" />
-                <h3 className="text-lg font-semibold text-foreground">Where The Team Can Help</h3>
+                <h3 className="font-display text-lg font-semibold text-foreground">Where The Team Can Help</h3>
               </div>
               <div className="space-y-3">
                 {[

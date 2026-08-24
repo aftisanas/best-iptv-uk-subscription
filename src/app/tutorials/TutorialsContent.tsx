@@ -58,7 +58,7 @@ function renderStepText(text: string): React.ReactNode {
     parts.push(
       <code
         key={`${m.index}-${m[0]}`}
-        className="font-mono text-xs sm:text-sm bg-violet-50 text-violet-700 px-1.5 py-0.5 rounded border border-violet-100 break-all"
+        className="font-mono text-xs sm:text-sm bg-[color:var(--color-primary)]/8 text-[color:var(--color-primary)] px-1.5 py-0.5 rounded border border-[color:var(--color-border)] break-all"
       >
         {m[0]}
       </code>
@@ -80,7 +80,7 @@ function TroubleshootingSection() {
           viewport={{ once: true }}
           className="text-center mb-10 lg:mb-14"
         >
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 border border-amber-200 px-4 py-1.5 text-sm font-medium text-amber-700 mb-4">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[color:var(--color-neon)]/10 border border-[color:var(--color-neon)]/30 px-4 py-1.5 text-sm font-medium text-[color:var(--color-accent)] mb-4">
             <Wrench className="h-4 w-4" />
             Troubleshooting
           </span>
@@ -105,7 +105,7 @@ function TroubleshootingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
-              className="rounded-xl border border-violet-100/60 bg-white p-5 premium-card"
+              className="rounded-xl border border-[color:var(--color-border)] bg-white p-5 premium-card"
             >
               <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
               <p className="text-sm text-muted leading-relaxed">
@@ -127,7 +127,7 @@ function TroubleshootingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: Math.min(i * 0.03, 0.18) }}
-              className="rounded-xl border border-violet-100/60 bg-white p-5 sm:p-6 scroll-mt-24"
+              className="rounded-xl border border-[color:var(--color-border)] bg-white p-5 sm:p-6 scroll-mt-24"
             >
               <h4 className="text-base sm:text-lg font-semibold text-foreground mb-3">
                 {item.title}
@@ -142,7 +142,7 @@ function TroubleshootingSection() {
                   {item.steps.map((step, j) => (
                     <li
                       key={j}
-                      className="text-sm text-muted leading-relaxed marker:text-violet-600 marker:font-semibold"
+                      className="text-sm text-muted leading-relaxed marker:text-[color:var(--color-primary)] marker:font-semibold"
                     >
                       {renderStepText(step)}
                     </li>
@@ -153,7 +153,7 @@ function TroubleshootingSection() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-2xl border border-cyan-200 bg-gradient-to-br from-cyan-50/80 to-violet-50/60 p-6 sm:p-8 text-center">
+        <div className="mt-12 rounded-2xl border border-[color:var(--color-primary)]/25 bg-gradient-to-br from-[#f2ecff] to-[#fff5ec]/70 p-6 sm:p-8 text-center">
           <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
             Still stuck?
           </h4>
@@ -166,7 +166,7 @@ function TroubleshootingSection() {
             href={SUPPORT_WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-purple-900/30 transition-all hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98]"
+            className="inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-indigo-deep)] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-[rgba(30,20,60,0.30)] transition-all hover:shadow-2xl hover:shadow-[rgba(101,30,253,0.30)] active:scale-[0.98]"
           >
             <MessageCircle className="h-5 w-5" />
             WhatsApp us — {SUPPORT_WHATSAPP_NUMBER}
@@ -183,23 +183,15 @@ export default function TutorialsContent() {
   return (
     <div>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0118] via-[#1a0a3e] to-[#0c1445]" />
-
-        <div className="aurora-blob w-[600px] h-[600px] bg-purple-600/20 -top-32 -left-32" style={{ animationDelay: "0s" }} />
-        <div className="aurora-blob w-[450px] h-[450px] bg-blue-500/15 top-1/4 right-[-8%]" style={{ animationDelay: "4s" }} />
-        <div className="aurora-blob w-[400px] h-[400px] bg-cyan-500/15 bottom-[-15%] left-1/3" style={{ animationDelay: "8s" }} />
-        <div className="aurora-blob w-[300px] h-[300px] bg-fuchsia-500/12 top-[30%] left-[55%]" style={{ animationDelay: "6s" }} />
-
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(124,58,237,0.18),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(6,182,212,0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.07),transparent_60%)]" />
+      <section className="relative overflow-hidden section-wash-dark pt-28 pb-20 lg:pt-36 lg:pb-24">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,188,125,0.16),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,30,30,0.10),transparent_55%)]" />
 
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.05] pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)`,
+            backgroundSize: "72px 72px",
           }}
         />
 
@@ -208,26 +200,26 @@ export default function TutorialsContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-purple-400/20 bg-white/[0.07] backdrop-blur-md px-5 py-2.5 text-sm text-purple-200 mb-8"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] backdrop-blur-md px-5 py-2 text-[11px] font-semibold tracking-[0.22em] uppercase text-[#ffbc7d] mb-8"
           >
-            <BookOpen className="h-4 w-4 text-cyan-400" />
-            <span className="font-medium">IPTV Setup Guides — 12 Devices Covered</span>
+            <BookOpen className="h-3.5 w-3.5" />
+            <span>Best IPTV UK Setup Guides — 12 Devices</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.1] mb-6 text-white"
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold tracking-tight leading-[1.08] mb-6 text-white"
           >
-            IPTV Setup Guides — Activate Your Line On Any Device
+            Best IPTV UK Setup Guides — Activate Your Line On Any Device
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mx-auto max-w-2xl text-base sm:text-lg text-gray-300/90 leading-relaxed mb-10"
+            className="mx-auto max-w-2xl text-base sm:text-lg text-white/75 leading-relaxed mb-10"
           >
             Plain-English walkthroughs for getting your subscription live on Fire Stick,
             Smart TV, Apple TV, Android, iPhone, Windows, Mac and dedicated IPTV boxes. No
@@ -243,24 +235,23 @@ export default function TutorialsContent() {
           >
             <a
               href="#devices"
-              className="group relative flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-lg shadow-purple-900/40 transition-all hover:shadow-2xl hover:shadow-purple-500/40 active:scale-[0.98] w-full sm:w-auto justify-center"
+              className="group relative flex items-center gap-2.5 rounded-xl bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-hover)] px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-lg shadow-[rgba(101,30,253,0.30)] transition-all active:scale-[0.98] w-full sm:w-auto justify-center"
             >
               <Play className="h-5 w-5 fill-current" />
               <span>Choose Your Device</span>
               <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
             </a>
             <Link
               href="/contact"
-              className="group flex items-center gap-2.5 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm px-7 py-3.5 text-sm sm:text-base font-semibold text-white transition-all hover:border-purple-400/30 hover:bg-white/10 w-full sm:w-auto justify-center"
+              className="group flex items-center gap-2.5 rounded-xl border border-white/15 bg-white/[0.06] backdrop-blur-sm px-7 py-3.5 text-sm sm:text-base font-semibold text-white transition-all hover:border-[#ffbc7d]/50 hover:bg-white/10 w-full sm:w-auto justify-center"
             >
-              <MessageCircle className="h-5 w-5 text-cyan-400" />
+              <MessageCircle className="h-5 w-5 text-[#ffbc7d]" />
               <span>Stuck? Contact our UK team</span>
             </Link>
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#fafbff] via-[#fafbff]/80 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[color:var(--color-background)] to-transparent" />
       </section>
 
       {/* ── Device Hub Grid ── */}
@@ -274,12 +265,16 @@ export default function TutorialsContent() {
             viewport={{ once: true }}
             className="text-center mb-12 lg:mb-16"
           >
-            <span className="inline-block rounded-full bg-cyan-50 border border-cyan-200 px-4 py-1.5 text-sm font-medium text-cyan-700 mb-4">
-              Pick Your Hardware
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <span className="editorial-rule" />
+              <span className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[color:var(--color-primary)]">
+                Pick Your Hardware
+              </span>
+              <span className="editorial-rule" />
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4 tracking-tight">
               Choose A Device For Its{" "}
-              <span className="gradient-text">Step-By-Step Setup Guide</span>
+              <span className="gradient-text">Best IPTV UK Setup Guide</span>
             </h2>
             <p className="mx-auto max-w-xl text-lg text-muted">
               Twelve dedicated walkthroughs — tap the card that matches your screen and
@@ -298,11 +293,11 @@ export default function TutorialsContent() {
               >
                 <Link
                   href={`/tutorials/${device.slug}`}
-                  className="group relative flex h-full flex-col rounded-2xl border border-violet-100/60 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-100/40 premium-card focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2"
+                  className="group relative flex h-full flex-col rounded-2xl border border-[color:var(--color-border)] bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[color:var(--color-primary)]/30 hover:shadow-lg hover:shadow-[rgba(101,30,253,0.10)] premium-card focus-visible:outline-2 focus-visible:outline-[color:var(--color-primary)] focus-visible:outline-offset-2"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-violet-50/50 to-cyan-50/20 opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#f2ecff]/60 to-[#fff5ec]/30 opacity-0 transition-opacity group-hover:opacity-100" />
                   <div className="relative flex h-full flex-col">
-                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-100 to-cyan-50 text-2xl transition-all group-hover:from-violet-200/80 group-hover:to-cyan-100/50 group-hover:shadow-md group-hover:shadow-violet-200/30">
+                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[#f2ecff] to-[#fff5ec] text-2xl transition-all group-hover:from-[color:var(--color-primary)]/20 group-hover:to-[#ffe6ec] group-hover:shadow-md group-hover:shadow-[rgba(101,30,253,0.15)]">
                       <span aria-hidden="true">{device.emoji}</span>
                     </div>
                     <h3 className="text-base font-semibold text-foreground mb-1">
@@ -311,7 +306,7 @@ export default function TutorialsContent() {
                     <p className="text-sm text-muted leading-relaxed mb-4 flex-1">
                       {device.subtitle}
                     </p>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-violet-600 transition-all group-hover:gap-2.5">
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[color:var(--color-primary)] transition-all group-hover:gap-2.5">
                       View setup guide
                       <ArrowRight className="h-4 w-4" />
                     </span>
@@ -359,7 +354,7 @@ export default function TutorialsContent() {
             viewport={{ once: true }}
             className="text-center mb-12 lg:mb-16"
           >
-            <span className="inline-block rounded-full bg-violet-50 border border-violet-200 px-4 py-1.5 text-sm font-medium text-violet-700 mb-4">
+            <span className="inline-block rounded-full bg-[color:var(--color-primary)]/10 border border-[color:var(--color-primary)]/25 px-4 py-1.5 text-sm font-medium text-[color:var(--color-primary)] mb-4">
               Best IPTV UK Setup Help
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -389,10 +384,10 @@ export default function TutorialsContent() {
                     aria-controls={`tut-faq-panel-${i}`}
                     id={`tut-faq-trigger-${i}`}
                     className={cn(
-                      "w-full flex items-center justify-between gap-4 rounded-xl border p-5 text-left transition-all duration-300 focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2",
+                      "w-full flex items-center justify-between gap-4 rounded-xl border p-5 text-left transition-all duration-300 focus-visible:outline-2 focus-visible:outline-[color:var(--color-primary)] focus-visible:outline-offset-2",
                       isOpen
-                        ? "border-violet-200 bg-violet-50/60 shadow-sm"
-                        : "border-violet-100/50 bg-white hover:border-violet-200 hover:shadow-sm"
+                        ? "border-[color:var(--color-primary)]/30 bg-[color:var(--color-primary)]/5 shadow-sm"
+                        : "border-[color:var(--color-border)] bg-white hover:border-[color:var(--color-primary)]/30 hover:shadow-sm"
                     )}
                   >
                     <span className="text-sm sm:text-base font-medium text-foreground pr-4">
@@ -402,7 +397,7 @@ export default function TutorialsContent() {
                       aria-hidden="true"
                       className={cn(
                         "h-5 w-5 shrink-0 text-muted transition-transform duration-300",
-                        isOpen && "rotate-180 text-violet-600"
+                        isOpen && "rotate-180 text-[color:var(--color-primary)]"
                       )}
                     />
                   </button>
@@ -433,15 +428,9 @@ export default function TutorialsContent() {
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="relative py-11 lg:py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f0524] via-[#1a0a3e] to-[#0c1445]" />
-
-        <div className="aurora-blob w-[500px] h-[500px] bg-purple-600/20 -top-20 -left-20" style={{ animationDelay: "0s" }} />
-        <div className="aurora-blob w-[400px] h-[400px] bg-cyan-500/15 bottom-[-10%] right-[-5%]" style={{ animationDelay: "5s" }} />
-        <div className="aurora-blob w-[300px] h-[300px] bg-violet-500/15 top-1/2 left-1/2 -translate-x-1/2" style={{ animationDelay: "10s" }} />
-
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.12),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.08),transparent_50%)]" />
+      <section className="relative py-11 lg:py-16 overflow-hidden section-wash-dark">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,188,125,0.16),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,30,30,0.10),transparent_55%)]" />
 
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
@@ -449,11 +438,11 @@ export default function TutorialsContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight">
               Not subscribed yet?{" "}
               <span className="gradient-text-hero">Get Best IPTV UK in minutes</span>
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-300/90 mb-10 leading-relaxed">
+            <p className="mx-auto max-w-2xl text-lg text-white/75 mb-10 leading-relaxed">
               Choose a plan, pay in seconds, and your login lands in your inbox before the
               first ad break. Every Best IPTV UK order is backed by a 30-day money-back
               guarantee and live UK support.
@@ -462,17 +451,16 @@ export default function TutorialsContent() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <SectionLink
                 href="/#pricing"
-                className="group relative flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-8 py-4 text-base font-semibold text-white transition-all hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98] w-full sm:w-auto justify-center"
+                className="group relative flex items-center gap-2.5 rounded-xl bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-hover)] px-8 py-4 text-base font-semibold text-white transition-all shadow-lg shadow-[rgba(101,30,253,0.30)] active:scale-[0.98] w-full sm:w-auto justify-center"
               >
                 <Play className="h-5 w-5 fill-current" />
                 Browse Best IPTV UK Plans
-                <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 transition-opacity group-hover:opacity-100" />
               </SectionLink>
               <Link
                 href="/contact"
-                className="group flex items-center gap-2.5 rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-purple-400/30 hover:bg-white/10 w-full sm:w-auto justify-center"
+                className="group flex items-center gap-2.5 rounded-xl border border-white/15 bg-white/[0.06] backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-[#ffbc7d]/50 hover:bg-white/10 w-full sm:w-auto justify-center"
               >
-                <MessageCircle className="h-5 w-5 text-cyan-400" />
+                <MessageCircle className="h-5 w-5 text-[#ffbc7d]" />
                 Talk To UK Support
               </Link>
             </div>

@@ -8,7 +8,7 @@ import SectionLink from "@/components/SectionLink";
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-violet-100/50 bg-gradient-to-b from-[#fafbff] to-white">
+    <footer className="relative border-t border-[color:var(--color-border)] bg-gradient-to-b from-[#fafbff] to-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 py-16">
@@ -22,7 +22,7 @@ export default function Footer() {
                   fill
                   sizes="48px"
                   loading="lazy"
-                  className="object-contain drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]"
+                  className="object-contain drop-shadow-[0_0_8px_rgba(101,30,253,0.55)]"
                 />
               </div>
               <span className="text-lg font-bold text-foreground">
@@ -34,11 +34,11 @@ export default function Footer() {
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm text-muted">
-                <Mail className="h-4 w-4 text-violet-500/60" />
+                <Mail className="h-4 w-4 text-[color:var(--color-primary)]/70" />
                 <span>{CONTACT_EMAIL}</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted">
-                <MapPin className="h-4 w-4 text-violet-500/60" />
+                <MapPin className="h-4 w-4 text-[color:var(--color-primary)]/70" />
                 <span>London, United Kingdom</span>
               </div>
             </div>
@@ -54,7 +54,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <SectionLink
                     href={link.href}
-                    className="text-sm text-muted transition-colors hover:text-violet-600"
+                    className="text-sm text-muted transition-colors hover:text-[color:var(--color-primary)]"
                   >
                     {link.label}
                   </SectionLink>
@@ -73,7 +73,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted transition-colors hover:text-violet-600"
+                    className="text-sm text-muted transition-colors hover:text-[color:var(--color-primary)]"
                   >
                     {link.label}
                   </Link>
@@ -92,7 +92,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted transition-colors hover:text-violet-600"
+                    className="text-sm text-muted transition-colors hover:text-[color:var(--color-primary)]"
                   >
                     {link.label}
                   </Link>
@@ -104,7 +104,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-violet-100/50 py-6">
+        <div className="border-t border-[color:var(--color-border)] py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-muted text-center sm:text-left">
               © {new Date().getFullYear()} best-iptv-uk-subscription.com — UK IPTV subscription with full broadcaster coverage

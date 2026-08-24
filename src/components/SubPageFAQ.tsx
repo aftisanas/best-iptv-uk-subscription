@@ -30,10 +30,10 @@ export default function SubPageFAQ({ items }: SubPageFAQProps) {
               aria-controls={`subpage-faq-panel-${i}`}
               id={`subpage-faq-trigger-${i}`}
               className={cn(
-                "w-full flex items-center justify-between gap-4 rounded-xl border p-5 text-left transition-all duration-300 focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2",
+                "w-full flex items-center justify-between gap-4 rounded-xl border p-5 text-left transition-all duration-300 focus-visible:outline-2 focus-visible:outline-[color:var(--color-primary)] focus-visible:outline-offset-2",
                 isOpen
-                  ? "border-violet-200 bg-violet-50/60 shadow-sm"
-                  : "border-violet-100/50 bg-white hover:border-violet-200 hover:shadow-sm",
+                  ? "border-[color:var(--color-primary)]/30 bg-[color:var(--color-primary)]/5 shadow-sm"
+                  : "border-[color:var(--color-border)] bg-white hover:border-[color:var(--color-primary)]/30 hover:shadow-sm",
               )}
             >
               <span className="text-sm sm:text-base font-medium text-foreground pr-4">
@@ -43,7 +43,7 @@ export default function SubPageFAQ({ items }: SubPageFAQProps) {
                 aria-hidden="true"
                 className={cn(
                   "h-5 w-5 shrink-0 text-muted transition-transform duration-300",
-                  isOpen && "rotate-180 text-violet-600",
+                  isOpen && "rotate-180 text-[color:var(--color-primary)]",
                 )}
               />
             </button>

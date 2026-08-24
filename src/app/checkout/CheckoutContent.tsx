@@ -260,30 +260,15 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
   return (
     <div>
       {/* ── Hero Header ── */}
-      <section className="relative overflow-hidden pt-28 pb-12 lg:pt-32 lg:pb-14">
-        {/* Deep premium gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0118] via-[#1a0a3e] to-[#0c1445]" />
+      <section className="relative overflow-hidden section-wash-dark pt-28 pb-12 lg:pt-32 lg:pb-14">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,188,125,0.16),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(255,30,30,0.10),transparent_55%)]" />
 
-        {/* Aurora blobs */}
         <div
-          className="aurora-blob w-[500px] h-[500px] bg-purple-600/20 -top-32 -left-32"
-          style={{ animationDelay: "0s" }}
-        />
-        <div
-          className="aurora-blob w-[400px] h-[400px] bg-cyan-500/15 top-1/4 right-[-8%]"
-          style={{ animationDelay: "4s" }}
-        />
-
-        {/* Radial overlays */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(124,58,237,0.18),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(6,182,212,0.1),transparent_50%)]" />
-
-        {/* Subtle grid */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.05] pointer-events-none"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)`,
+            backgroundSize: "72px 72px",
           }}
         />
 
@@ -291,7 +276,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
           {/* Back to plans */}
           <Link
             href="/#pricing"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#ffbc7d] hover:text-white transition-colors"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             Back to plans
@@ -299,17 +284,17 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
 
           {/* Page header */}
           <div className="mt-6">
-            <div className="text-xs font-bold tracking-[0.18em] text-cyan-400">
-              CHECKOUT
+            <div className="text-[11px] font-bold tracking-[0.22em] uppercase text-[#ffbc7d]">
+              Secure Checkout
             </div>
-            <h1 className="mt-2 text-3xl sm:text-4xl font-bold text-white">
+            <h1 className="font-display mt-2 text-3xl sm:text-4xl font-bold text-white tracking-tight">
               {toAccessLabel(plan.name)}
             </h1>
             <div className="mt-3 flex items-baseline gap-3">
               <span className="text-3xl font-extrabold text-white">
                 {formatPrice(plan.price)}
               </span>
-              <span className="text-xs font-semibold tracking-[0.15em] text-gray-300">
+              <span className="text-xs font-semibold tracking-[0.15em] text-white/70">
                 ONE-TIME PAYMENT
               </span>
             </div>
@@ -317,7 +302,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
         </div>
 
         {/* Bottom gradient fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-[color:var(--color-background)] to-transparent pointer-events-none" />
       </section>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
@@ -326,7 +311,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
           {/* Left Column (Narrower): Order Summary + Promo Code */}
           <div className="space-y-6 lg:sticky lg:top-24">
             {/* Top Card: Order Summary */}
-            <div className="rounded-2xl border border-violet-100/60 bg-white p-6 shadow-lg shadow-purple-900/5">
+            <div className="rounded-2xl border border-[color:var(--color-border)] bg-white p-6 shadow-sm">
               <h2 className="text-xs font-bold tracking-[0.18em] text-foreground uppercase border-b border-gray-100 pb-4 mb-4">
                 ORDER SUMMARY
               </h2>
@@ -353,7 +338,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
             </div>
 
             {/* Bottom Card: Promo Code */}
-            <div className="rounded-2xl border border-violet-100/60 bg-white p-6 shadow-lg shadow-purple-900/5">
+            <div className="rounded-2xl border border-[color:var(--color-border)] bg-white p-6 shadow-sm">
               <h2 className="text-xs font-bold tracking-[0.18em] text-foreground uppercase mb-1.5">
                 HAVE A PROMO CODE?
               </h2>
@@ -370,14 +355,14 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
                     if (promoNotice) setPromoNotice(null);
                   }}
                   placeholder="Promo code"
-                  className="w-full rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-violet-400 focus:outline-2 focus:outline-violet-600 focus-visible:outline-none"
+                  className="w-full rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-[color:var(--color-primary)] focus:outline-2 focus:outline-[color:var(--color-primary)] focus-visible:outline-none"
                 />
                 <button
                   type="button"
                   onClick={() => {
                     setPromoNotice("Promo codes aren't available yet.");
                   }}
-                  className="shrink-0 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 px-4 py-2.5 text-xs font-bold tracking-wider text-white transition-all hover:shadow-md hover:shadow-purple-500/20 active:scale-[0.98]"
+                  className="shrink-0 rounded-xl bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-hover)] px-4 py-2.5 text-xs font-bold tracking-wider text-white transition-all hover:shadow-md hover:shadow-[rgba(101,30,253,0.30)] active:scale-[0.98]"
                 >
                   APPLY
                 </button>
@@ -387,7 +372,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
           </div>
 
           {/* Right Column (Wider / Main Container Card): Billing Details */}
-          <div className="rounded-2xl border border-violet-100/60 bg-white p-6 sm:p-8 shadow-lg shadow-purple-900/5 space-y-8">
+          <div className="rounded-2xl border border-[color:var(--color-border)] bg-white p-6 sm:p-8 shadow-sm space-y-8">
             <h2 className="text-xs font-bold tracking-[0.18em] text-foreground uppercase border-b border-gray-100 pb-4">
               BILLING DETAILS
             </h2>
@@ -473,7 +458,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
                       <span className="text-sm font-semibold text-foreground">
                         Proxy Protection
                       </span>
-                      <span className="inline-flex items-center rounded-md bg-amber-100 px-2 py-0.5 text-[10px] font-bold tracking-[0.12em] text-amber-700">
+                      <span className="inline-flex items-center rounded-md bg-[color:var(--color-neon)]/20 px-2 py-0.5 text-[10px] font-bold tracking-[0.12em] text-[color:var(--color-accent)]">
                         POPULAR
                       </span>
                     </div>
@@ -494,9 +479,9 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
                       aria-checked={proxyOn}
                       aria-label="Toggle Proxy Protection"
                       onClick={() => setProxyOn((v) => !v)}
-                      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-violet-600 focus-visible:outline-offset-2 ${
+                      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-[color:var(--color-primary)] focus-visible:outline-offset-2 ${
                         proxyOn
-                          ? "bg-gradient-to-r from-violet-600 to-cyan-500"
+                          ? "bg-gradient-to-r from-[color:var(--color-primary)] to-[#ff1e1e]"
                           : "bg-gray-200"
                       }`}
                     >
@@ -535,7 +520,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
                     onChange={(e) => setFirstName(e.target.value)}
                     disabled={submitting}
                     placeholder="Jane"
-                    className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-violet-400 focus:outline-2 focus:outline-violet-600 focus:outline-offset-1 disabled:cursor-not-allowed disabled:bg-gray-50"
+                    className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-[color:var(--color-primary)] focus:outline-2 focus:outline-[color:var(--color-primary)] focus:outline-offset-1 disabled:cursor-not-allowed disabled:bg-gray-50"
                   />
                 </div>
 
@@ -555,7 +540,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
                     onChange={(e) => setLastName(e.target.value)}
                     disabled={submitting}
                     placeholder="Smith"
-                    className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-violet-400 focus:outline-2 focus:outline-violet-600 focus:outline-offset-1 disabled:cursor-not-allowed disabled:bg-gray-50"
+                    className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-[color:var(--color-primary)] focus:outline-2 focus:outline-[color:var(--color-primary)] focus:outline-offset-1 disabled:cursor-not-allowed disabled:bg-gray-50"
                   />
                 </div>
               </div>
@@ -579,7 +564,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
                   placeholder="+44 7XXX XXXXXX"
                   aria-invalid={!phoneValid}
                   aria-describedby="checkout-phone-help"
-                  className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-violet-400 focus:outline-2 focus:outline-violet-600 focus:outline-offset-1 disabled:cursor-not-allowed disabled:bg-gray-50"
+                  className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-[color:var(--color-primary)] focus:outline-2 focus:outline-[color:var(--color-primary)] focus:outline-offset-1 disabled:cursor-not-allowed disabled:bg-gray-50"
                 />
                 {!phoneValid && (
                   <p className="mt-1.5 text-[11px] leading-relaxed text-red-600">
@@ -615,7 +600,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
                   placeholder="you@example.com"
                   aria-invalid={trimmedEmail !== "" && !emailValid}
                   aria-describedby="checkout-email-help"
-                  className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-violet-400 focus:outline-2 focus:outline-violet-600 focus:outline-offset-1 disabled:cursor-not-allowed disabled:bg-gray-50"
+                  className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-foreground placeholder:text-muted/60 transition-colors focus:border-[color:var(--color-primary)] focus:outline-2 focus:outline-[color:var(--color-primary)] focus:outline-offset-1 disabled:cursor-not-allowed disabled:bg-gray-50"
                 />
                 {trimmedEmail !== "" && !emailValid && (
                   <p className="mt-1.5 text-[11px] leading-relaxed text-red-600">
@@ -656,7 +641,7 @@ function CheckoutForPlan({ plan }: { plan: Plan }) {
               </div>
 
               <div className="flex items-center justify-center gap-2 text-xs text-muted">
-                <Shield className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
+                <Shield className="h-3.5 w-3.5 text-[color:var(--color-success)]" aria-hidden="true" />
                 <span>{CHECKOUT_COPY.footerNote}</span>
               </div>
             </div>

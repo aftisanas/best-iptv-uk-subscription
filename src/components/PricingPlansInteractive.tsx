@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
 import { Check, Star, Crown, Gem, Award, Medal } from "lucide-react";
 import { CHECKOUT_MODE, PRICING_PLANS } from "@/lib/constants";
 import { cn, toAccessLabel } from "@/lib/utils";
@@ -26,59 +25,59 @@ const tierMeta: Record<string, {
 }> = {
   amber: {
     icon: Medal,
-    gradient: "from-amber-500 to-orange-500",
-    badge: "bg-amber-50 text-amber-700 border-amber-200",
-    discount: "bg-gradient-to-r from-amber-500 to-orange-500 text-white",
-    border: "border-amber-100",
-    hoverBorder: "hover:border-amber-300",
-    accent: "text-amber-600",
-    accentLight: "text-amber-500",
-    button: "bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:shadow-lg hover:shadow-amber-500/20",
-    check: "text-amber-500",
-    glow: "group-hover:shadow-amber-100/50",
-    iconBg: "from-amber-100 to-orange-50",
+    gradient: "from-[#ffbc7d] to-[#ff8a3d]",
+    badge: "bg-[color:var(--color-neon)]/15 text-[color:var(--color-foreground)] border-[color:var(--color-neon)]/40",
+    discount: "bg-gradient-to-r from-[#ffbc7d] to-[#ff8a3d] text-[color:var(--color-foreground)]",
+    border: "border-[color:var(--color-neon)]/30",
+    hoverBorder: "hover:border-[color:var(--color-neon)]",
+    accent: "text-[color:var(--color-foreground)]",
+    accentLight: "text-[color:var(--color-neon)]",
+    button: "bg-gradient-to-r from-[#ffbc7d] to-[#ff8a3d] text-[color:var(--color-foreground)] hover:shadow-lg hover:shadow-[rgba(255,188,125,0.30)]",
+    check: "text-[color:var(--color-neon)]",
+    glow: "group-hover:shadow-[rgba(255,188,125,0.20)]",
+    iconBg: "from-[color:var(--color-neon)]/25 to-[#fff5ec]",
   },
   slate: {
     icon: Award,
-    gradient: "from-slate-500 to-gray-600",
-    badge: "bg-slate-50 text-slate-600 border-slate-200",
-    discount: "bg-gradient-to-r from-slate-500 to-gray-600 text-white",
-    border: "border-slate-100",
-    hoverBorder: "hover:border-slate-300",
-    accent: "text-slate-600",
-    accentLight: "text-slate-500",
-    button: "bg-gradient-to-r from-slate-600 to-gray-700 text-white hover:shadow-lg hover:shadow-slate-500/20",
-    check: "text-slate-500",
-    glow: "group-hover:shadow-slate-100/50",
-    iconBg: "from-slate-100 to-gray-50",
+    gradient: "from-[color:var(--color-muted-foreground)] to-[color:var(--color-foreground)]",
+    badge: "bg-[color:var(--color-border)]/40 text-[color:var(--color-muted)] border-[color:var(--color-border)]",
+    discount: "bg-gradient-to-r from-[color:var(--color-muted-foreground)] to-[color:var(--color-foreground)] text-white",
+    border: "border-[color:var(--color-border)]",
+    hoverBorder: "hover:border-[color:var(--color-muted-foreground)]",
+    accent: "text-[color:var(--color-muted)]",
+    accentLight: "text-[color:var(--color-muted-foreground)]",
+    button: "bg-gradient-to-r from-[color:var(--color-muted-foreground)] to-[color:var(--color-foreground)] text-white hover:shadow-lg hover:shadow-[rgba(74,70,101,0.25)]",
+    check: "text-[color:var(--color-muted-foreground)]",
+    glow: "group-hover:shadow-[rgba(74,70,101,0.12)]",
+    iconBg: "from-[color:var(--color-border)]/40 to-white",
   },
   blue: {
     icon: Crown,
-    gradient: "from-violet-600 via-purple-600 to-cyan-500",
-    badge: "bg-violet-50 text-violet-700 border-violet-200",
-    discount: "bg-gradient-to-r from-emerald-500 to-teal-500 text-white",
-    border: "border-violet-200",
-    hoverBorder: "hover:border-violet-400",
-    accent: "text-violet-600",
-    accentLight: "text-violet-500",
-    button: "bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 text-white hover:shadow-xl hover:shadow-purple-500/25",
-    check: "text-violet-500",
-    glow: "group-hover:shadow-violet-100/50",
-    iconBg: "from-violet-100 to-purple-50",
+    gradient: "from-[#ff6fa1] to-[#ff1e1e]",
+    badge: "bg-[#ffe6ec] text-[#ff1e1e] border-[#ffbdcf]",
+    discount: "bg-gradient-to-r from-[#ff6fa1] to-[#ff1e1e] text-white",
+    border: "border-[#ff6fa1]/40",
+    hoverBorder: "hover:border-[#ff1e1e]",
+    accent: "text-[#ff1e1e]",
+    accentLight: "text-[#ff6fa1]",
+    button: "bg-gradient-to-r from-[#ff6fa1] to-[#ff1e1e] text-white hover:shadow-xl hover:shadow-[rgba(255,30,30,0.35)]",
+    check: "text-[#ff1e1e]",
+    glow: "group-hover:shadow-[rgba(255,111,161,0.20)]",
+    iconBg: "from-[#ffe6ec] to-[#fff5ec]",
   },
   violet: {
     icon: Gem,
-    gradient: "from-fuchsia-600 to-purple-600",
-    badge: "bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200",
-    discount: "bg-gradient-to-r from-fuchsia-600 to-purple-600 text-white",
-    border: "border-fuchsia-100",
-    hoverBorder: "hover:border-fuchsia-300",
-    accent: "text-fuchsia-600",
-    accentLight: "text-fuchsia-500",
-    button: "bg-gradient-to-r from-fuchsia-600 to-purple-600 text-white hover:shadow-lg hover:shadow-fuchsia-500/20",
-    check: "text-fuchsia-500",
-    glow: "group-hover:shadow-fuchsia-100/50",
-    iconBg: "from-fuchsia-100 to-purple-50",
+    gradient: "from-[color:var(--color-primary)] to-[color:var(--color-indigo-deep)]",
+    badge: "bg-[color:var(--color-primary)]/10 text-[color:var(--color-primary)] border-[color:var(--color-primary)]/25",
+    discount: "bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-indigo-deep)] text-white",
+    border: "border-[color:var(--color-primary)]/20",
+    hoverBorder: "hover:border-[color:var(--color-primary)]",
+    accent: "text-[color:var(--color-primary)]",
+    accentLight: "text-[color:var(--color-primary)]/80",
+    button: "bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-indigo-deep)] text-white hover:shadow-lg hover:shadow-[rgba(101,30,253,0.30)]",
+    check: "text-[color:var(--color-primary)]",
+    glow: "group-hover:shadow-[rgba(101,30,253,0.15)]",
+    iconBg: "from-[color:var(--color-primary)]/15 to-[#f2ecff]",
   },
 };
 
@@ -100,19 +99,15 @@ export default function PricingPlansInteractive() {
   return (
     <>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-start">
-        {PRICING_PLANS.map((plan, i) => {
+        {PRICING_PLANS.map((plan) => {
           const isPopular = plan.popular;
           const isHovered = hoveredPlan === plan.id;
           const meta = tierMeta[plan.accentColor] || tierMeta.blue;
           const TierIcon = meta.icon;
 
           return (
-            <motion.div
+            <div
               key={plan.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
               onMouseEnter={() => setHoveredPlan(plan.id)}
               onMouseLeave={() => setHoveredPlan(null)}
               className={cn(
@@ -120,7 +115,7 @@ export default function PricingPlansInteractive() {
                 meta.border,
                 meta.hoverBorder,
                 isPopular
-                  ? "border-violet-300 shadow-xl shadow-violet-100/60 lg:scale-[1.04] z-10"
+                  ? "border-[#ff1e1e]/40 shadow-xl shadow-[rgba(255,30,30,0.14)] lg:scale-[1.04] z-10"
                   : "shadow-sm",
                 !isPopular && isHovered && "-translate-y-2 shadow-lg",
                 isPopular && isHovered && "-translate-y-3",
@@ -130,9 +125,9 @@ export default function PricingPlansInteractive() {
               {/* Popular ribbon effect */}
               {isPopular && (
                 <>
-                  <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-violet-400/30 via-transparent to-cyan-400/20 pointer-events-none" />
+                  <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-[#ff6fa1]/30 via-transparent to-[#ff1e1e]/20 pointer-events-none" />
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                    <div className="badge-shimmer rounded-full bg-gradient-to-r from-violet-600 via-purple-600 to-cyan-500 px-5 py-2 text-xs font-bold tracking-wider text-white shadow-lg shadow-purple-500/30 whitespace-nowrap flex items-center gap-1.5">
+                    <div className="badge-shimmer rounded-full gradient-popular px-5 py-2 text-xs font-bold tracking-wider text-white shadow-lg shadow-[rgba(255,30,30,0.35)] whitespace-nowrap flex items-center gap-1.5">
                       <Star className="h-3 w-3 fill-current" />
                       {plan.badge}
                     </div>
@@ -143,7 +138,7 @@ export default function PricingPlansInteractive() {
               {/* Non-popular badge */}
               {plan.badge && !isPopular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                  <div className="badge-shimmer rounded-full bg-gradient-to-r from-fuchsia-600 to-purple-600 px-5 py-2 text-xs font-bold tracking-wider text-white shadow-lg shadow-fuchsia-500/20 whitespace-nowrap flex items-center gap-1.5">
+                  <div className="badge-shimmer rounded-full bg-gradient-to-r from-[color:var(--color-primary)] to-[color:var(--color-indigo-deep)] px-5 py-2 text-xs font-bold tracking-wider text-white shadow-lg shadow-[rgba(101,30,253,0.30)] whitespace-nowrap flex items-center gap-1.5">
                     <Gem className="h-3 w-3" />
                     {plan.badge}
                   </div>
@@ -173,7 +168,7 @@ export default function PricingPlansInteractive() {
 
                 {/* Tier name + duration */}
                 <div className="mb-5">
-                  <h3 className="text-lg font-bold text-foreground leading-snug">{plan.tier}</h3>
+                  <h3 className="font-display text-xl font-bold text-foreground leading-snug">{plan.tier}</h3>
                   <p className="text-sm text-muted mt-1">{plan.name}</p>
                 </div>
 
@@ -197,8 +192,8 @@ export default function PricingPlansInteractive() {
                   className={cn(
                     "h-px mb-5",
                     isPopular
-                      ? "bg-gradient-to-r from-transparent via-violet-200 to-transparent"
-                      : "bg-gray-100"
+                      ? "bg-gradient-to-r from-transparent via-[#ff6fa1]/40 to-transparent"
+                      : "bg-[color:var(--color-border)]/50"
                   )}
                 />
 
@@ -209,12 +204,12 @@ export default function PricingPlansInteractive() {
                       <div
                         className={cn(
                           "mt-0.5 flex h-4.5 w-4.5 items-center justify-center rounded-full shrink-0",
-                          isPopular ? "bg-violet-100" : "bg-gray-50"
+                          isPopular ? "bg-[#ffe6ec]" : "bg-[color:var(--color-card-hover)]"
                         )}
                       >
                         <Check className={cn("h-3 w-3", meta.check)} />
                       </div>
-                      <span className="text-sm text-gray-600">{feature}</span>
+                      <span className="text-sm text-muted">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -226,13 +221,15 @@ export default function PricingPlansInteractive() {
                   aria-label={`Choose ${plan.tier} plan — ${plan.name}`}
                   className={cn(
                     "flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-bold transition-all active:scale-[0.98] w-full",
-                    isPopular ? meta.button : "bg-cyan-500 hover:bg-accent text-white hover:shadow-xl hover:shadow-purple-500/25",
+                    isPopular
+                      ? meta.button
+                      : "bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-hover)] text-white hover:shadow-xl hover:shadow-[rgba(101,30,253,0.30)]",
                   )}
                 >
                   Choose Plan
                 </button>
               </div>
-            </motion.div>
+            </div>
           );
         })}
       </div>

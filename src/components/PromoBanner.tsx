@@ -1,87 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-interface TimeLeft {
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
-
-function getOrCreateEndTime(): number {
-  if (typeof window === "undefined") return Date.now() + 18 * 60 * 60 * 1000;
-
-  const stored = window.localStorage.getItem("promoEndTime");
-  const now = Date.now();
-
-  if (stored) {
-    const endTime = parseInt(stored, 10);
-    if (!Number.isNaN(endTime) && endTime > now) {
-      return endTime;
-    }
-  }
-
-  const minMs = 14 * 60 * 60 * 1000;
-  const maxMs = 24 * 60 * 60 * 1000 - 60 * 1000;
-  const randomMs = minMs + Math.floor(Math.random() * (maxMs - minMs));
-  const newEndTime = now + randomMs;
-
-  window.localStorage.setItem("promoEndTime", newEndTime.toString());
-  return newEndTime;
-}
-
-function calculateTimeLeft(endTime: number): TimeLeft {
-  const diff = Math.max(0, endTime - Date.now());
-  return {
-    hours: Math.floor(diff / (1000 * 60 * 60)),
-    minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
-    seconds: Math.floor((diff % (1000 * 60)) / 1000),
-  };
-}
+import { usePromoCountdown, padTime } from "@/lib/usePromoCountdown";
 
 export default function PromoBanner() {
-  const [endTime, setEndTime] = useState<number>(0);
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    const end = getOrCreateEndTime();
-
-    const timeoutId = window.setTimeout(() => {
-      setEndTime(end);
-      setTimeLeft(calculateTimeLeft(end));
-      setMounted(true);
-    }, 0);
-
-    return () => window.clearTimeout(timeoutId);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted || endTime === 0) return;
-
-    const interval = setInterval(() => {
-      const left = calculateTimeLeft(endTime);
-
-      if (left.hours === 0 && left.minutes === 0 && left.seconds === 0) {
-        if (typeof window !== "undefined") {
-          window.localStorage.removeItem("promoEndTime");
-        }
-        const newEnd = getOrCreateEndTime();
-        setEndTime(newEnd);
-        setTimeLeft(calculateTimeLeft(newEnd));
-      } else {
-        setTimeLeft(left);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [endTime, mounted]);
-
-  const pad = (n: number) => n.toString().padStart(2, "0");
+  const { timeLeft, mounted } = usePromoCountdown();
+  const pad = padTime;
 
   if (!mounted) {
     return (
@@ -94,8 +17,8 @@ export default function PromoBanner() {
       className="promo-banner relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, rgba(88, 28, 135, 0.55) 0%, rgba(30, 27, 75, 0.75) 50%, rgba(14, 23, 90, 0.55) 100%)",
-        border: "1px solid rgba(139, 92, 246, 0.4)",
+          "linear-gradient(135deg, rgba(43, 12, 107, 0.72) 0%, rgba(21, 13, 38, 0.85) 50%, rgba(101, 30, 253, 0.30) 100%)",
+        border: "1px solid rgba(101, 30, 253, 0.45)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
       }}
@@ -114,38 +37,31 @@ export default function PromoBanner() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at top left, rgba(168,85,247,0.18), transparent 55%), radial-gradient(ellipse at bottom right, rgba(34,211,238,0.14), transparent 55%)",
+            "radial-gradient(ellipse at top left, rgba(255,188,125,0.16), transparent 55%), radial-gradient(ellipse at bottom right, rgba(255,30,30,0.16), transparent 55%)",
         }}
       />
 
       <div className="relative z-10 flex flex-col items-center text-center px-4 sm:px-5 py-4 sm:py-5 gap-2 sm:gap-2.5">
-        <div className="flex items-center gap-2">
-          <span aria-hidden="true" className="text-yellow-400 text-base drop-shadow-[0_0_10px_rgba(250,204,21,0.6)]">⚡</span>
+        <div className="flex items-center gap-3">
+          <span className="editorial-rule" aria-hidden />
           <span
-            className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase"
-            style={{
-              color: "rgba(196, 181, 253, 0.95)",
-              textShadow: "0 0 14px rgba(139, 92, 246, 0.6)",
-            }}
+            className="text-[10px] sm:text-[11px] font-semibold tracking-[0.22em] uppercase"
+            style={{ color: "rgba(255, 188, 125, 0.95)" }}
           >
-            Limited Time Reduction
+            Current Term Pricing
           </span>
-          <span aria-hidden="true" className="text-yellow-400 text-base drop-shadow-[0_0_10px_rgba(250,204,21,0.6)]">⚡</span>
+          <span className="editorial-rule" aria-hidden />
         </div>
 
-        <h2
-          className="text-lg sm:text-xl md:text-2xl font-extrabold text-white leading-tight"
-          style={{ textShadow: "0 0 30px rgba(139, 92, 246, 0.55)" }}
-        >
-          <span aria-hidden="true">🔥 </span>Limited-Time Subscription Discount — Claim Before It Ends<span aria-hidden="true"> 🔥</span>
+        <h2 className="font-display text-lg sm:text-xl md:text-2xl font-semibold text-white leading-tight tracking-tight">
+          Reduced pricing on every term — reverts when the timer resets.
         </h2>
 
         <p
-          className="text-xs sm:text-sm font-medium"
-          style={{ color: "rgba(196, 181, 253, 0.9)" }}
+          className="text-xs sm:text-sm"
+          style={{ color: "rgba(255, 245, 236, 0.80)" }}
         >
-          <span aria-hidden="true" className="text-emerald-400">✅</span>{" "}
-          30-Day Money Back Guarantee — Zero Risk. Cancel Anytime.
+          Every plan is covered by the 30-day refund window.
         </p>
 
         <div className="flex items-start gap-1.5 sm:gap-2.5 mt-0.5">
@@ -166,10 +82,10 @@ export default function PromoBanner() {
         </div>
 
         <p
-          className="text-[10px] sm:text-[11px] mt-0.5"
-          style={{ color: "rgba(226, 232, 240, 0.9)" }}
+          className="text-[10px] sm:text-[11px] tracking-[0.15em] uppercase mt-0.5"
+          style={{ color: "rgba(226, 232, 240, 0.75)" }}
         >
-          <span aria-hidden="true">🔒</span> Secure Payment &nbsp;·&nbsp; <span aria-hidden="true">⚡</span> Instant Activation &nbsp;·&nbsp; 24/7 UK Support
+          Secure checkout &nbsp;·&nbsp; Credentials in under 2 minutes &nbsp;·&nbsp; 24/7 UK support
         </p>
       </div>
     </div>
